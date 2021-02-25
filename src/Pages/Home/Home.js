@@ -3,7 +3,16 @@ import './Home.css';
 const Home = () => {
     return (
         <div>
-            <h1>Home Page</h1>
+            <div className="main-home">
+                <div className="show">
+                    <div className="left">
+                        <div className="social-links"></div>
+                        <div className="my-det"></div>
+                        <div className="show-btns"></div>
+                    </div>
+                    <div className="right"></div>
+                </div>
+            </div>
         </div>
     )
 }
