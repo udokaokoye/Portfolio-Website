@@ -1,0 +1,49 @@
+$accent-color: #01A1A7;
+$dark-color: #2c2c2c;
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    position: fixed;
+    height: 10vh;
+    .logo {
+        display: flex;
+        align-items: center;
+
+        h1 {
+            color: white;
+        }
+    }
+    .links {
+        padding-right: 28px;
+        width: 35%;
+
+        .inner{ 
+        color: rgb(207, 207, 207);
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            cursor: pointer;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+            transition: all 0.4s ease-in-out;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 5px;
+
+            &:hover {
+                color: $accent-color;
+                border-bottom-color: $accent-color;
+            }
+        }
+        }
+    }
+}

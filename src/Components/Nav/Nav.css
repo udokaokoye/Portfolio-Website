@@ -1,1 +1,68 @@
-/* No CSS *//*# sourceMappingURL=Nav.css.map */
+.main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  position: fixed;
+  height: 10vh;
+}
+
+nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .logo h1 {
+  color: white;
+}
+
+nav .links {
+  padding-right: 28px;
+  width: 35%;
+}
+
+nav .links .inner {
+  color: #cfcfcf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav .links .inner span {
+  cursor: pointer;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 5px;
+}
+
+nav .links .inner span:hover {
+  color: #01A1A7;
+  border-bottom-color: #01A1A7;
+}
+/*# sourceMappingURL=Nav.css.map */

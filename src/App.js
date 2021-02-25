@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <React.Fragment>
-        {/* <NavBar /> */}
+        <NavBar />
         <Route key={'/'} exact path={'/'}>
           <Home />
         </Route>

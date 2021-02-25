@@ -34,6 +34,7 @@ const Home = () => {
                     <div className="right"></div>
                 </div>
             </div>
+
         </div>
     )
 }
