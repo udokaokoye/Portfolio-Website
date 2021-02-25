@@ -34,6 +34,7 @@
 .main-home .show .left {
   width: 50%;
   height: 80%;
+  margin-top: 30px;
 }
 
 .main-home .show .left .social-links {
@@ -132,5 +133,6 @@
   width: 50%;
   height: 80%;
   background-color: blue;
+  margin-top: 30px;
 }
 /*# sourceMappingURL=Home.css.map */

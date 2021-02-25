@@ -24,7 +24,7 @@ const Home = () => {
                         </div>
                         <div className="my-det">
                             <h3>I am Okoye Udoka</h3>
-                            <p>I'm Okoye Udoka A Freelance Web Designer & Developer based in Lagos, Nigeria.
+                            <p> Hello i'm Okoye Udoka A Freelance Web Designer & Developer based in Lagos, Nigeria.
                                 Highly experienced in designing & developing websites.</p>
                         </div>
                         <div className="show-btns">

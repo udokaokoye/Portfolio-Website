@@ -33,6 +33,7 @@ nav .logo {
 
 nav .logo h1 {
   color: white;
+  font-size: 25px;
 }
 
 nav .links {
@@ -58,11 +59,10 @@ nav .links .inner span {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   border-bottom: 1px solid transparent;
-  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 nav .links .inner span:hover {
   color: #01A1A7;
-  border-bottom-color: #01A1A7;
 }
 /*# sourceMappingURL=Nav.css.map */

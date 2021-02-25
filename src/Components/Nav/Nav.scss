@@ -19,6 +19,7 @@ nav {
 
         h1 {
             color: white;
+            font-size: 25px;
         }
     }
     .links {
@@ -37,11 +38,11 @@ nav {
             letter-spacing: 2px;
             transition: all 0.4s ease-in-out;
             border-bottom: 1px solid transparent;
-            padding-bottom: 5px;
+            margin-bottom: 5px;
 
             &:hover {
                 color: $accent-color;
-                border-bottom-color: $accent-color;
+                // border-bottom-color: $accent-color;
             }
         }
         }
