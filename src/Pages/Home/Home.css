@@ -3,6 +3,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .main-home {
@@ -28,13 +29,46 @@
 .main-home .show .left {
   width: 50%;
   height: 80%;
-  background-color: red;
 }
 
 .main-home .show .left .social-links {
-  width: 100%;
+  width: 50%;
   height: 10%;
-  background-color: yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-home .show .left .social-links a {
+  border: 2px solid #01A1A7;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.main-home .show .left .social-links .fb, .main-home .show .left .social-links .tw, .main-home .show .left .social-links .ig, .main-home .show .left .social-links .li {
+  font-size: 23px;
+}
+
+.main-home .show .left .social-links .fb {
+  width: 23px;
+}
+
+.main-home .show .left .my-det {
+  width: 100%;
+  height: 70%;
+  background-color: violet;
+}
+
+.main-home .show .left .show-btns {
+  width: 100%;
+  height: 20%;
+  background-color: green;
 }
 
 .main-home .show .right {
