@@ -1,12 +1,9 @@
 import React from 'react'
 import './Home.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faCopyright,
-//   faAngleUp,
-//   faBars,
-//   faTimes,
-// } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
   faInstagram,
@@ -30,7 +27,9 @@ const Home = () => {
                             <p>I'm Okoye Udoka A Freelance Web Designer & Developer based in Lagos, Nigeria.
                                 Highly experienced in designing & developing websites.</p>
                         </div>
-                        <div className="show-btns"></div>
+                        <div className="show-btns">
+                           <button>Veiw My Portfolio <span><FontAwesomeIcon className="arrwrgt" color="#fff" icon={faArrowRight} /></span></button> 
+                        </div>
                     </div>
                     <div className="right"></div>
                 </div>
