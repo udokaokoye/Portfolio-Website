@@ -10,14 +10,6 @@
   font-weight: 400;
 }
 
-#particles-js {
-  position: absolute;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #242424;
-}
-
 .main-home {
   width: 100%;
   height: 100vh;
@@ -51,6 +43,17 @@
   width: 50%;
   height: 80%;
   margin-top: 30px;
+  margin-left: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main-home .show .left .social-links {
@@ -151,5 +154,10 @@
   height: 80%;
   background-color: blue;
   margin-top: 30px;
+  margin-bottom: 85px;
+  background: url("../../Assets/mypic1.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 80%;
 }
 /*# sourceMappingURL=Home.css.map */
