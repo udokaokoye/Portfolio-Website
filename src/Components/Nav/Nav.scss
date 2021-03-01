@@ -4,6 +4,7 @@ $dark-color: #2c2c2c;
 .main-nav {
     display: flex;
     justify-content: center;
+    z-index: 3;
 }
 
 nav {
