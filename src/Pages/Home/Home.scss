@@ -11,6 +11,10 @@ $dark-color: #242424;
     font-weight: 400;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 .main-home {
     width: 100%;
@@ -30,16 +34,22 @@ $dark-color: #242424;
         // background-color: red;
         z-index: 5;
         width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        height: 80%;
+        padding-top: 18vh;
+
+        .show_inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
 
         .left {
             // z-index: 1;
             width: 50%;
-            height: 80%;
+            height: 100%;
             margin-top: 30px;
             margin-left: 45px;
             display: flex;
@@ -60,10 +70,16 @@ $dark-color: #242424;
                     border: 2px solid $accent-color;
                     border-radius: 50%;
                     padding: 10px;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        box-shadow: 0px 1px 13px $accent-color;
+                    }
                 }
 
                 .fb, .tw, .ig, .li {
                     font-size: 23px;
+
+                    
                 }
 
                 .fb {
@@ -135,9 +151,9 @@ $dark-color: #242424;
         }
 
         .right {
-            z-index: 2;
+            z-index: -1;
             width: 50%;
-            height: 80%;
+            height: 100%;
             background-color: blue;
             margin-top: 30px;
             margin-bottom: 85px;
@@ -145,6 +161,223 @@ $dark-color: #242424;
             background-position: top;
             background-repeat: no-repeat;
             background-size: 80%;
+        }
+
+        .dwn-btn {
+            width: 100%;
+            margin-top: 35px;
+            // background-color: red;
+            display: flex;
+            justify-content: center;
+            span {
+
+                .dwnicn{
+                    text-align: center;
+                    font-size: 25px;
+                    cursor: pointer;
+
+                    animation: dwnbtn 1.5s infinite;
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+        }
+
+        @keyframes dwnbtn {
+            from {
+                transform: translateY(-10px);
+            }
+
+            to {
+                transform: translateY(0px);
+                // color: #01a1a7a9;
+            }
+        }
+    }
+}
+
+.about {
+    .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .head_intro {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            h1 {
+                font-size: 45px;
+                text-align: center;
+                color: rgb(34, 34, 34);
+                font-family: "Roboto";
+            }
+            hr {
+                width: 79px;
+                border-top: 5px solid rgb(34, 34, 34);
+                margin: 15px 0;
+            }
+        }
+
+        .boxes {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 75%;
+
+
+            .bx1, .bx2, .bx3, .bx4 {
+                height: 300px;
+                // background-color: blue;
+                width: 22%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                .shape {
+                        margin: 35px 0px;
+                        width: 100px;
+                        height: 57.735px;
+                        background: $accent-color;
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        span {
+                            font-size: 45px;
+                        }
+                }
+
+                .shape::before {
+                    content: "";
+                    position: absolute;
+                    top: -28.8675px;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border-left: 50px solid transparent;
+                    border-right: 50px solid transparent;
+                    border-bottom: 28.8675px solid $accent-color;
+                  }
+
+                .shape::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -28.8675px;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border-left: 50px solid transparent;
+                    border-right: 50px solid transparent;
+                    border-top: 28.8675px solid $accent-color;
+                  }
+
+                  h1 {
+                      text-align: center;
+                      font-weight: bold;
+                      color: rgb(63, 63, 63);
+                      font-family: "Roboto";
+                  }
+
+                  p {
+                      padding-top: 10px;
+                      text-align: center;
+                      font-size: 18px;
+                      font-family: "Roboto";
+                  }
+            }
+        }
+
+        .me_skills {
+            width: 75%;
+            height: 60vh;
+
+            .inner {
+                width: 100%;
+                height: 100%;
+                // background-color: red;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .me {
+                    width: 45%;
+                    height: 100%;
+                    // background-color: blue;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .img {
+                        width: 100%;
+                        height: 80%;
+                        background: url('../../Assets/cartoonpic.png');
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+
+                    h1 {
+                        text-align: center;
+                        font-weight: bold;
+                        color: rgb(58, 58, 58);
+                    }
+
+                    p {
+                        padding-top: 15px;
+                        text-align: center;
+                    }
+                }
+
+                .skills {
+                    width: 45%;
+                    height: 100%;
+                    // background-color: violet;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .skill_bar {
+                        width: 100%;
+                        height: 30px;
+                        background-color: #EEEEEE;
+                        display: flex;
+                        margin-bottom: 18px;
+
+                        .skill_fill {
+                            width: 90%;
+                            display: flex;
+                            position: relative;
+                            .inner_fill {
+                                position: absolute;
+                                height: 100%;
+                                background-color: $accent-color;
+                            }
+
+                            .skill_name {
+                                width: 18%;
+                                background-color: #00cdd4;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: white;
+                                z-index: 20;
+                                cursor: pointer;
+                            }
+                        }
+
+                        .skill_percent {
+                            width: 10%;
+                            // background-color: green;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
         }
     }
 }
