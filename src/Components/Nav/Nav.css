@@ -5,7 +5,24 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 3;
+  z-index: 50;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.scroll_def {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-color: #2c2c2c98;
+}
+
+.scroll {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #2c2c2c;
 }
 
 nav {
@@ -43,6 +60,7 @@ nav .links {
 }
 
 nav .links .inner {
+  z-index: 50;
   color: #cfcfcf;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,6 +68,11 @@ nav .links .inner {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+nav .links .inner a {
+  color: inherit;
+  text-decoration: none;
 }
 
 nav .links .inner span {

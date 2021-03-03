@@ -4,10 +4,32 @@ $dark-color: #2c2c2c;
 .main-nav {
     display: flex;
     justify-content: center;
-    z-index: 3;
+    z-index: 50;
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    transition: all 0.4s ease-in-out;
+
+    // .scr {
+    //     position: fixed;
+    //     width: 100%;
+    //     // background-color: blue;
+    //     height: 10px;
+    // }
+}
+
+.scroll_def {
+    transition: all 0.4s ease-in-out;
+    background-color: #2c2c2c98;
+}
+
+.scroll {
+    transition: all 0.3s ease-in-out;
+    background-color: $dark-color;
 }
 
 nav {
+    // background-color: red;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,9 +50,15 @@ nav {
         width: 35%;
 
         .inner{ 
+        z-index: 50;
         color: rgb(207, 207, 207);
         display: flex;
         justify-content: space-between;
+
+        a{ 
+            color: inherit;
+            text-decoration: none;
+        }
 
         span {
             cursor: pointer;

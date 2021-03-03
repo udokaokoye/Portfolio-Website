@@ -1,11 +1,44 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+// import {
+//     BrowserRouter as Router,
+//     Route,
+//     Link,
+//     NavLink,
+//   } from "react-router-dom";
 import './Nav.css'
 import logo from '../../Assets/code.svg'
+
 const Nav = () => {
 
+    const [navTrans, setnavTrans] = useState("");
+
+    function vhToPixels (vh) {
+        return Math.round(window.innerHeight / (100 / vh));
+        // console.log(Math.round(window.innerHeight / (100 / vh)) + 'px')
+        // alert(Math.round(window.innerHeight / (100 / vh)) + 'px')
+      }
+
+    useEffect(() => {
+        // vhToPixels(100)
+
+        window.onscroll = () => {
+            if (window.scrollY > 20) {
+              setnavTrans("scroll_def");
+            }
+
+            if (window.scrollY > vhToPixels(100) - 3) {
+                setnavTrans("scroll");
+              }
+      
+            if (window.scrollY < 1) {
+              setnavTrans("");
+            }
+        }
+    }, [])
     
     return (
-        <div className='main-nav'>
+        <div className={`main-nav ${navTrans}`}>
+            {/* <div className="scr"></div> */}
             <nav>
                 <div className="logo">
                     <img src={logo} alt="code"/>
@@ -14,10 +47,10 @@ const Nav = () => {
 
                 <div className="links">
                     <div className="inner">
-                        <span>Home</span>
-                        <span>About</span>
-                        <span>Portfolio</span>
-                        <span>Contact</span>
+                        <a href={"#home"}><span>Home</span></a>
+                        <a href="#about"><span>About</span></a>
+                        <a><span>Portfolio</span></a>
+                        <a><span>Contact</span></a>
                     </div>
                 </div>
             </nav>
