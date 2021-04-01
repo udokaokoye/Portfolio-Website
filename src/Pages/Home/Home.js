@@ -174,6 +174,7 @@ const Home = () => {
                             <a href=""><FontAwesomeIcon className="fb" color="#fff" icon={faFacebookF} /></a>
                             <a href=""><FontAwesomeIcon className="tw" color="#fff" icon={faTwitter} /></a>
                             <a href=""><FontAwesomeIcon className="ig" color="#fff" icon={faInstagram} /></a>
+                            <a href=""><FontAwesomeIcon className="ig" color="#fff" icon={faLinkedinIn} /></a>
                             {/* <a href=""><FontAwesomeIcon className="li" color="#fff" icon={faLinkedinIn} /></a> */}
                         </div>
                         <div className="my-det">
@@ -199,6 +200,7 @@ const Home = () => {
                 
                 <div id="about"></div>
             </div>
+
 
 
             <div className="about">
@@ -267,6 +269,58 @@ Let's make something special</p>
                     </div>
                 </div>
             </div>
+        
+        <div id="experience_div"></div>
+        
+        <div className="experience">
+            <div className="inner">
+                <div className="left">
+                    <h1>Experience</h1>
+                </div>
+                <div className="middle"></div>
+                <div className="right">
+                    <div className="inner-rgt">
+                        <div className="experience_container">
+                            <h1 className="jb_title">Junior Web Developer</h1>
+                            <h3 className="organization">First Lincoln Technologies</h3>
+                            <span className="date_location">1 year Intern – August 2019 to September 2020 Lagos, Nigeria</span>
+                            <div className="jb_function">
+                                <ul>
+                                    <li>Frontend Styling and Design</li>
+                                    <li>MYSQL Database – PHP</li>
+                                    <li>Management and Updating of web contents either via CMS (Content Management System – WordPress) or server-side (cPanel).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="experience_container">
+                            <h1 className="jb_title">Senior Web Developer</h1>
+                            <h3 className="organization">Skello Technologies</h3>
+                            <span className="date_location">3 months November 2020 to February 2021 Lagos, Nigeria</span>
+                            <div className="jb_function">
+                                <ul>
+                                    <li>Frontend Development</li>
+                                    <li>Mongo DB Database / MySQL Database – Node Js / PHP</li>
+                                    <li>Management and Updating of web contents either via CMS (Content Management System – WordPress) or server-side (cPanel).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="experience_container">
+                            <h1 className="jb_title">Information Technology (IT) Specialist</h1>
+                            <h3 className="organization">Royal Star Comprehensive College</h3>
+                            <span className="date_location">1 month – March 2021  Lagos, Nigeria</span>
+                        </div>
+
+                        {/* <div className="experience_container">
+                            <h1 className="jb_title">Software Engineer Intern</h1>
+                            <h3 className="organization">Copart</h3>
+                            <span className="date_location">Jun 2020 – Aug 2020  Dallas, TX</span>
+                        </div> */}
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     )
 }

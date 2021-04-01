@@ -49,6 +49,7 @@ const Nav = () => {
                     <div className="inner">
                         <a href={"#home"}><span>Home</span></a>
                         <a href="#about"><span>About</span></a>
+                        <a href="#experience_div"><span>Experience</span></a>
                         <a><span>Portfolio</span></a>
                         <a><span>Contact</span></a>
                     </div>
