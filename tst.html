@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <style>
+        .grid-item { width: 25%; }
+        .grid-item--width2 { width: 50%; }
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="grid-item first">first</div>
+        <div class="grid-item last">last</div>
+        <div class="grid-item first">first</div>
+      </div>
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+      <script>
+          var $grid = $('.grid').isotope({
+            // options
+            itemSelector: '.grid-item',
+            layoutMode: 'fitRows'
+            });
+
+            $grid.isotope({
+                filter: '.first'
+            })
+      </script>
+</body>
+</html>

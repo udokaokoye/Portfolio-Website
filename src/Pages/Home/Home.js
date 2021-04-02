@@ -321,6 +321,39 @@ Let's make something special</p>
                 </div>
             </div>
         </div>
+        
+        
+        <div id='projects' className="projects project_grid">
+           <div className="inner">
+           <div className="left">
+               <h1>Projects</h1>
+           </div>
+           <div className="right">
+               <div className="bar">
+                   <div className="br1 active_br"><span>All</span></div>
+                   <div className="br2"><span>React Js</span></div>
+                   <div className="br3"><span>React Native</span></div>
+                   <div className="br4"><span>PHP</span></div>
+                   <div className="br5"><span>Python</span></div>
+               </div>
+
+               <div className="prjs">
+                   <div className="project_div prj1">
+                       <div className="prj_card">
+                       <div className="prj_txt"><span>All Saints AHQ Cathedral</span></div>
+                       <div className="prj_but"><button>Learn More</button></div>
+                       </div>
+                       
+                   </div>
+                   <div className="project_div prj2"></div>
+                   <div className="project_div prj3"></div>
+                   <div className="project_div prj4"></div>
+                   <div className="project_div prj5"></div>
+                   <div className="project_div prj6"></div>
+               </div>
+           </div>
+           </div>
+        </div>
         </div>
     )
 }
