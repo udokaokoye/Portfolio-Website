@@ -490,24 +490,33 @@ html {
             // background-color: blue;
     
             .bar {
-                width: 60%;
-                height: 15%;
+                margin: 0 auto;
+                width: 40%;
+                height: 10%;
                 // background-color: brown;
                 border-radius: 8px;
-                margin-left: 25px;
+                // margin-left: 25px;
+                margin-top: 25px;
+                margin-bottom: 25px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 overflow: hidden;
     
                 .br1, .br2, .br3, .br4, .br5 {
-                    width: 20%;
+                    width: 30%;
                     height: 100%;
                     // background-color: yellow;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
+                    transition: all 0.4s ease-in-out;
+
+                    &:hover {
+                        background-color: $dark-color;
+                        color: $light-cardbg;
+                    }
                 }
     
                 .active_br {
@@ -525,7 +534,7 @@ html {
                 margin: 0 auto;
                 height: 100%;
                 width: 85%;
-                background-color: red;
+                // background-color: red;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 grid-gap: 1rem;
@@ -543,6 +552,7 @@ html {
                     // background-repeat: no-repeat;
 
                     .prj_card {
+                        overflow: hidden;
                         position: absolute;
                         width: 100%;
                         height: 100%;
@@ -550,12 +560,53 @@ html {
                         transition: all 0.5s ease-in-out;
 
                         .prj_txt {
+                            opacity: 1;
                             position: absolute;
+                            // transform: translateY(0);
+                            top: -50%;
+                            transition: all 0.5s ease-in-out;
+
+                            // !Main Style
+
+                            text-align: center;
+                            width: 100%;
+                            font-size: 1.5vw;
+                            font-family: 'Lato';
+                            font-weight: 400;
+
+                            .lng_used {
+                                font-size: 1vw ;
+                            }
                         }
 
-                        .prJ_but {
-                            position: absolute
-                            ;
+                        .prj_but {
+                            opacity: 1;
+                            position: absolute;
+                            // transform: translateY(0);
+                            bottom: -50%;
+                            transition: all 0.5s ease-in-out;
+
+                            // !Main Style
+
+                            display: flex;
+                            justify-content: center;
+                            width: 100%;
+
+                            button {
+                                padding: 20px 60px;
+                                transition: all 0.3s ease-in-out;
+                                font-weight: 400;
+                                font-family: 'Roboto';
+                                background-color: transparent;
+                                color: $text-darkbg;
+                                border: 1px solid $accent-color;
+
+                                &:hover {
+                                    background-color: $text-darkbg;
+                                    color: white;
+                                    cursor: pointer;
+                                }
+                            }
                         }
                     }
                 }
@@ -571,10 +622,26 @@ html {
                             position: absolute;
                             width: 100%;
                             height: 100%;
-                            background-color: blue;
+                            background-color: white;
                             // transition: all 0.5s ease-in-out;
 
 
+                        }
+
+                        .prj_txt {
+                            opacity: 1;
+                            position: absolute;
+                            // transform: translateY(0);
+                            top: 20%;
+                            transition: all 0.5s ease-in-out;
+                        }
+
+                        .prj_but {
+                            opacity: 1;
+                            position: absolute;
+                            // transform: translateY(0);
+                            bottom: 20%;
+                            transition: all 0.5s ease-in-out;
                         }
                     }
                 }

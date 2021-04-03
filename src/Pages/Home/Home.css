@@ -584,10 +584,12 @@ html {
 }
 
 .projects .inner .right .bar {
-  width: 60%;
-  height: 15%;
+  margin: 0 auto;
+  width: 40%;
+  height: 10%;
   border-radius: 8px;
-  margin-left: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -601,7 +603,7 @@ html {
 }
 
 .projects .inner .right .bar .br1, .projects .inner .right .bar .br2, .projects .inner .right .bar .br3, .projects .inner .right .bar .br4, .projects .inner .right .bar .br5 {
-  width: 20%;
+  width: 30%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -613,6 +615,13 @@ html {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.projects .inner .right .bar .br1:hover, .projects .inner .right .bar .br2:hover, .projects .inner .right .bar .br3:hover, .projects .inner .right .bar .br4:hover, .projects .inner .right .bar .br5:hover {
+  background-color: #202020;
+  color: #a8a8a8;
 }
 
 .projects .inner .right .bar .active_br {
@@ -628,7 +637,6 @@ html {
   margin: 0 auto;
   height: 100%;
   width: 85%;
-  background-color: red;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
@@ -650,6 +658,7 @@ html {
 }
 
 .projects .inner .right .prjs .project_div .prj_card {
+  overflow: hidden;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -658,11 +667,52 @@ html {
 }
 
 .projects .inner .right .prjs .project_div .prj_card .prj_txt {
+  opacity: 1;
   position: absolute;
+  top: -50%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  width: 100%;
+  font-size: 1.5vw;
+  font-family: 'Lato';
+  font-weight: 400;
 }
 
-.projects .inner .right .prjs .project_div .prj_card .prJ_but {
+.projects .inner .right .prjs .project_div .prj_card .prj_txt .lng_used {
+  font-size: 1vw;
+}
+
+.projects .inner .right .prjs .project_div .prj_card .prj_but {
+  opacity: 1;
   position: absolute;
+  bottom: -50%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.projects .inner .right .prjs .project_div .prj_card .prj_but button {
+  padding: 20px 60px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-weight: 400;
+  font-family: 'Roboto';
+  background-color: transparent;
+  color: #007175;
+  border: 1px solid #01A1A7;
+}
+
+.projects .inner .right .prjs .project_div .prj_card .prj_but button:hover {
+  background-color: #007175;
+  color: white;
+  cursor: pointer;
 }
 
 .projects .inner .right .prjs .prj1 {
@@ -676,7 +726,23 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: white;
+}
+
+.projects .inner .right .prjs .prj1:hover .prj_txt {
+  opacity: 1;
+  position: absolute;
+  top: 20%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.projects .inner .right .prjs .prj1:hover .prj_but {
+  opacity: 1;
+  position: absolute;
+  bottom: 20%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Screen larger than 900px? 3 columns */

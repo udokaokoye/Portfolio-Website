@@ -14,7 +14,8 @@
     </style>
 </head>
 <body>
-    <div class="grid">
+    <button data-filter="first">First</button>
+    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
         <div class="grid-item first">first</div>
         <div class="grid-item last">last</div>
         <div class="grid-item first">first</div>
@@ -25,15 +26,14 @@
       <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
       <script>
-          var $grid = $('.grid').isotope({
-            // options
-            itemSelector: '.grid-item',
-            layoutMode: 'fitRows'
-            });
+        //   var elem = document.querySelector('.grid');
+        //     var iso = new Isotope( elem, {
+        //     // options
+        //     itemSelector: '.grid-item',
+        //     layoutMode: 'fitRows'
+        //     });
 
-            $grid.isotope({
-                filter: '.first'
-            })
+
       </script>
 </body>
 </html>
