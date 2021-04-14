@@ -316,6 +316,7 @@ html {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
+                    align-items: center;
 
                     .img {
                         width: 100%;
@@ -335,6 +336,24 @@ html {
                     p {
                         padding-top: 15px;
                         text-align: center;
+                    }
+
+                    .resume {
+                        padding:  12px 35px;
+                        margin-top: 20px;
+                        border: none;
+                        background-color: $accent-color;
+                        color: white;
+                        border-radius: 3px;
+                        cursor: pointer;
+
+                        .resm {
+                            margin-right: 5px;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
                     }
                 }
 
@@ -464,7 +483,105 @@ html {
 .projects {
     width: 100%;
     height: 100vh;
+    position: relative;
 
+    .project_popup {
+        width: 100%;
+        height: 110vh;
+        background-color: rgba(0, 0, 0, 0.781);
+        position: absolute;
+        z-index: 100;
+        // transition: all 0.5s ease-in-out;
+
+        .project_inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            
+            .project_popup_main {
+                width: 40%;
+                height: 80%;
+                background-color: rgb(240, 240, 240);
+
+                .img_slide {
+                    width: 100%;
+                    height: 45%;
+                    background-color: red;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 48px;
+                    font-weight: bold;
+                }
+
+                .project_title {
+                    h3 {
+                        padding: 0px 25px;
+                        padding-top: 10px;
+                        font-weight: bold;
+                    }
+                }
+
+                .prj_description {
+                    p {
+                        font-family: 'Roboto';
+                        padding: 25px;
+                        text-align: left;
+                        line-height: 28px;
+                    }
+                }
+
+                .prj_btns {
+                    width: 45%;
+                    padding: 0px 25px;
+                    // background-color: red;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .view_site {
+                        padding: 12px 30px;
+                        color: white;
+                        background-color: $accent-color;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+
+                        &:hover {
+                            background-color: #007175;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        .arr_icn {
+                            color: white;
+                            margin-right: 8px;
+                            transform: rotate(30deg);
+                        }
+                    }
+
+                    .cls_btn {
+                        padding: 12px 40px;
+                        color: white;
+                        background-color: rgb(209, 9, 9);
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+
+                        &:focus {
+                            outline: none;
+                        }
+                        &:hover {
+                            background-color:rgb(145, 22, 22);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     .inner {
         display: flex;
@@ -475,10 +592,12 @@ html {
         height: 100%;
         .left {
             width: 100%;
-            height: 100%;
+            height: auto;
             // background-color: red;
+            margin-bottom: 40px;
 
             H1 {
+                font-size: 45px;
                 font-weight: bold;
                 text-align: center;
             }
@@ -492,7 +611,7 @@ html {
             .bar {
                 margin: 0 auto;
                 width: 40%;
-                height: 10%;
+                height: 6%;
                 // background-color: brown;
                 border-radius: 8px;
                 // margin-left: 25px;
@@ -536,20 +655,20 @@ html {
                 width: 85%;
                 // background-color: red;
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
                 grid-gap: 1rem;
                 justify-content: center;
-                align-items: center;
 
                 .project_div {
                     width: 100%;
                     height: 40vh;
-                    background-color: yellow;
+                    // background-color: yellow;
                     position: relative;
                     // background: url('../../Assets/ProjectImage/church 2.PNG');
                     // background-size: cover;
                     // background-position: center;
                     // background-repeat: no-repeat;
+                    transition: all 0.5s ease-in-out;
 
                     .prj_card {
                         overflow: hidden;
@@ -558,6 +677,7 @@ html {
                         height: 100%;
                         // background-color: blue;
                         transition: all 0.5s ease-in-out;
+                        // border: 1px solid $light-cardbg;
 
                         .prj_txt {
                             opacity: 1;
@@ -606,16 +726,20 @@ html {
                                     color: white;
                                     cursor: pointer;
                                 }
+
+                                &:focus {
+                                    outline: none;
+                                }
                             }
                         }
                     }
                 }
 
-                .prj1 {
-                    background: url('../../Assets/ProjectImage/church 2.PNG');
-                    background-size: cover;
-                    background-position: center;
+                .project_div {
+                    // background: url('../../Assets/ProjectImage/Church 1.PNG');
+                    background-size: contain;
                     background-repeat: no-repeat;
+                    background-position: center;
 
                     &:hover {
                         .prj_card {

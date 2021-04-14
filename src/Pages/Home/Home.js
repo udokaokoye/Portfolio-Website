@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Home.css';
 import Particles from 'react-particles-js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,96 +7,167 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRight,
   faTachometerAlt,
-  faMobile,
   faMobileAlt,
   faLightbulb,
-  faRocket
+  faRocket,
+  faEye,
+  faLongArrowAltUp,
+  faFileAlt
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
   faInstagram,
   faTwitter,
   faLinkedinIn,
-  faGithub
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import  {motion} from 'framer-motion';
+import  {motion, useAnimation} from 'framer-motion';
+import {useInView} from 'react-intersection-observer';
+import FadeWhenVisible from '../../FadeWhenVisible';
+import projects from '../../projects';
+import { parse } from '@fortawesome/fontawesome-svg-core';
 const Home = () => {
 
-    const skills = [
-        {
-            skill: "HTML",
-            percent: 90
-        },
-        {
-            skill: "CSS",
-            percent: 90
-        },
-        {
-            skill: "React",
-            percent: 80
-        },
-        {
-            skill: "HTML",
-            percent: 80
-        },
-        {
-            skill: "Angular",
-            percent: 20
-        },
-        {
-            skill: "Node.js",
-            percent: 60
-        },
-        {
-            skill: "PHP",
-            percent: 90
-        },
-        {
-            skill: "UI/UX",
-            percent: 60
-        },
-        {
-            skill: "XD",
-            percent: 50
-        },
-    ];
+    useEffect(() => {
+        fetchSkills()
+        fetchExperience()
+        // fetchProjects()
+    }, [])
 
-// const [filterKey, setFilterKey] = React.useState('*');
+    const [filterkey, setfilterkey] = useState('*')
 
-// const projects = [
-//     {
-//         name: 'All Saints AHQ Cathedral',
-//         tools: 'React Js / PHP',
-//         category: 'react js'
-//     },
+    // !Project Popup
 
-//     {
-//         name: 'Crypto lion x2',
-//         tools: 'PHP',
-//         category: 'php'
-        
-//     },
-// ];
+    const [project_popup, setproject_popup] = useState([false, {}])
 
-// const [projects_arr, setprojects_arr] = useState(projects);
+        // !Skills
+        const [skills, setskills] = useState([]);
+        const [skills_msg, setskills_msg] = useState(['', ''])
+    
+        // !EXPERIENCE
+        const [experience, setexperience] = useState([])
+        const [experience_msg, setexperience_msg] = useState(['', ''])
+    
+        // !PROJECTS
+        // const [projects, setprojects] = useState([])
+        const [projects_msg, setprojects_msg] = useState(['', ''])
+    // const skills = [
+    //     {
+    //         skill: "HTML",
+    //         percent: 90
+    //     },
+    //     {
+    //         skill: "CSS",
+    //         percent: 90
+    //     },
+    //     {
+    //         skill: "React",
+    //         percent: 80
+    //     },
+    //     {
+    //         skill: "HTML",
+    //         percent: 80
+    //     },
+    //     {
+    //         skill: "Angular",
+    //         percent: 20
+    //     },
+    //     {
+    //         skill: "Node.js",
+    //         percent: 60
+    //     },
+    //     {
+    //         skill: "PHP",
+    //         percent: 90
+    //     },
+    //     {
+    //         skill: "UI/UX",
+    //         percent: 60
+    //     },
+    //     {
+    //         skill: "XD",
+    //         percent: 50
+    //     },
+    // ];
+
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+
+    
+    const [newarray, setnewarray] = useState(projects)
+
+    // var newArray = [projects];
+
+    useEffect(() => {
+        if (inView) {
+          controls.start("visible");
+        //   alert("inview")
+        }
+      }, [controls, inView]);
+
+    useEffect(() => {
+    
+        var updatedArray = projects.filter(function (el) {
+
+            if (filterkey === '*') {
+                return projects
+            } else {
+                return el.category === filterkey
+            }
+          });
+
+        //   console.log(updatedArray)
+          setnewarray(updatedArray)
+    }, [filterkey])
 
 
+    const fetchSkills = () => {
+        const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=skills'
 
-// const tools = ['react', 'python', 'react naive', 'php',];
+        fetch(url, {
+            method: 'POST'
+        })
+        .then((data) => data.json())
+        .then((res) => {
+            setskills(res)
+        });
+    }
 
+    const fetchExperience = () => {
+        const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=experience'
 
-    // const filterTools = (filterKey) => {
-    //     // projects.filter((project) => {
-    //     //     return(project.category == 'react')
-    //     // })
+        fetch(url, {
+            method: 'POST'
+        })
+        .then((data) => data.json())
+        .then((res) => {
+            setexperience(res)
+        });
+    }
 
+    // const fetchProjects = () => {
+    //     const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=projects'
 
-    //     projects.map((prjc) => {
-    //         return prjc.category === 'react';
+    //     fetch(url, {
+    //         method: 'POST'
     //     })
+    //     .then((data) => data.json())
+    //     .then((res) => {
+    //         setprojects(res)
+    //     });
     // }
 
-    // console.log(filterTools())
+
+    const openProjectPopup = {
+        transition: "all 0.5s ease-in-out",
+        display: 'flex'
+      };
+    
+      const closeProjectPopup = {
+        transition: "all 0.5s ease-in-out",
+        display: 'block'
+      };
+
 
 
     return (
@@ -211,11 +282,11 @@ const Home = () => {
                     
                     <div className="left">
                         <div className="social-links">
-                            <a href=""><FontAwesomeIcon className="li" color="#fff" icon={faGithub} /></a>
-                            <a href=""><FontAwesomeIcon className="fb" color="#fff" icon={faFacebookF} /></a>
-                            <a href=""><FontAwesomeIcon className="tw" color="#fff" icon={faTwitter} /></a>
-                            <a href=""><FontAwesomeIcon className="ig" color="#fff" icon={faInstagram} /></a>
-                            <a href=""><FontAwesomeIcon className="ig" color="#fff" icon={faLinkedinIn} /></a>
+                            <a href="https://github.com/udokaokoye" target='_blank'><FontAwesomeIcon className="li" color="#fff" icon={faGithub} /></a>
+                            <a href="https://web.facebook.com/udokovic" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faFacebookF} /></a>
+                            <a href="#" target='_blank'><FontAwesomeIcon className="tw" color="#fff" icon={faTwitter} /></a>
+                            <a href="#" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faInstagram} /></a>
+                            <a href="https://linkedin.com/in/udoka-okoye-abba591ab/" target='_blank'><FontAwesomeIcon className="ig" color="#fff" icon={faLinkedinIn} /></a>
                             {/* <a href=""><FontAwesomeIcon className="li" color="#fff" icon={faLinkedinIn} /></a> */}
                         </div>
                         <div className="my-det">
@@ -223,13 +294,17 @@ const Home = () => {
                             <p> Hello i'm Okoye Udoka A Freelance Web Designer & Developer based in Lagos, Nigeria.
                                 Highly experienced in designing & developing websites.</p>
                         </div>
-                        <div className="show-btns">
-                            <a href="#about">
+                        <motion.div 
+                        animate={{translateY: 0, opacity: 1, transition: {duration: 2, delay: 2}}} initial={{translateY: 50, opacity: 0}}
+                        className="show-btns">
+                            <a href="#projects">
                            <button>Veiw My Portfolio <span><FontAwesomeIcon className="arrwrgt" color="#fff" icon={faArrowRight} /></span></button> 
                            </a>
-                        </div>
+                        </motion.div>
                     </div>
-                    <div className="right">
+                    <div
+                    //  animate={{opacity: 1, transition: {duration: 3}}} initial={{opacity: 0}}
+                     className="right">
                         {/* <img src={mypic} alt=""/> */}
                     </div>
                     </div>
@@ -247,37 +322,47 @@ const Home = () => {
             <div className="about">
                 <div className="inner">
                     <div className="head_intro">
-                        <h1>ABOUT</h1>
-                        <hr/>
+                        <FadeWhenVisible><h1>ABOUT</h1></FadeWhenVisible>
+                        <motion.hr 
+                        animate={{translateX: 0, opacity: 1, transition: {duration: 1}}} initial={{translateX: 100, opacity: 0}}
+                        />
                     </div>
 
                     <div className="boxes">
                         <div className="bx1">
-                            <div className="shape">
+                            <motion.div 
+                            animate={{opacity: 1, transition: {duration: 2}}} initial={{opacity: 0}}
+                            className="shape">
                                 <span><FontAwesomeIcon className="li" color="#fff" icon={faTachometerAlt} /></span>
-                            </div>
+                            </motion.div>
                             <h1>Fast</h1>
                             <p>Fast load times and lag free interaction is my highest priority.</p>
                         </div>
                         <div className="bx2">
-                            <div className="shape">
+                            <motion.div 
+                            animate={{opacity: 1, transition: {duration: 2, delay: 0.8}}} initial={{opacity: 0}}
+                            className="shape">
                                 <span><FontAwesomeIcon className="li" color="#fff" icon={faMobileAlt} /></span>
-                            </div>
+                            </motion.div>
                             <h1>Responsive</h1>
                             <p>Website layout will work on any device, big or small.
                             </p>
                         </div>
                         <div className="bx3">
-                            <div className="shape">
+                            <motion.div 
+                            animate={{opacity: 1, transition: {duration: 2, delay: 1}}} initial={{opacity: 0}}
+                            className="shape">
                             <span><FontAwesomeIcon className="li" color="#fff" icon={faLightbulb} /></span>
-                            </div>
+                            </motion.div>
                             <h1>Intuitive</h1>
                             <p>Strong preference for easy to use, intuitive UX/UI.</p>
                         </div>
                         <div className="bx4">
-                            <div className="shape">
+                            <motion.div 
+                            animate={{opacity: 1, transition: {duration: 2, delay: 1.2}}} initial={{opacity: 0}}
+                            className="shape">
                             <span><FontAwesomeIcon className="li" color="#fff" icon={faRocket} /></span>
-                            </div>
+                            </motion.div>
                             <h1>Dynamic</h1>
                             <p>Websites don't have to be static, I love making pages come to life.</p>
                         </div>
@@ -292,13 +377,16 @@ const Home = () => {
                                 <p>I'm a Fullstack Developer in Lagos, Nigeria.
 I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
 Let's make something special</p>
+                                <a href="../../Assets/Profile.pdf"><button className='resume'><FontAwesomeIcon className="resm" color="#fff" icon={faFileAlt} /> Resume</button></a>
                             </div>
                             <div className="skills">
                                 {skills.map((skill) => {
                                     return (
                                         <div className="skill_bar">
                                     <div className="skill_fill">
-                                        <div title={skill.skill + " - " + skill.percent + "%"} style={{width: skill.percent + 10 + "%"}} className="inner_fill"></div>
+                                        <motion.div title={skill.skill + " - " + skill.percent + "%"}
+                                         animate={{opacity: 1, width: parseInt(skill.percent) + 10 + "%", transition: {duration: 2}}} initial={{opacity: 0, width: 0}}
+                                         style={{}} className="inner_fill"></motion.div>
                                     <div title={skill.skill + " - " + skill.percent + "%"} className="skill_name">{skill.skill}</div>
                                     </div>
                                     <span title={skill.skill + " - " + skill.percent + "%"} className="skill_percent">{skill.percent}%</span>
@@ -321,43 +409,23 @@ Let's make something special</p>
                 <div className="middle"></div>
                 <div className="right">
                     <div className="inner-rgt">
-                        <div className="experience_container">
-                            <h1 className="jb_title">Junior Web Developer</h1>
-                            <h3 className="organization">First Lincoln Technologies</h3>
-                            <span className="date_location">1 year Intern – August 2019 to September 2020 Lagos, Nigeria</span>
+                        {experience.map((exp) => {
+                            return (
+                                <div className="experience_container">
+                            <h1 className="jb_title">{exp.job_title}</h1>
+                            <h3 className="organization">{exp.company}</h3>
+                            <span className="date_location">{exp.duration}</span>
                             <div className="jb_function">
                                 <ul>
-                                    <li>Frontend Styling and Design</li>
+                                    {exp.job_description}
+                                    {/* <li>Frontend Styling and Design</li>
                                     <li>MYSQL Database – PHP</li>
-                                    <li>Management and Updating of web contents either via CMS (Content Management System – WordPress) or server-side (cPanel).</li>
+                                    <li>Management and Updating of web contents either via CMS (Content Management System – WordPress) or server-side (cPanel).</li> */}
                                 </ul>
                             </div>
                         </div>
-
-                        <div className="experience_container">
-                            <h1 className="jb_title">Senior Web Developer</h1>
-                            <h3 className="organization">Skello Technologies</h3>
-                            <span className="date_location">3 months November 2020 to February 2021 Lagos, Nigeria</span>
-                            <div className="jb_function">
-                                <ul>
-                                    <li>Frontend Development</li>
-                                    <li>Mongo DB Database / MySQL Database – Node Js / PHP</li>
-                                    <li>Management and Updating of web contents either via CMS (Content Management System – WordPress) or server-side (cPanel).</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="experience_container">
-                            <h1 className="jb_title">Information Technology (IT) Specialist</h1>
-                            <h3 className="organization">Royal Star Comprehensive College</h3>
-                            <span className="date_location">1 month – March 2021  Lagos, Nigeria</span>
-                        </div>
-
-                        {/* <div className="experience_container">
-                            <h1 className="jb_title">Software Engineer Intern</h1>
-                            <h3 className="organization">Copart</h3>
-                            <span className="date_location">Jun 2020 – Aug 2020  Dallas, TX</span>
-                        </div> */}
+                            )
+                        })}
                     </div>
                 </div>
             </div>
@@ -365,45 +433,58 @@ Let's make something special</p>
         
         
         <div id='projects' className="projects project_grid">
+            <div style={{display: project_popup[0] ? 'block' : 'none'}} className="project_popup">
+                <div style={project_popup[0] ? openProjectPopup : closeProjectPopup} className="project_inner">
+                <div className="project_popup_main">
+                    <div className="img_slide">Project Image</div>
+                    <div className="project_title"><h3>{project_popup[1].name}</h3></div>
+                    <div className="prj_description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolores quisquam explicabo eaque praesentium deserunt quia sint aliquid commodi autem! Repellat, iusto repudiandae culpa doloribus vitae quo vero laboriosam velit optio, totam hic sequi dolores eos at iure recusandae maiores, officia odit odio. Quod quaerat cumque at iure, ullam, beatae, nisi facilis pariatur modi natus vero. Voluptates, minus, perferendis sapiente in recusandae quam officiis ab eum ullam, aspernatur consequatur cumque? Iusto hic in deserunt voluptatum. Ad amet explicabo eos perferendis cum fugiat aliquid, neque dolores debitis nobis eum id reprehenderit consectetur totam mollitia in voluptatibus! Dolores illum itaque ea optio delectus repellat ad, esse totam excepturi dolorem nisi ullam cupiditate, sint accusantium necessitatibus autem vero vel eligendi, neque aliquid? Dolores!</p>
+                    </div>
+                    <div className="prj_btns">
+                        <button className='view_site'><FontAwesomeIcon className="arr_icn" color="red" icon={faLongArrowAltUp} /> View Site</button>
+                        <button onClick={() => {setproject_popup([false, []])}} className='cls_btn'>Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
            <div className="inner">
            <div className="left">
                <h1>Projects</h1>
            </div>
            <div className="right">
                <div className="bar">
-                   <div className="br1 active_br"><span>All</span></div>
-                   <div
-                //    onClick={() => {filterTools('react')}}
-                    // onClick={handleFilterKeyChange('react')} 
-                    className="br2"><span>React Js</span></div>
-                   <div className="br3"><span>React Native</span></div>
-                   <div className="br4"><span>PHP</span></div>
-                   <div className="br5"><span>Python</span></div>
+                   <div onClick={() => {setfilterkey('*')}} className={`br1 ${filterkey === '*' ? 'active_br' : ''} `}><span>All</span></div>
+                   <div 
+                    onClick={() => {setfilterkey('react js')}} 
+                    className={`br2 ${filterkey === 'react js' ? 'active_br' : ''} `} data-filter='react'><span>React Js</span></div>
+                   <div onClick={() => {setfilterkey('react native')}} className={`br3 ${filterkey === 'react native' ? 'active_br' : ''} `} ><span>React Native</span></div>
+                   <div onClick={() => {setfilterkey('php')}} className={`br4 ${filterkey === 'php' ? 'active_br' : ''} `}><span>PHP</span></div>
+                   <div onClick={() => {setfilterkey('python')}} className={`br5 ${filterkey === 'python' ? 'active_br' : ''} `}><span>Python</span></div>
                </div>
 
                <div className="prjs" id="prjs">
 
-                   
-                        <div className="project_div prj1">
+                   {newarray.slice(0, 6).map((project) => {
+                       return (
+                           
+                        <div style={{backgroundImage: `url(${project.images[0].default})`, backgroundSize: `${project.type === 'web' ? 'cover' : 'contain'}` }} className="project_div prj1 reactnative">
                         <div className="prj_card">
-                        <div className="prj_txt"><span>All Saints AHQ Cathedral<br/> <span className='lng_used'>React Js / PHP</span></span></div>
-                        <div className="prj_but"><button>Learn More</button></div>
+                        <div className="prj_txt"><span>{project.name}<br/> <span className='lng_used'>{project.tools}</span></span></div>
+                        <div className="prj_but"><button onClick={() => {
+                            setproject_popup([true, project])
+                            
+                            }}>Learn More</button></div>
                         </div>
                         
                         </div>
-                   
-                   <div className="project_div prj2 react"></div>
-                   <div className="project_div prj3"></div>
-                   <div className="project_div prj4"></div>
-                   <div className="project_div prj5"></div>
-                   <div className="project_div prj6"></div>
+                       );
+                   })}
+                    
                </div>
            </div>
            </div>
         </div>
-
-                        {/* <div className="prjss"></div>
-        <div className="react"></div> */}
         </div>
         
     )

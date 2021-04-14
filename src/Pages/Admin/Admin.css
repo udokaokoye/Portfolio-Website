@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap");
+.admin_main {
+  width: 100%;
+  height: auto;
+  background-color: #202020;
+  overflow-x: hidden;
+}
+
+.admin_main .nav {
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.admin_main .nav h1 {
+  color: #eeecec;
+}
+
+.admin_main .nav button {
+  padding: 12px 35px;
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+  color: #eeecec;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.admin_main .main_body {
+  width: 100%;
+  padding: 25px;
+  color: #eeecec;
+  overflow-x: hidden;
+}
+
+.admin_main .main_body .cms_welcome {
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+
+.admin_main .main_body .cms_skills h1 {
+  padding-bottom: 20px;
+}
+
+.admin_main .main_body .cms_skills .ext_skills {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin_main .main_body .cms_skills .ext_skills .cnt {
+  margin-left: 25px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #2d2d2e;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+}
+
+.admin_main .main_body .cms_skills .ext_skills .cnt .del_skill {
+  margin-left: 12px;
+  cursor: pointer;
+  color: red;
+  font-weight: bolder;
+}
+
+.admin_main .main_body .cms_skills .ext_skills .cnt:first-child {
+  margin-left: 0;
+}
+
+.admin_main .main_body .cms_skills .add_skills {
+  margin-top: 25px;
+}
+
+.admin_main .main_body .cms_skills .add_skills h3 {
+  display: non;
+}
+
+.admin_main .main_body .cms_skills .add_skills p {
+  padding-top: 15px;
+}
+
+.admin_main .main_body .cms_skills .add_skills .skills_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin_main .main_body .cms_skills .add_skills .skills_form .field2 {
+  margin-left: 25px;
+}
+
+.admin_main .main_body .cms_skills .add_skills .skills_form .field1, .admin_main .main_body .cms_skills .add_skills .skills_form .field2 {
+  margin-top: 20px;
+}
+
+.admin_main .main_body .cms_skills .add_skills .skills_form .field1 input, .admin_main .main_body .cms_skills .add_skills .skills_form .field2 input {
+  padding: 15px 25px;
+  background: transparent;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  color: #eeecec;
+}
+
+.admin_main .main_body .cms_skills .add_skills .skills_form .field1 input:focus, .admin_main .main_body .cms_skills .add_skills .skills_form .field2 input:focus {
+  outline: none;
+}
+
+.admin_main .main_body .cms_skills .add_skills .skills_form .field1 small, .admin_main .main_body .cms_skills .add_skills .skills_form .field2 small {
+  margin-left: 10px;
+}
+
+.admin_main .main_body .cms_skills .add_skill {
+  margin-top: 25px;
+}
+
+.admin_main .main_body .cms_skills .add_skill button {
+  padding: 12px 30px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: #eeecec;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin_main .main_body .cms_skills .add_skill button:hover {
+  background-color: #01A1A7;
+  border: 1px solid #01A1A7;
+  color: #eeecec;
+}
+
+.admin_main .main_body .cms_skills .add_skill button:focus {
+  outline: none;
+}
+
+.admin_main .main_body hr {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-color: #4b4b4b;
+}
+
+.admin_main .main_body .cms_experience {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.admin_main .main_body .cms_experience h1 {
+  padding-bottom: 18px;
+}
+
+.admin_main .main_body .cms_experience .ext_experience {
+  overflow-x: hidden;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 25px 0;
+}
+
+.admin_main .main_body .cms_experience .ext_experience .cnt {
+  margin-left: 25px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #2d2d2e;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+}
+
+.admin_main .main_body .cms_experience .ext_experience .cnt .company {
+  color: #01A1A7;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.admin_main .main_body .cms_experience .ext_experience .cnt .del_experience {
+  cursor: pointer;
+  color: red;
+  font-weight: bolder;
+}
+
+.admin_main .main_body .cms_experience .ext_experience .cnt .del_experience .li {
+  margin-top: 12px;
+}
+
+.admin_main .main_body .cms_experience .ext_experience .cnt:first-child {
+  margin-left: 0;
+}
+
+.admin_main .main_body .cms_experience .add_experience {
+  overflow-x: hidden;
+}
+
+.admin_main .main_body .cms_experience .add_experience h3 {
+  padding-top: 35px;
+}
+
+.admin_main .main_body .cms_experience .add_experience p {
+  padding-top: 15px;
+}
+
+.admin_main .main_body .cms_experience .add_experience .experience_form {
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin_main .main_body .cms_experience .add_experience .experience_form .field2, .admin_main .main_body .cms_experience .add_experience .experience_form .field3, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 {
+  margin-left: 25px;
+}
+
+.admin_main .main_body .cms_experience .add_experience .experience_form .field1, .admin_main .main_body .cms_experience .add_experience .experience_form .field2, .admin_main .main_body .cms_experience .add_experience .experience_form .field3, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 {
+  margin-top: 20px;
+}
+
+.admin_main .main_body .cms_experience .add_experience .experience_form .field1 input, .admin_main .main_body .cms_experience .add_experience .experience_form .field1 textarea, .admin_main .main_body .cms_experience .add_experience .experience_form .field2 input, .admin_main .main_body .cms_experience .add_experience .experience_form .field2 textarea, .admin_main .main_body .cms_experience .add_experience .experience_form .field3 input, .admin_main .main_body .cms_experience .add_experience .experience_form .field3 textarea, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 input, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 textarea {
+  padding: 15px 25px;
+  width: 210px;
+  background: transparent;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  color: #c9c9c9;
+}
+
+.admin_main .main_body .cms_experience .add_experience .experience_form .field1 input:focus, .admin_main .main_body .cms_experience .add_experience .experience_form .field1 textarea:focus, .admin_main .main_body .cms_experience .add_experience .experience_form .field2 input:focus, .admin_main .main_body .cms_experience .add_experience .experience_form .field2 textarea:focus, .admin_main .main_body .cms_experience .add_experience .experience_form .field3 input:focus, .admin_main .main_body .cms_experience .add_experience .experience_form .field3 textarea:focus, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 input:focus, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 textarea:focus {
+  outline: none;
+}
+
+.admin_main .main_body .cms_experience .add_experience .experience_form .field1 textarea, .admin_main .main_body .cms_experience .add_experience .experience_form .field2 textarea, .admin_main .main_body .cms_experience .add_experience .experience_form .field3 textarea, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 textarea {
+  width: initial;
+}
+
+.admin_main .main_body .cms_experience .add_experience .experience_form .field1 small, .admin_main .main_body .cms_experience .add_experience .experience_form .field2 small, .admin_main .main_body .cms_experience .add_experience .experience_form .field3 small, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 small {
+  margin-left: 10px;
+}
+
+.admin_main .main_body .cms_experience .add_experience .add_experience {
+  overflow-x: hidden;
+  margin-top: 25px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.admin_main .main_body .cms_experience .add_experience .add_experience button {
+  overflow-x: hidden;
+  padding: 12px 30px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: #eeecec;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin_main .main_body .cms_experience .add_experience .add_experience button:hover {
+  background-color: #01A1A7;
+  border: 1px solid #01A1A7;
+  color: #eeecec;
+}
+
+.admin_main .main_body .cms_experience .add_experience .add_experience button:focus {
+  outline: none;
+}
+
+.admin_main .main_body .cms_project {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.admin_main .main_body .cms_project h1 {
+  padding-bottom: 18px;
+}
+
+.admin_main .main_body .cms_project .ext_project {
+  overflow-x: hidden;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 25px 0;
+}
+
+.admin_main .main_body .cms_project .ext_project .cnt {
+  margin-top: 25px;
+  width: 50%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #2d2d2e;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+}
+
+.admin_main .main_body .cms_project .ext_project .cnt .tech {
+  color: #01A1A7;
+  padding: 15px 0;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.admin_main .main_body .cms_project .ext_project .cnt .description {
+  color: silver;
+}
+
+.admin_main .main_body .cms_project .ext_project .cnt .link {
+  margin-top: 10px;
+}
+
+.admin_main .main_body .cms_project .ext_project .cnt .link .link_icn {
+  color: #01A1A7;
+}
+
+.admin_main .main_body .cms_project .ext_project .cnt .link a {
+  color: #929292;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.admin_main .main_body .cms_project .ext_project .cnt .del_project {
+  margin-top: 15px;
+  cursor: pointer;
+  color: #eeecec;
+  background-color: #e22121;
+  border: 1px solid transparent;
+  font-weight: bolder;
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+
+.admin_main .main_body .cms_project .ext_project .cnt:first-child {
+  margin-left: 0;
+}
+
+.admin_main .main_body .cms_project .add_project {
+  overflow-x: hidden;
+}
+
+.admin_main .main_body .cms_project .add_project h3 {
+  padding-top: 35px;
+}
+
+.admin_main .main_body .cms_project .add_project p {
+  padding-top: 15px;
+}
+
+.admin_main .main_body .cms_project .add_project .project_form {
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin_main .main_body .cms_project .add_project .project_form .field2, .admin_main .main_body .cms_project .add_project .project_form .field3, .admin_main .main_body .cms_project .add_project .project_form .field4 {
+  margin-left: 25px;
+}
+
+.admin_main .main_body .cms_project .add_project .project_form .field1, .admin_main .main_body .cms_project .add_project .project_form .field2, .admin_main .main_body .cms_project .add_project .project_form .field3, .admin_main .main_body .cms_project .add_project .project_form .field4 {
+  margin-top: 20px;
+}
+
+.admin_main .main_body .cms_project .add_project .project_form .field1 input, .admin_main .main_body .cms_project .add_project .project_form .field1 textarea, .admin_main .main_body .cms_project .add_project .project_form .field2 input, .admin_main .main_body .cms_project .add_project .project_form .field2 textarea, .admin_main .main_body .cms_project .add_project .project_form .field3 input, .admin_main .main_body .cms_project .add_project .project_form .field3 textarea, .admin_main .main_body .cms_project .add_project .project_form .field4 input, .admin_main .main_body .cms_project .add_project .project_form .field4 textarea {
+  padding: 15px 25px;
+  width: 210px;
+  background: transparent;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  color: #c9c9c9;
+}
+
+.admin_main .main_body .cms_project .add_project .project_form .field1 input:focus, .admin_main .main_body .cms_project .add_project .project_form .field1 textarea:focus, .admin_main .main_body .cms_project .add_project .project_form .field2 input:focus, .admin_main .main_body .cms_project .add_project .project_form .field2 textarea:focus, .admin_main .main_body .cms_project .add_project .project_form .field3 input:focus, .admin_main .main_body .cms_project .add_project .project_form .field3 textarea:focus, .admin_main .main_body .cms_project .add_project .project_form .field4 input:focus, .admin_main .main_body .cms_project .add_project .project_form .field4 textarea:focus {
+  outline: none;
+}
+
+.admin_main .main_body .cms_project .add_project .project_form .field1 textarea, .admin_main .main_body .cms_project .add_project .project_form .field2 textarea, .admin_main .main_body .cms_project .add_project .project_form .field3 textarea, .admin_main .main_body .cms_project .add_project .project_form .field4 textarea {
+  width: initial;
+}
+
+.admin_main .main_body .cms_project .add_project .project_form .field1 small, .admin_main .main_body .cms_project .add_project .project_form .field2 small, .admin_main .main_body .cms_project .add_project .project_form .field3 small, .admin_main .main_body .cms_project .add_project .project_form .field4 small {
+  margin-left: 10px;
+}
+
+.admin_main .main_body .cms_project .add_project .prj_img {
+  margin-top: 25px;
+}
+
+.admin_main .main_body .cms_project .add_project .add_project_btn {
+  overflow-x: hidden;
+  margin-top: 25px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.admin_main .main_body .cms_project .add_project .add_project_btn button {
+  overflow-x: hidden;
+  padding: 12px 30px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: #eeecec;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin_main .main_body .cms_project .add_project .add_project_btn button:hover {
+  background-color: #01A1A7;
+  border: 1px solid #01A1A7;
+  color: #eeecec;
+}
+
+.admin_main .main_body .cms_project .add_project .add_project_btn button:focus {
+  outline: none;
+}
+/*# sourceMappingURL=Admin.css.map */

@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+$accent-color: #01A1A7;
+$dark-color: #202020;
+$text-darkbg: #007175;
+$light-cardbg: #eeecec;
+$dark-cardbg: #4b4b4b;
+
+
+.admin_main {
+    width: 100%;
+    height: auto;
+    background-color: $dark-color;
+    overflow-x: hidden;
+    
+    .nav {
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        // background-color: red;
+
+        h1 {
+            color: $light-cardbg;
+        }
+
+        button {
+            padding: 12px 35px;
+            border-radius: 5px;
+            border: none;
+            background-color: red;
+            box-shadow: 10px 10px 20px 3px #161616;
+            color: $light-cardbg;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+
+        }
+    }
+
+    .main_body {
+        width: 100%;
+        padding: 25px;
+        color: $light-cardbg;
+        overflow-x: hidden;
+        
+        .cms_welcome {
+            font-size: 15px;
+            padding-bottom: 20px;
+        }
+
+        .cms_skills {
+            h1 {
+                padding-bottom: 20px;
+            }
+
+            .ext_skills {
+                width: 100%;
+                display: flex;
+                
+                .cnt {
+                    margin-left: 25px;
+                    width: fit-content;
+                    padding: 15px 20px;
+                    // border: 1px solid white;
+                    border-radius: 5px;
+                    background-color: rgb(45, 45, 46);
+                    box-shadow: 10px 10px 20px 3px #161616;
+
+                    .del_skill {
+                        margin-left: 12px;
+                        cursor: pointer;
+                        color: red;
+                        font-weight: bolder;
+                    }
+                }
+
+                .cnt:first-child {
+                    margin-left: 0;
+                }
+            }
+
+            .add_skills {
+                margin-top: 25px;
+                h3 {
+                    display: non;
+                }
+
+                p {
+                    padding-top: 15px;
+                    // color: #e60a0a;
+                }
+
+                .skills_form {
+                    display: flex;
+
+                    .field2 {
+                        margin-left: 25px;
+                    }
+
+                    .field1, .field2 {
+                        margin-top: 20px;
+                        input {
+                            padding: 15px 25px;
+                            background: transparent;
+                            box-shadow: 10px 10px 20px 3px #161616;
+                            border: 1px solid $dark-cardbg;
+                            border-radius: 6px;
+                            color: $light-cardbg;
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        small {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+
+            .add_skill {
+                margin-top: 25px;
+                
+                button {
+                    padding: 12px 30px;
+                    border-radius: 6px;
+                    border: 1px solid white;
+                    background-color: $light-cardbg;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        background-color: $accent-color;
+                        border: 1px solid $accent-color;
+                        color: $light-cardbg;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        hr {
+            // width: 20%;
+            margin-top: 35px;
+            margin-bottom: 35px;
+            border-color: $dark-cardbg;
+        }
+
+        .cms_experience {
+            overflow-x: hidden;
+            width: 100%;
+            
+            h1 {
+                padding-bottom: 18px;
+            }
+
+            .ext_experience {
+                overflow-x: hidden;
+                    width: 100%;
+                    display: flex;
+                    padding: 25px 0;
+                    
+                    .cnt {
+                        margin-left: 25px;
+                        width: fit-content;
+                        padding: 15px 20px;
+                        // border: 1px solid white;
+                        border-radius: 5px;
+                        background-color: rgb(45, 45, 46);
+                        box-shadow: 10px 10px 20px 3px #161616;
+                        
+                        .company {
+                            color: $accent-color;
+                            padding: 15px 0;
+                            cursor: pointer;
+                        }
+                        .del_experience {
+                            cursor: pointer;
+                            color: red;
+                            font-weight: bolder;
+
+                            .li {
+                                margin-top: 12px;
+                            }
+                        }
+                    }
+    
+                    .cnt:first-child {
+                        margin-left: 0;
+                    }
+                
+            }
+
+            .add_experience {
+                overflow-x: hidden;
+
+                h3 {
+                    padding-top: 35px;
+                }
+
+                p {
+                    padding-top: 15px;
+                    // color: #e60a0a;
+                }
+
+                .experience_form {
+                    overflow-x: hidden;
+                    display: flex;
+
+                    .field2, .field3, .field4 {
+                        margin-left: 25px;
+                    }
+
+                    .field1, .field2, .field3, .field4 {
+                        margin-top: 20px;
+                        input, textarea {
+                            padding: 15px 25px;
+                            width: 210px;
+                            background: transparent;
+                            box-shadow: 10px 10px 20px 3px #161616;
+                            border: 1px solid $dark-cardbg;
+                            border-radius: 6px;
+                            color: rgb(201, 201, 201);
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        textarea {
+                            width: initial;
+                        }
+
+                        small {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                .add_experience {
+                    overflow-x: hidden;
+                    margin-top: 25px;
+                    width: fit-content;
+                    
+                    button {
+                        overflow-x: hidden;
+                        padding: 12px 30px;
+                        border-radius: 6px;
+                        border: 1px solid white;
+                        background-color: $light-cardbg;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+                        &:hover {
+                            background-color: $accent-color;
+                            border: 1px solid $accent-color;
+                            color: $light-cardbg;
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .cms_project {
+            overflow-x: hidden;
+            width: 100%;
+            
+            h1 {
+                padding-bottom: 18px;
+            }
+
+            .ext_project {
+                overflow-x: hidden;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 25px 0;
+                    
+                    .cnt {
+                        margin-top: 25px;
+                        width: 50%;
+                        padding: 15px 20px;
+                        // border: 1px solid white;
+                        border-radius: 5px;
+                        background-color: rgb(45, 45, 46);
+                        box-shadow: 10px 10px 20px 3px #161616;
+                        
+                        .tech {
+                            color: $accent-color;
+                            padding: 15px 0;
+                            cursor: pointer;
+                            width: fit-content;
+                        }
+
+                        .description {
+                            color: rgb(192, 192, 192);
+                        }
+
+                        .link {
+                            margin-top: 10px;
+
+                            .link_icn {
+                                color: $accent-color;
+                            }
+                            a {
+                                color: rgb(146, 146, 146);
+                                margin-left: 10px;
+                                text-decoration: none;
+                            }
+                        }
+                        .del_project {
+                            margin-top: 15px;
+                            cursor: pointer;
+                            color: $light-cardbg;
+                            background-color: rgb(226, 33, 33);
+                            border: 1px solid transparent;
+                            font-weight: bolder;
+                            padding: 10px 25px;
+                            border-radius: 5px;
+                        }
+                    }
+    
+                    .cnt:first-child {
+                        margin-left: 0;
+                    }
+                
+            }
+
+            .add_project {
+                overflow-x: hidden;
+
+                h3 {
+                    padding-top: 35px;
+                }
+
+                p {
+                    padding-top: 15px;
+                    // color: #e60a0a;
+                }
+
+                .project_form {
+                    overflow-x: hidden;
+                    display: flex;
+
+                    .field2, .field3, .field4 {
+                        margin-left: 25px;
+                    }
+
+                    .field1, .field2, .field3, .field4 {
+                        margin-top: 20px;
+                        input, textarea {
+                            padding: 15px 25px;
+                            width: 210px;
+                            background: transparent;
+                            box-shadow: 10px 10px 20px 3px #161616;
+                            border: 1px solid $dark-cardbg;
+                            border-radius: 6px;
+                            color: rgb(201, 201, 201);
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        textarea {
+                            width: initial;
+                        }
+
+                        small {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                .prj_img {
+                    // display: block;
+                    margin-top: 25px;
+
+                    input {}
+                }
+
+                .add_project_btn {
+                    overflow-x: hidden;
+                    margin-top: 25px;
+                    width: fit-content;
+                    
+                    button {
+                        overflow-x: hidden;
+                        padding: 12px 30px;
+                        border-radius: 6px;
+                        border: 1px solid white;
+                        background-color: $light-cardbg;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+                        &:hover {
+                            background-color: $accent-color;
+                            border: 1px solid $accent-color;
+                            color: $light-cardbg;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

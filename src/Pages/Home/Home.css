@@ -391,6 +391,9 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .about .inner .me_skills .inner .me .img {
@@ -411,6 +414,24 @@ html {
 .about .inner .me_skills .inner .me p {
   padding-top: 15px;
   text-align: center;
+}
+
+.about .inner .me_skills .inner .me .resume {
+  padding: 12px 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #01A1A7;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.about .inner .me_skills .inner .me .resume .resm {
+  margin-right: 5px;
+}
+
+.about .inner .me_skills .inner .me .resume:focus {
+  outline: none;
 }
 
 .about .inner .me_skills .inner .skills {
@@ -553,6 +574,119 @@ html {
 .projects {
   width: 100%;
   height: 100vh;
+  position: relative;
+}
+
+.projects .project_popup {
+  width: 100%;
+  height: 110vh;
+  background-color: rgba(0, 0, 0, 0.781);
+  position: absolute;
+  z-index: 100;
+}
+
+.projects .project_popup .project_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.projects .project_popup .project_inner .project_popup_main {
+  width: 40%;
+  height: 80%;
+  background-color: #f0f0f0;
+}
+
+.projects .project_popup .project_inner .project_popup_main .img_slide {
+  width: 100%;
+  height: 45%;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.projects .project_popup .project_inner .project_popup_main .project_title h3 {
+  padding: 0px 25px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.projects .project_popup .project_inner .project_popup_main .prj_description p {
+  font-family: 'Roboto';
+  padding: 25px;
+  text-align: left;
+  line-height: 28px;
+}
+
+.projects .project_popup .project_inner .project_popup_main .prj_btns {
+  width: 45%;
+  padding: 0px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.projects .project_popup .project_inner .project_popup_main .prj_btns .view_site {
+  padding: 12px 30px;
+  color: white;
+  background-color: #01A1A7;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.projects .project_popup .project_inner .project_popup_main .prj_btns .view_site:hover {
+  background-color: #007175;
+}
+
+.projects .project_popup .project_inner .project_popup_main .prj_btns .view_site:focus {
+  outline: none;
+}
+
+.projects .project_popup .project_inner .project_popup_main .prj_btns .view_site .arr_icn {
+  color: white;
+  margin-right: 8px;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.projects .project_popup .project_inner .project_popup_main .prj_btns .cls_btn {
+  padding: 12px 40px;
+  color: white;
+  background-color: #d10909;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.projects .project_popup .project_inner .project_popup_main .prj_btns .cls_btn:focus {
+  outline: none;
+}
+
+.projects .project_popup .project_inner .project_popup_main .prj_btns .cls_btn:hover {
+  background-color: #911616;
 }
 
 .projects .inner {
@@ -570,10 +704,12 @@ html {
 
 .projects .inner .left {
   width: 100%;
-  height: 100%;
+  height: auto;
+  margin-bottom: 40px;
 }
 
 .projects .inner .left H1 {
+  font-size: 45px;
   font-weight: bold;
   text-align: center;
 }
@@ -586,7 +722,7 @@ html {
 .projects .inner .right .bar {
   margin: 0 auto;
   width: 40%;
-  height: 10%;
+  height: 6%;
   border-radius: 8px;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -639,22 +775,20 @@ html {
   width: 85%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-columns: (minmax(30%, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
   grid-gap: 1rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .projects .inner .right .prjs .project_div {
   width: 100%;
   height: 40vh;
-  background-color: yellow;
   position: relative;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .projects .inner .right .prjs .project_div .prj_card {
@@ -715,21 +849,24 @@ html {
   cursor: pointer;
 }
 
-.projects .inner .right .prjs .prj1 {
-  background: url("../../Assets/ProjectImage/church 2.PNG");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.projects .inner .right .prjs .project_div .prj_card .prj_but button:focus {
+  outline: none;
 }
 
-.projects .inner .right .prjs .prj1:hover .prj_card {
+.projects .inner .right .prjs .project_div {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.projects .inner .right .prjs .project_div:hover .prj_card {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: white;
 }
 
-.projects .inner .right .prjs .prj1:hover .prj_txt {
+.projects .inner .right .prjs .project_div:hover .prj_txt {
   opacity: 1;
   position: absolute;
   top: 20%;
@@ -737,7 +874,7 @@ html {
   transition: all 0.5s ease-in-out;
 }
 
-.projects .inner .right .prjs .prj1:hover .prj_but {
+.projects .inner .right .prjs .project_div:hover .prj_but {
   opacity: 1;
   position: absolute;
   bottom: 20%;
