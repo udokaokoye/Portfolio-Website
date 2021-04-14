@@ -40,10 +40,20 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
-    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script defer src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 
     <script>
+
+var $isotope = $('.prjs').isotope({});
+$('.controlss').on('click', 'button', function() {
+  var filterValue = $(this).attr('data-filter');
+  $isotope.isotope({
+    filter: filterValue
+  });
+
+  alert("Hello")
+});
       // var grid = $('.prjs').isotope({
       //   // options
       //   itemSelector: '.project_div',
