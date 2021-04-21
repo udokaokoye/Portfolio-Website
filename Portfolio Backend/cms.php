@@ -50,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $prj_tech = $_POST['prj_tech'];
             $prj_url = $_POST['prj_url'];
             $prj_description = $_POST['prj_description'];
+            $prj_filter_key = $_POST['prj_filter_key'];
+            $prj_platform = $_POST['prj_platform'];
             $image1 = '';
             $image2 = '';
             $image3 = '';
@@ -116,11 +118,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             }
 
-            $query = "INSERT INTO `projects` (`project_id`, `project_name`, `project_tech`, `project_description`, `prj_img1`, `prj_img2`, `prj_img3`, `prj_img4`, `prj_img5`, `project_link`) VALUES (
+            $query = "INSERT INTO `projects` (`project_id`, `project_name`, `project_filter_key`, `project_tech`, `project_description`, `project_platform`, `prj_img1`, `prj_img2`, `prj_img3`, `prj_img4`, `prj_img5`, `project_link`) VALUES (
                 '".mysqli_real_escape_string( $link, $project_id )."', 
                 '".mysqli_real_escape_string( $link, $prj_title )."', 
+                '".mysqli_real_escape_string( $link, $prj_filter_key )."', 
                 '".mysqli_real_escape_string( $link, $prj_tech )."', 
                 '".mysqli_real_escape_string( $link, $prj_description )."', 
+                '".mysqli_real_escape_string( $link, $prj_platform )."', 
                 '".mysqli_real_escape_string( $link, $image1 )."', 
                 '".mysqli_real_escape_string( $link, $image2 )."', 
                 '".mysqli_real_escape_string( $link, $image3 )."', 
