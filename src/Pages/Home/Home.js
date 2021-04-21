@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import './Home.css';
 import Particles from 'react-particles-js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +12,8 @@ import {
   faRocket,
   faEye,
   faLongArrowAltUp,
-  faFileAlt
+  faFileAlt,
+  faCopyright
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
@@ -24,17 +25,19 @@ import {
 import  {motion, useAnimation} from 'framer-motion';
 import {useInView} from 'react-intersection-observer';
 import FadeWhenVisible from '../../FadeWhenVisible';
-import projects from '../../projects';
+// import projects from '../../projects';
 import { parse } from '@fortawesome/fontawesome-svg-core';
 const Home = () => {
+    
+    const formData = new FormData();
 
     useEffect(() => {
         fetchSkills()
         fetchExperience()
-        // fetchProjects()
+        fetchProjects()
     }, [])
 
-    const [filterkey, setfilterkey] = useState('*')
+    const [filterkey, setfilterkey] = useState('react js')
 
     // !Project Popup
 
@@ -51,6 +54,13 @@ const Home = () => {
         // !PROJECTS
         // const [projects, setprojects] = useState([])
         const [projects_msg, setprojects_msg] = useState(['', ''])
+
+
+        // !CONTACT
+        const [cnt_name, setcnt_name] = useState('')
+        const [cnt_email, setcnt_email] = useState('')
+        const [cnt_message, setcnt_message] = useState('')
+        const [messageSentSuccess, setmessageSentSuccess] = useState([, ''])
     // const skills = [
     //     {
     //         skill: "HTML",
@@ -93,10 +103,13 @@ const Home = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView();
 
-    
-    const [newarray, setnewarray] = useState(projects)
+    const [projects, setprojects] = useState([]);
+    const [newarray, setnewarray] = useState([])
+
 
     // var newArray = [projects];
+
+    const popupRef = useRef(null);
 
     useEffect(() => {
         if (inView) {
@@ -112,13 +125,12 @@ const Home = () => {
             if (filterkey === '*') {
                 return projects
             } else {
-                return el.category === filterkey
+                    return el.project_filter_key === filterkey;
             }
           });
 
-        //   console.log(updatedArray)
           setnewarray(updatedArray)
-    }, [filterkey])
+    }, [filterkey, projects])
 
 
     const fetchSkills = () => {
@@ -145,17 +157,43 @@ const Home = () => {
         });
     }
 
-    // const fetchProjects = () => {
-    //     const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=projects'
+    const fetchProjects = () => {
+        const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=projects'
 
-    //     fetch(url, {
-    //         method: 'POST'
-    //     })
-    //     .then((data) => data.json())
-    //     .then((res) => {
-    //         setprojects(res)
-    //     });
-    // }
+        fetch(url, {
+            method: 'POST'
+        })
+        .then((data) => data.json())
+        .then((res) => {
+            setprojects(res)
+            // console.log(res);
+        });
+    }
+
+    const handelContact = () => {
+        formData.append("name", cnt_name);
+        formData.append('email', cnt_email);
+        formData.append('message', cnt_message);
+
+        const url = 'http://localhost/Portfolio%20Backend/contact.php';
+
+        fetch(url, {
+            method: 'post',
+            body: formData
+        })
+        .then((data) => data.json())
+        .then((res) => {
+            if (res === 'SUCCESS') {
+                setmessageSentSuccess([true, 'Your message was sent successfully. Thanks!'] )
+            } else {
+                setmessageSentSuccess([false, 'An error occurred while sending the message. Try again later'] )
+            }
+
+            setTimeout(() => {
+                setmessageSentSuccess([, ''] )
+            }, 7000);
+        })
+    }
 
 
     const openProjectPopup = {
@@ -282,11 +320,11 @@ const Home = () => {
                     
                     <div className="left">
                         <div className="social-links">
-                            <a href="https://github.com/udokaokoye" target='_blank'><FontAwesomeIcon className="li" color="#fff" icon={faGithub} /></a>
-                            <a href="https://web.facebook.com/udokovic" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faFacebookF} /></a>
-                            <a href="#" target='_blank'><FontAwesomeIcon className="tw" color="#fff" icon={faTwitter} /></a>
-                            <a href="#" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faInstagram} /></a>
-                            <a href="https://linkedin.com/in/udoka-okoye-abba591ab/" target='_blank'><FontAwesomeIcon className="ig" color="#fff" icon={faLinkedinIn} /></a>
+                            <a href="https://github.com/udokaokoye" rel="noreferrer" target='_blank'><FontAwesomeIcon className="li" color="#fff" icon={faGithub} /></a>
+                            <a href="https://web.facebook.com/udokovic" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faFacebookF} /></a>
+                            <a href="https://twitter.com/udokaokoye2" rel="noreferrer" target='_blank'><FontAwesomeIcon className="tw" color="#fff" icon={faTwitter} /></a>
+                            <a href="https://www.instagram.com/okoye__udoka/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faInstagram} /></a>
+                            <a href="https://linkedin.com/in/udoka-okoye-abba591ab/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="ig" color="#fff" icon={faLinkedinIn} /></a>
                             {/* <a href=""><FontAwesomeIcon className="li" color="#fff" icon={faLinkedinIn} /></a> */}
                         </div>
                         <div className="my-det">
@@ -297,7 +335,7 @@ const Home = () => {
                         <motion.div 
                         animate={{translateY: 0, opacity: 1, transition: {duration: 2, delay: 2}}} initial={{translateY: 50, opacity: 0}}
                         className="show-btns">
-                            <a href="#projects">
+                            <a href="#portfolio">
                            <button>Veiw My Portfolio <span><FontAwesomeIcon className="arrwrgt" color="#fff" icon={faArrowRight} /></span></button> 
                            </a>
                         </motion.div>
@@ -377,7 +415,7 @@ const Home = () => {
                                 <p>I'm a Fullstack Developer in Lagos, Nigeria.
 I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
 Let's make something special</p>
-                                <a href="../../Assets/Profile.pdf"><button className='resume'><FontAwesomeIcon className="resm" color="#fff" icon={faFileAlt} /> Resume</button></a>
+                                <a href="https://drive.google.com/file/d/1VcRyB5ChzmjZYwwj-p1KCiF-7a0AfjU6/view?usp=sharing" target='_blank'><button className='resume'><FontAwesomeIcon className="resm" color="#fff" icon={faFileAlt} /> Resume</button></a>
                             </div>
                             <div className="skills">
                                 {skills.map((skill) => {
@@ -399,7 +437,7 @@ Let's make something special</p>
                 </div>
             </div>
         
-        <div id="experience_div"></div>
+        <div id="experience"></div>
         
         <div className="experience">
             <div className="inner">
@@ -432,17 +470,17 @@ Let's make something special</p>
         </div>
         
         
-        <div id='projects' className="projects project_grid">
-            <div style={{display: project_popup[0] ? 'block' : 'none'}} className="project_popup">
+        <div id='portfolio' className="projects project_grid">
+            <div ref={popupRef} style={{display: project_popup[0] ? 'block' : 'none'}} className="project_popup">
                 <div style={project_popup[0] ? openProjectPopup : closeProjectPopup} className="project_inner">
                 <div className="project_popup_main">
-                    <div className="img_slide">Project Image</div>
-                    <div className="project_title"><h3>{project_popup[1].name}</h3></div>
+                    <div style={{backgroundImage: `url(${project_popup[1].prj_img1})`, backgroundSize: `${project_popup[1].project_platform === 'web' ? 'cover' : 'cover'}` }} className="img_slide"></div>
+                    <div className="project_title"><h3>{project_popup[1].project_name}</h3></div>
                     <div className="prj_description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolores quisquam explicabo eaque praesentium deserunt quia sint aliquid commodi autem! Repellat, iusto repudiandae culpa doloribus vitae quo vero laboriosam velit optio, totam hic sequi dolores eos at iure recusandae maiores, officia odit odio. Quod quaerat cumque at iure, ullam, beatae, nisi facilis pariatur modi natus vero. Voluptates, minus, perferendis sapiente in recusandae quam officiis ab eum ullam, aspernatur consequatur cumque? Iusto hic in deserunt voluptatum. Ad amet explicabo eos perferendis cum fugiat aliquid, neque dolores debitis nobis eum id reprehenderit consectetur totam mollitia in voluptatibus! Dolores illum itaque ea optio delectus repellat ad, esse totam excepturi dolorem nisi ullam cupiditate, sint accusantium necessitatibus autem vero vel eligendi, neque aliquid? Dolores!</p>
+                        <p>{project_popup[1].project_description}</p>
                     </div>
                     <div className="prj_btns">
-                        <button className='view_site'><FontAwesomeIcon className="arr_icn" color="red" icon={faLongArrowAltUp} /> View Site</button>
+                       <a href={project_popup[1].project_link} rel="noreferrer" target='_blank'><button className='view_site'><FontAwesomeIcon className="arr_icn" color="red" icon={faLongArrowAltUp} /> View Site</button></a> 
                         <button onClick={() => {setproject_popup([false, []])}} className='cls_btn'>Close</button>
                     </div>
                 </div>
@@ -468,12 +506,12 @@ Let's make something special</p>
                    {newarray.slice(0, 6).map((project) => {
                        return (
                            
-                        <div style={{backgroundImage: `url(${project.images[0].default})`, backgroundSize: `${project.type === 'web' ? 'cover' : 'contain'}` }} className="project_div prj1 reactnative">
+                        <div style={{backgroundImage: `url(${project.prj_img1})`, backgroundSize: `${project.project_platform === 'Web' ? 'cover' : 'contain'}` }} className="project_div prj1">
                         <div className="prj_card">
-                        <div className="prj_txt"><span>{project.name}<br/> <span className='lng_used'>{project.tools}</span></span></div>
+                        <div className="prj_txt"><span>{project.project_name}<br/> <span className='lng_used'>{project.project_tech}</span></span></div>
                         <div className="prj_but"><button onClick={() => {
                             setproject_popup([true, project])
-                            
+                            // popupRef.current.scrollIntoView()
                             }}>Learn More</button></div>
                         </div>
                         
@@ -485,6 +523,81 @@ Let's make something special</p>
            </div>
            </div>
         </div>
+        
+        
+        
+        <div id='contact' className="contact">
+                <div className="cnt_inner">
+                   <div className="intro">
+                        <h1>Contact Me</h1>
+                        <p>Have a question or want to work together?</p>
+                        <h3>Let's Make It Happen!</h3>
+                        
+                   </div>
+
+                   {messageSentSuccess[0] === true ? 
+                        (
+                        <div style={{padding: messageSentSuccess[0] ? 25 : 0}} className="msg_div">
+                        <p>{messageSentSuccess[1]}</p>
+                       </div>
+                       )
+                    :  (
+                        <div style={{backgroundColor: 'red', padding: messageSentSuccess[0] === false ? 25 : 0}} className="msg_div">
+                    <p>{messageSentSuccess[1]}</p>
+                   </div>
+                   )}
+
+                   <div className="cnt_form">
+                       <form onSubmit={(e) => {e.preventDefault(); handelContact()}}>
+                                <div className="nor_inpt">
+                                <div className="field">
+                                    <input required onChange={(val) => setcnt_name(val.target.value)} placeholder='Name' type="text"/>
+                                </div>
+
+                                <div className="field">
+                                    <input required onChange={(val) => setcnt_email(val.target.value)} placeholder='Email' type="email"/>
+                                </div>
+                                </div>
+
+                                <div className="field">
+                                <textarea required onChange={(val) => setcnt_message(val.target.value)} placeholder='Message' cols="53" rows="10"></textarea>
+                                </div>
+                                <div className="submitt_cnt">
+                                    <button type='submit'>Submit</button>
+                                </div>
+                       </form>
+                   </div>
+                </div>
+        </div>
+        
+        <div className="footer">
+            <div className="ft_inner">
+            {/* <h1>Footer</h1> */}
+            {/* <div className="soc_icns">
+                <div className="github">
+
+                </div>
+                <div className="facebook"></div>
+                <div className="twitter"></div>
+                <div className="insta"></div>
+                <div className="linkedln"></div>
+            </div> */}
+
+            <div className="social-links">
+                            <a href="https://github.com/udokaokoye" rel="noreferrer" target='_blank'><FontAwesomeIcon className="li icn" color="#fff" icon={faGithub} /></a>
+                            <a href="https://web.facebook.com/udokovic" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb icn" color="#fff" icon={faFacebookF} /></a>
+                            <a href="https://twitter.com/udokaokoye2" rel="noreferrer" target='_blank'><FontAwesomeIcon className="tw icn" color="#fff" icon={faTwitter} /></a>
+                            <a href="https://www.instagram.com/okoye__udoka/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb icn" color="#fff" icon={faInstagram} /></a>
+                            <a href="https://linkedin.com/in/udoka-okoye-abba591ab/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="ig icn" color="#fff" icon={faLinkedinIn} /></a>
+                            {/* <a href=""><FontAwesomeIcon className="li" color="#fff" icon={faLinkedinIn} /></a> */}
+            </div>
+
+            <div className="cprght">
+                <p><FontAwesomeIcon className="li" color="#fff" icon={faCopyright} /> <span>Okoye Udoka 2021</span></p>
+            </div>
+            </div>
+        </div>
+        
         </div>
         
     )

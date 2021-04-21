@@ -507,7 +507,7 @@ html {
   width: 100%;
   height: auto;
   background-color: #202020;
-  color: #007175;
+  color: #01A1A7;
 }
 
 .experience .inner {
@@ -573,13 +573,12 @@ html {
 
 .projects {
   width: 100%;
-  height: 100vh;
-  position: relative;
+  height: auto;
 }
 
 .projects .project_popup {
   width: 100%;
-  height: 110vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.781);
   position: absolute;
   z-index: 100;
@@ -608,7 +607,6 @@ html {
 .projects .project_popup .project_inner .project_popup_main .img_slide {
   width: 100%;
   height: 45%;
-  background-color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -620,6 +618,8 @@ html {
           align-items: center;
   font-size: 48px;
   font-weight: bold;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .projects .project_popup .project_inner .project_popup_main .project_title h3 {
@@ -699,7 +699,7 @@ html {
           flex-direction: column;
   padding: 30px 20px;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .projects .inner .left {
@@ -722,7 +722,7 @@ html {
 .projects .inner .right .bar {
   margin: 0 auto;
   width: 40%;
-  height: 6%;
+  height: 5vh;
   border-radius: 8px;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -757,12 +757,12 @@ html {
 
 .projects .inner .right .bar .br1:hover, .projects .inner .right .bar .br2:hover, .projects .inner .right .bar .br3:hover, .projects .inner .right .bar .br4:hover, .projects .inner .right .bar .br5:hover {
   background-color: #202020;
-  color: #a8a8a8;
+  color: #eeeeee;
 }
 
 .projects .inner .right .bar .active_br {
   background-color: #202020;
-  color: #a8a8a8;
+  color: #eeeeee;
 }
 
 .projects .inner .right .bar .br3 {
@@ -880,6 +880,222 @@ html {
   bottom: 20%;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+.contact {
+  width: 100%;
+  height: auto;
+  background-color: #202020;
+  color: #eeeeee;
+}
+
+.contact .cnt_inner {
+  padding: 25px;
+}
+
+.contact .cnt_inner .intro {
+  text-align: center;
+}
+
+.contact .cnt_inner .intro h1 {
+  font-size: 39px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  font-weight: 500;
+  font-family: 'Roboto';
+}
+
+.contact .cnt_inner .intro p {
+  padding-bottom: 15px;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: 'Roboto';
+}
+
+.contact .cnt_inner .intro h3 {
+  color: #01A1A7;
+  font-weight: 500;
+  font-family: 'Roboto';
+}
+
+.contact .cnt_inner .msg_div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 5px;
+  background-color: darkgreen;
+}
+
+.contact .cnt_inner .cnt_form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact .cnt_inner .cnt_form form .nor_inpt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.contact .cnt_inner .cnt_form form .nor_inpt .field {
+  margin-bottom: 20px;
+}
+
+.contact .cnt_inner .cnt_form form .nor_inpt .field input, .contact .cnt_inner .cnt_form form .nor_inpt .field textarea {
+  padding: 15px 25px;
+  width: 210px;
+  background: transparent;
+  -webkit-box-shadow: 10px 10px 20px 3px #141414;
+          box-shadow: 10px 10px 20px 3px #141414;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  color: #c9c9c9;
+  margin-left: 15px;
+}
+
+.contact .cnt_inner .cnt_form form .nor_inpt .field input:focus, .contact .cnt_inner .cnt_form form .nor_inpt .field textarea:focus {
+  outline: none;
+}
+
+.contact .cnt_inner .cnt_form form .nor_inpt .field textarea {
+  width: initial;
+}
+
+.contact .cnt_inner .cnt_form form .nor_inpt .field small {
+  margin-left: 10px;
+}
+
+.contact .cnt_inner .cnt_form form .field {
+  margin-bottom: 20px;
+}
+
+.contact .cnt_inner .cnt_form form .field textarea {
+  padding: 15px 25px;
+  width: 210px;
+  background: transparent;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  color: #c9c9c9;
+  margin-left: 15px;
+}
+
+.contact .cnt_inner .cnt_form form .field textarea:focus {
+  outline: none;
+}
+
+.contact .cnt_inner .cnt_form form .field textarea {
+  width: initial;
+}
+
+.contact .cnt_inner .cnt_form form .field small {
+  margin-left: 10px;
+}
+
+.contact .cnt_inner .cnt_form form .submitt_cnt button {
+  padding: 12px 35px;
+  border-radius: 5px;
+  margin-left: 15px;
+  border: 1px solid transparent;
+  background-color: #01A1A7;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.contact .cnt_inner .cnt_form form .submitt_cnt button:hover {
+  background-color: #007175;
+}
+
+.contact .cnt_inner .cnt_form form .submitt_cnt button:focus {
+  outline: none;
+}
+
+.footer {
+  width: 100%;
+  height: 20vh;
+  background-color: #202020;
+  color: #eeeeee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .ft_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+.footer .ft_inner .social-links {
+  margin-top: 20px;
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 25px;
+}
+
+.footer .ft_inner .social-links a {
+  background-color: #4b4b4b;
+  padding: 15px 16px;
+  -webkit-box-shadow: 10px 10px 20px 3px #141414;
+          box-shadow: 10px 10px 20px 3px #141414;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.footer .ft_inner .social-links a .icn {
+  font-size: 18px;
+}
+
+.footer .ft_inner .social-links a:hover {
+  background-color: #01A1A7;
+}
+
+.footer .ft_inner .social-links a:hover .icn {
+  color: #eeeeee;
+}
+
+.footer .ft_inner .cprght p span {
+  margin-left: 8px;
 }
 
 /* Screen larger than 900px? 3 columns */

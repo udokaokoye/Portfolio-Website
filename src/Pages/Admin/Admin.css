@@ -420,6 +420,18 @@
   margin-top: 25px;
 }
 
+.admin_main .main_body .cms_project .add_project .chkbx {
+  padding: 10px;
+  color: transparent;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.admin_main .main_body .cms_project .add_project small {
+  margin-top: 25px;
+  margin-right: 15px;
+}
+
 .admin_main .main_body .cms_project .add_project .add_project_btn {
   overflow-x: hidden;
   margin-top: 25px;

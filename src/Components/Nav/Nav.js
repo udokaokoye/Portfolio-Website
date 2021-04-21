@@ -49,10 +49,10 @@ const Nav = () => {
                     <div className="inner">
                         <a href={"#home"}><span>Home</span></a>
                         <a href="#about"><span>About</span></a>
-                        <a href="#experience_div"><span>Experience</span></a>
+                        <a href="#experience"><span>Experience</span></a>
                         {/* <a href="#experience_div"><span>Projects</span></a> */}
-                        <a href="#projects"><span>Portfolio</span></a>
-                        <a><span>Contact</span></a>
+                        <a href="#portfolio"><span>Portfolio</span></a>
+                        <a href="#contact"><span>Contact</span></a>
                     </div>
                 </div>
             </nav>

@@ -386,6 +386,20 @@ $dark-cardbg: #4b4b4b;
                     input {}
                 }
 
+                .chkbx {
+                    padding: 10px;
+                    color: transparent;
+                    margin-right: 15px;
+                    margin-top: 25px;
+                }
+
+                small {
+
+                    margin-top: 25px;
+                    // color: red;
+                    margin-right: 15px;
+                }
+
                 .add_project_btn {
                     overflow-x: hidden;
                     margin-top: 25px;

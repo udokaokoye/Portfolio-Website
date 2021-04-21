@@ -32,6 +32,8 @@ const Admin = () => {
     const [prj_title, setprj_title] = useState('')
     const [prj_tech, setprj_tech] = useState('')
     const [prj_url, setprj_url] = useState('')
+    const [prj_filter_key, setprj_filter_key] = useState('');
+    const [prj_platform, setprj_platform] = useState('');
     const [prj_description, setprj_description] = useState('')
 
 
@@ -187,6 +189,8 @@ const Admin = () => {
         formData.append('prj_tech', prj_tech)
         formData.append('prj_url', prj_url)
         formData.append('prj_description', prj_description)
+        formData.append('prj_filter_key', prj_filter_key)
+        formData.append('prj_platform', prj_platform);
 
         var image1 = document.getElementById("prj_img1").files;
         var image2 = document.getElementById("prj_img2").files;
@@ -384,9 +388,14 @@ const Admin = () => {
                                     <input required onChange={(val) => setprj_url(val.target.value)} placeholder='Enter Project url' type="text"/>
                                 </div>
 
+                                <div className="field3">
+                                    <input required onChange={(val) => setprj_filter_key(val.target.value)} placeholder='Enter Filter Key' type="text"/>
+                                </div>
+
                                 <div className="field4">
                                     <textarea required onChange={(val) => setprj_description(val.target.value)} placeholder='Enter Project Description' cols="50" rows="10"></textarea>
                                 </div>
+                                
 
                             </div>
 
@@ -397,6 +406,15 @@ const Admin = () => {
                                 <input id='prj_img4' type="file"/>
                                 <input id='prj_img5' type="file"/>
                             </div>
+
+                            <p>Select Platform</p>
+                            <small>Mobile</small>
+                            <input onChange={(val) => setprj_platform(val.target.value)} className='chkbx' type="radio" value='Mobile' name="platform" id=""/>
+                            
+
+                            <small>Web</small>
+                            <input onChange={(val) => setprj_platform(val.target.value)} className='chkbx' type="radio" value='Web' name="platform" id=""/>
+                            
 
                             <div className="add_project_btn">
                                     <button type='submit'>Add Project</button>

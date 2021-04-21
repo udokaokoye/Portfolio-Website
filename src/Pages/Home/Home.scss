@@ -5,7 +5,7 @@
 $accent-color: #01A1A7;
 $dark-color: #202020;
 $text-darkbg: #007175;
-$light-cardbg: #a8a8a8;
+$light-cardbg: #eeeeee;
 $dark-cardbg: #4b4b4b;
 *{
     margin: 0;
@@ -412,7 +412,7 @@ html {
     width: 100%;
     height: auto;
     background-color: $dark-color;
-    color: $text-darkbg;
+    color: $accent-color;
 
     .inner {
         padding: 100px 100px;
@@ -482,12 +482,11 @@ html {
 
 .projects {
     width: 100%;
-    height: 100vh;
-    position: relative;
+    height: auto;
 
     .project_popup {
         width: 100%;
-        height: 110vh;
+        height: 100%;
         background-color: rgba(0, 0, 0, 0.781);
         position: absolute;
         z-index: 100;
@@ -508,12 +507,14 @@ html {
                 .img_slide {
                     width: 100%;
                     height: 45%;
-                    background-color: red;
+                    // background-color: red;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     font-size: 48px;
                     font-weight: bold;
+                    background-position: center;
+                    background-repeat: no-repeat;
                 }
 
                 .project_title {
@@ -589,7 +590,7 @@ html {
         flex-direction: column;
         padding: 30px 20px;
         width: 100%;
-        height: 100%;
+        height: auto;
         .left {
             width: 100%;
             height: auto;
@@ -611,7 +612,7 @@ html {
             .bar {
                 margin: 0 auto;
                 width: 40%;
-                height: 6%;
+                height: 5vh;
                 // background-color: brown;
                 border-radius: 8px;
                 // margin-left: 25px;
@@ -773,6 +774,198 @@ html {
         }
     }
 
+}
+
+.contact {
+    width: 100%;
+    height: auto;
+    background-color: $dark-color;
+    color: $light-cardbg;
+
+    .cnt_inner {
+        padding: 25px;
+        .intro {
+            text-align: center;
+
+            h1 {
+                font-size: 39px;
+                text-transform: uppercase;
+                padding-bottom: 15px;
+                font-weight: 500;
+                font-family: 'Roboto';
+            }
+
+            p {
+                padding-bottom: 15px;
+                font-size: 15px;
+                font-weight: 300;
+                font-family: 'Roboto';
+            }
+
+            h3 {
+                color: $accent-color;
+                font-weight: 500;
+                font-family: 'Roboto';
+            }
+
+            
+        }
+
+        .msg_div {
+            width: fit-content;
+            height: auto;
+            // padding: 15px;
+            margin: 0 auto;
+            margin-top: 15px;
+            border-radius: 5px;
+            background-color: darkgreen;
+        }
+
+        .cnt_form {
+            width: 100%;
+            // background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            form {
+                .nor_inpt {
+                    display: flex;
+                    margin-top: 20px;
+                        .field {
+                            margin-bottom: 20px;
+                            input, textarea {
+                                padding: 15px 25px;
+                                width: 210px;
+                                background: transparent;
+                                box-shadow: 10px 10px 20px 3px #141414;
+                                border: 1px solid $dark-cardbg;
+                                border-radius: 6px;
+                                color: rgb(201, 201, 201);
+                                margin-left:  15px;
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+
+    
+                            textarea {
+                                width: initial;
+                            }
+    
+                            small {
+                                margin-left: 10px;
+                            }
+                        }
+                }
+
+                .field {
+                    margin-bottom: 20px;
+                    textarea {
+                        padding: 15px 25px;
+                        width: 210px;
+                        background: transparent;
+                        box-shadow: 10px 10px 20px 3px #161616;
+                        border: 1px solid $dark-cardbg;
+                        border-radius: 6px;
+                        color: rgb(201, 201, 201);
+                        margin-left:  15px;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+
+                    textarea {
+                        width: initial;
+                    }
+
+                    small {
+                        margin-left: 10px;
+                    }
+                
+        }
+
+            .submitt_cnt {
+                button {
+                    padding: 12px 35px;
+                    border-radius: 5px;
+                    margin-left: 15px;
+                    border: 1px solid transparent;
+                    background-color: $accent-color;
+                    color: white;
+                    cursor: pointer;
+                    transition: all 0.5s ease-in-out;
+
+                    &:hover {
+                        background-color: $text-darkbg;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 20vh;
+    background-color: $dark-color;
+    // background-color: red;
+    color: $light-cardbg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border: 1px solid white;
+
+    .ft_inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 10px;
+        .social-links {
+            margin-top: 20px;
+            width: 20%;
+            // background-color: blue;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 25px;
+            a {
+                // padding: 25px;
+                background-color: $dark-cardbg;
+                padding: 15px 16px;
+                box-shadow: 10px 10px 20px 3px #141414;
+                transition: all 0.5s ease-in-out;
+
+                .icn {
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    background-color: $accent-color;
+
+                    .icn {
+                        color: $light-cardbg;
+                    }
+                }
+            }
+        }
+
+        .cprght {
+            p {
+                span {
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
 }
 
 
