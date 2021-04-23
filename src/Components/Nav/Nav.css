@@ -89,4 +89,20 @@ nav .links .inner span {
 nav .links .inner span:hover {
   color: #01A1A7;
 }
+
+nav .menu_bar {
+  display: none;
+}
+
+@media only screen and (max-width: 978px) {
+  nav .links {
+    display: none;
+  }
+  nav .menu_bar {
+    display: block;
+  }
+  nav .menu_bar .mnu {
+    font-size: 18px;
+  }
+}
 /*# sourceMappingURL=Nav.css.map */

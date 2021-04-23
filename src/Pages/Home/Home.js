@@ -329,7 +329,7 @@ const Home = () => {
                         </div>
                         <div className="my-det">
                             <motion.h3 animate={{opacity: 1, transition: {duration: 2}}} initial={{opacity: 0}}>I am Okoye Udoka</motion.h3>
-                            <p> Hello i'm Okoye Udoka A Freelance Web Designer & Developer based in Lagos, Nigeria.
+                            <p>A Freelance Web Designer & Developer based in Lagos, Nigeria.
                                 Highly experienced in designing & developing websites.</p>
                         </div>
                         <motion.div 

@@ -6,7 +6,12 @@ import React, {useEffect, useState} from 'react';
 //     NavLink,
 //   } from "react-router-dom";
 import './Nav.css'
-import logo from '../../Assets/code.svg'
+import logo from '../../Assets/code.svg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faBars
+} from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => {
 
@@ -54,6 +59,10 @@ const Nav = () => {
                         <a href="#portfolio"><span>Portfolio</span></a>
                         <a href="#contact"><span>Contact</span></a>
                     </div>
+                </div>
+
+                <div className="menu_bar">
+                <FontAwesomeIcon className="mnu" color="#fff" icon={faBars} />
                 </div>
             </nav>
         </div>

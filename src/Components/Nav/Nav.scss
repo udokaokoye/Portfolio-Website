@@ -78,4 +78,26 @@ nav {
         }
         }
     }
+
+    .menu_bar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 978px) {
+
+    nav {
+        .links {
+            display: none;
+        }
+
+        .menu_bar {
+            display: block;
+
+            .mnu {
+                font-size: 18px;
+            }
+        }
+    }
+
 }
