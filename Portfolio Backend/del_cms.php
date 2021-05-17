@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($section == 'projects') {
             $id = $_POST['id'];
+        
             $query = "DELETE FROM `projects` WHERE id = '$id' ";
             if (mysqli_query($link, $query)) {
                 echo json_encode("Deleted");

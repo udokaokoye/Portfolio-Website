@@ -1,5 +1,5 @@
 <?php
-define( 'URLROOT', 'http://localhost/Portfolio%20Backend/' );
+define( 'URLROOT', 'http://192.168.200.146/Portfolio%20Backend/' );
 header( 'Access-Control-Allow-Origin: *' );
 header( 'Access-Control-Allow-Methods: GET, POST, OPTIONS' );
 header( 'Access-Control-Allow-Headers: *' );

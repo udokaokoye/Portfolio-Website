@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ( isset( $_FILES['prj_img1'] ) ) {
                 $path = 'Images/';
-                $file_name = $_FILES['prj_img1']['name'];
+                $file_name = str_replace(' ', '', $_FILES['prj_img1']['name']);
                 $file_tmp = $_FILES['prj_img1']['tmp_name'];
                 $file_type = $_FILES['prj_img1']['type'];
                 $file = $path . $file_name;
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ( isset( $_FILES['prj_img2'] ) ) {
                 $path = 'Images/';
-                $file_name = $_FILES['prj_img2']['name'];
+                $file_name = str_replace(' ', '', $_FILES['prj_img2']['name']);
                 $file_tmp = $_FILES['prj_img2']['tmp_name'];
                 $file_type = $_FILES['prj_img2']['type'];
                 $file = $path . $file_name;
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ( isset( $_FILES['prj_img3'] ) ) {
                 $path = 'Images/';
-                $file_name = $_FILES['prj_img3']['name'];
+                $file_name = str_replace(' ', '', $_FILES['prj_img3']['name']);
                 $file_tmp = $_FILES['prj_img3']['tmp_name'];
                 $file_type = $_FILES['prj_img3']['type'];
                 $file = $path . $file_name;
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ( isset( $_FILES['prj_img4'] ) ) {
                 $path = 'Images/';
-                $file_name = $_FILES['prj_img4']['name'];
+                $file_name = str_replace(' ', '', $_FILES['prj_img4']['name']);
                 $file_tmp = $_FILES['prj_img4']['tmp_name'];
                 $file_type = $_FILES['prj_img4']['type'];
                 $file = $path . $file_name;
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ( isset( $_FILES['prj_img5'] ) ) {
                 $path = 'Images/';
-                $file_name = $_FILES['prj_img5']['name'];
+                $file_name = str_replace(' ', '', $_FILES['prj_img5']['name']);
                 $file_tmp = $_FILES['prj_img5']['tmp_name'];
                 $file_type = $_FILES['prj_img5']['type'];
                 $file = $path . $file_name;
