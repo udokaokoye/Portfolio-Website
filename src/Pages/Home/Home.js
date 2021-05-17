@@ -2,6 +2,9 @@ import React, {useState, useEffect, useRef} from 'react'
 import './Home.css';
 import Particles from 'react-particles-js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Carousel from 'nuka-carousel';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 // import Isotope from 'isotope-layout';
 // import $ from 'jquery';
 import {
@@ -13,7 +16,8 @@ import {
   faEye,
   faLongArrowAltUp,
   faFileAlt,
-  faCopyright
+  faCopyright,
+  faArrowUp
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
@@ -22,9 +26,9 @@ import {
   faLinkedinIn,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import  {motion, useAnimation} from 'framer-motion';
-import {useInView} from 'react-intersection-observer';
-import FadeWhenVisible from '../../FadeWhenVisible';
+// import  {motion, useAnimation} from 'framer-motion';
+// import {useInView} from 'react-intersection-observer';
+// import FadeWhenVisible from '../../FadeWhenVisible';
 // import projects from '../../projects';
 import { parse } from '@fortawesome/fontawesome-svg-core';
 const Home = () => {
@@ -32,12 +36,36 @@ const Home = () => {
     const formData = new FormData();
 
     useEffect(() => {
+        AOS.init({
+            // Global settings:
+            disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+            startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+            initClassName: 'aos-init', // class applied after initialization
+            animatedClassName: 'aos-animate', // class applied on animation
+            useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+            disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+            debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+            throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+            
+          
+            // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 120, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 400, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: false, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out while scrolling past them
+            anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+          
+          });
         fetchSkills()
         fetchExperience()
         fetchProjects()
     }, [])
 
-    const [filterkey, setfilterkey] = useState('react js')
+  
+
+    const [filterkey, setfilterkey] = useState('*')
 
     // !Project Popup
 
@@ -100,8 +128,8 @@ const Home = () => {
     //     },
     // ];
 
-    const controls = useAnimation();
-    const [ref, inView] = useInView();
+    // const controls = useAnimation();
+    // const [ref, inView] = useInView();
 
     const [projects, setprojects] = useState([]);
     const [newarray, setnewarray] = useState([])
@@ -111,12 +139,12 @@ const Home = () => {
 
     const popupRef = useRef(null);
 
-    useEffect(() => {
-        if (inView) {
-          controls.start("visible");
-        //   alert("inview")
-        }
-      }, [controls, inView]);
+    // useEffect(() => {
+    //     if (inView) {
+    //       controls.start("visible");
+    //     //   alert("inview")
+    //     }
+    //   }, [controls, inView]);
 
     useEffect(() => {
     
@@ -134,7 +162,7 @@ const Home = () => {
 
 
     const fetchSkills = () => {
-        const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=skills'
+        const url = 'http://192.168.200.146/Portfolio%20Backend/get_cms.php?section=skills'
 
         fetch(url, {
             method: 'POST'
@@ -146,7 +174,7 @@ const Home = () => {
     }
 
     const fetchExperience = () => {
-        const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=experience'
+        const url = 'http://192.168.200.146/Portfolio%20Backend/get_cms.php?section=experience'
 
         fetch(url, {
             method: 'POST'
@@ -158,7 +186,7 @@ const Home = () => {
     }
 
     const fetchProjects = () => {
-        const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=projects'
+        const url = 'http://192.168.200.146/Portfolio%20Backend/get_cms.php?section=projects'
 
         fetch(url, {
             method: 'POST'
@@ -175,7 +203,7 @@ const Home = () => {
         formData.append('email', cnt_email);
         formData.append('message', cnt_message);
 
-        const url = 'http://localhost/Portfolio%20Backend/contact.php';
+        const url = 'http://192.168.200.146/Portfolio%20Backend/contact.php';
 
         fetch(url, {
             method: 'post',
@@ -205,11 +233,17 @@ const Home = () => {
         transition: "all 0.5s ease-in-out",
         display: 'block'
       };
+      function isEmpty(str) {
+        return (!str || str.length === 0 );
+    }
 
 
 
     return (
         <div>
+            <a
+                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400" data-aos-offset="0"
+                 className='page_up' href="#home"><FontAwesomeIcon className='page_up_icn' icon={faArrowUp} color='white' /></a>
             <div id='home' className="main-home">
             <Particles id="particles-js" 
             params={{
@@ -320,25 +354,44 @@ const Home = () => {
                     
                     <div className="left">
                         <div className="social-links">
-                            <a href="https://github.com/udokaokoye" rel="noreferrer" target='_blank'><FontAwesomeIcon className="li" color="#fff" icon={faGithub} /></a>
-                            <a href="https://web.facebook.com/udokovic" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faFacebookF} /></a>
-                            <a href="https://twitter.com/udokaokoye2" rel="noreferrer" target='_blank'><FontAwesomeIcon className="tw" color="#fff" icon={faTwitter} /></a>
-                            <a href="https://www.instagram.com/okoye__udoka/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faInstagram} /></a>
-                            <a href="https://linkedin.com/in/udoka-okoye-abba591ab/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="ig" color="#fff" icon={faLinkedinIn} /></a>
+                            <a 
+                            data-aos="zoom-in" 
+                            data-aos-duration="300" 
+                            data-aos-delay=""
+                            href="https://github.com/udokaokoye" rel="noreferrer" target='_blank'><FontAwesomeIcon className="li" color="#fff" icon={faGithub} /></a>
+                            <a
+                            data-aos="zoom-in" 
+                            data-aos-duration="300" 
+                            data-aos-delay="300"
+                             href="https://web.facebook.com/udokovic" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faFacebookF} /></a>
+                            <a 
+                            data-aos="zoom-in" 
+                            data-aos-duration="300" 
+                            data-aos-delay="500"
+                            href="https://twitter.com/udokaokoye2" rel="noreferrer" target='_blank'><FontAwesomeIcon className="tw" color="#fff" icon={faTwitter} /></a>
+                            <a 
+                            data-aos="zoom-in" 
+                            data-aos-duration="300" 
+                            data-aos-delay="700"
+                            href="https://www.instagram.com/okoye__udoka/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faInstagram} /></a>
+                            <a 
+                            data-aos="zoom-in" 
+                            data-aos-duration="300" 
+                            data-aos-delay="1000"
+                            href="https://linkedin.com/in/udoka-okoye-abba591ab/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="ig" color="#fff" icon={faLinkedinIn} /></a>
                             {/* <a href=""><FontAwesomeIcon className="li" color="#fff" icon={faLinkedinIn} /></a> */}
                         </div>
                         <div className="my-det">
-                            <motion.h3 animate={{opacity: 1, transition: {duration: 2}}} initial={{opacity: 0}}>I am Okoye Udoka</motion.h3>
-                            <p>A Freelance Web Designer & Developer based in Lagos, Nigeria.
+                            <h3 data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1000">I am Okoye Udoka</h3>
+                            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1050">A Freelance Web Designer & Developer based in Cincinnati, Ohio.
                                 Highly experienced in designing & developing websites.</p>
                         </div>
-                        <motion.div 
-                        animate={{translateY: 0, opacity: 1, transition: {duration: 2, delay: 2}}} initial={{translateY: 50, opacity: 0}}
+                        <div 
                         className="show-btns">
                             <a href="#portfolio">
-                           <button>Veiw My Portfolio <span><FontAwesomeIcon className="arrwrgt" color="#fff" icon={faArrowRight} /></span></button> 
+                           <button data-aos="fade-right" data-aos-duration="2000" data-aos-delay="1100">Veiw My Portfolio <span><FontAwesomeIcon className="arrwrgt" color="#fff" icon={faArrowRight} /></span></button> 
                            </a>
-                        </motion.div>
+                        </div>
                     </div>
                     <div
                     //  animate={{opacity: 1, transition: {duration: 3}}} initial={{opacity: 0}}
@@ -360,47 +413,47 @@ const Home = () => {
             <div className="about">
                 <div className="inner">
                     <div className="head_intro">
-                        <FadeWhenVisible><h1>ABOUT</h1></FadeWhenVisible>
-                        <motion.hr 
-                        animate={{translateX: 0, opacity: 1, transition: {duration: 1}}} initial={{translateX: 100, opacity: 0}}
+                        <h1>ABOUT</h1>
+                        <hr 
+                        
                         />
                     </div>
 
                     <div className="boxes">
                         <div className="bx1">
-                            <motion.div 
-                            animate={{opacity: 1, transition: {duration: 2}}} initial={{opacity: 0}}
+                            <div 
+                            data-aos="flip-left" data-aos-duration="1000" data-aos-delay="" data-aos-offset="70"
                             className="shape">
                                 <span><FontAwesomeIcon className="li" color="#fff" icon={faTachometerAlt} /></span>
-                            </motion.div>
+                            </div>
                             <h1>Fast</h1>
                             <p>Fast load times and lag free interaction is my highest priority.</p>
                         </div>
                         <div className="bx2">
-                            <motion.div 
-                            animate={{opacity: 1, transition: {duration: 2, delay: 0.8}}} initial={{opacity: 0}}
+                            <div 
+                            data-aos="flip-left" data-aos-duration="1000" data-aos-delay="50" data-aos-offset="70"
                             className="shape">
                                 <span><FontAwesomeIcon className="li" color="#fff" icon={faMobileAlt} /></span>
-                            </motion.div>
+                            </div>
                             <h1>Responsive</h1>
                             <p>Website layout will work on any device, big or small.
                             </p>
                         </div>
                         <div className="bx3">
-                            <motion.div 
-                            animate={{opacity: 1, transition: {duration: 2, delay: 1}}} initial={{opacity: 0}}
+                            <div 
+                            data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="40"
                             className="shape">
                             <span><FontAwesomeIcon className="li" color="#fff" icon={faLightbulb} /></span>
-                            </motion.div>
+                            </div>
                             <h1>Intuitive</h1>
                             <p>Strong preference for easy to use, intuitive UX/UI.</p>
                         </div>
                         <div className="bx4">
-                            <motion.div 
-                            animate={{opacity: 1, transition: {duration: 2, delay: 1.2}}} initial={{opacity: 0}}
+                            <div 
+                            data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="40"
                             className="shape">
                             <span><FontAwesomeIcon className="li" color="#fff" icon={faRocket} /></span>
-                            </motion.div>
+                            </div>
                             <h1>Dynamic</h1>
                             <p>Websites don't have to be static, I love making pages come to life.</p>
                         </div>
@@ -409,22 +462,25 @@ const Home = () => {
                     <div className="me_skills">
                         <div className="inner">
                             <div className="me">
-                                <div className="img"></div>
-                                <h1>Who's this guy?</h1>
+                                <div data-aos="zoom-in" data-aos-duration="900" data-aos-delay="" className="img"></div>
+                                <h1 data-aos="fade-up" data-aos-duration="900" data-aos-delay="50">Who's this guy?</h1>
 
-                                <p>I'm a Fullstack Developer in Lagos, Nigeria.
+                                <p data-aos="fade-in" data-aos-duration="900" data-aos-delay="200">I'm a Fullstack Developer in Cincinnati, Ohio.
 I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
 Let's make something special</p>
+                                <div className="cnt_res_btns">
+                                <a href="#contact" ><button className='resume'>Contact Me</button></a>
                                 <a href="https://drive.google.com/file/d/1VcRyB5ChzmjZYwwj-p1KCiF-7a0AfjU6/view?usp=sharing" target='_blank'><button className='resume'><FontAwesomeIcon className="resm" color="#fff" icon={faFileAlt} /> Resume</button></a>
+                                </div>
                             </div>
                             <div className="skills">
                                 {skills.map((skill) => {
                                     return (
                                         <div className="skill_bar">
                                     <div className="skill_fill">
-                                        <motion.div title={skill.skill + " - " + skill.percent + "%"}
-                                         animate={{opacity: 1, width: parseInt(skill.percent) + 10 + "%", transition: {duration: 2}}} initial={{opacity: 0, width: 0}}
-                                         style={{}} className="inner_fill"></motion.div>
+                                        <div title={skill.skill + " - " + skill.percent + "%"}
+                                         data-aos="fade-right" data-aos-duration="1000" data-aos-offset="50"
+                                         style={{ width: parseInt(skill.percent) + 10 + "%"}} className="inner_fill"></div>
                                     <div title={skill.skill + " - " + skill.percent + "%"} className="skill_name">{skill.skill}</div>
                                     </div>
                                     <span title={skill.skill + " - " + skill.percent + "%"} className="skill_percent">{skill.percent}%</span>
@@ -449,7 +505,7 @@ Let's make something special</p>
                     <div className="inner-rgt">
                         {experience.map((exp) => {
                             return (
-                                <div className="experience_container">
+                                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="" className="experience_container">
                             <h1 className="jb_title">{exp.job_title}</h1>
                             <h3 className="organization">{exp.company}</h3>
                             <span className="date_location">{exp.duration}</span>
@@ -474,7 +530,17 @@ Let's make something special</p>
             <div ref={popupRef} style={{display: project_popup[0] ? 'block' : 'none'}} className="project_popup">
                 <div style={project_popup[0] ? openProjectPopup : closeProjectPopup} className="project_inner">
                 <div className="project_popup_main">
-                    <div style={{backgroundImage: `url(${project_popup[1].prj_img1})`, backgroundSize: `${project_popup[1].project_platform === 'web' ? 'cover' : 'cover'}` }} className="img_slide"></div>
+                    <div 
+                    // style={{backgroundImage: `url(${project_popup[1].prj_img1})`, backgroundSize: `${project_popup[1].project_platform === 'Web' ? 'cover' : 'contain'}` }} 
+                    className="img_slide">
+                        <Carousel style={{widows: "100%", height: "100%"}}>
+                            <img style={{width: project_popup[1].project_platform === 'Mobile' ? '30%' : '100%'}} className='slider_img' src={project_popup[1].prj_img1} />
+                            <img style={{width: project_popup[1].project_platform === 'Mobile' ? '30%' : '100%'}} className='slider_img' src={project_popup[1].prj_img2} />
+                            <img style={{width: project_popup[1].project_platform === 'Mobile' ? '30%' : '100%'}} className='slider_img' src={project_popup[1].prj_img3} />
+                            <img style={{width: project_popup[1].project_platform === 'Mobile' ? '30%' : '100%'}} className='slider_img' src={project_popup[1].prj_img4} />
+                            <img style={{width: project_popup[1].project_platform === 'Mobile' ? '30%' : '100%'}} className='slider_img' src={project_popup[1].prj_img5} />
+                        </Carousel>
+                    </div>
                     <div className="project_title"><h3>{project_popup[1].project_name}</h3></div>
                     <div className="prj_description">
                         <p>{project_popup[1].project_description}</p>
@@ -506,7 +572,7 @@ Let's make something special</p>
                    {newarray.slice(0, 6).map((project) => {
                        return (
                            
-                        <div style={{backgroundImage: `url(${project.prj_img1})`, backgroundSize: `${project.project_platform === 'Web' ? 'cover' : 'contain'}` }} className="project_div prj1">
+                        <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="" style={{backgroundImage: `url(${project.prj_img1})`, backgroundSize: `${project.project_platform === 'Web' ? 'cover' : 'contain'}` }} className="project_div prj1">
                         <div className="prj_card">
                         <div className="prj_txt"><span>{project.project_name}<br/> <span className='lng_used'>{project.project_tech}</span></span></div>
                         <div className="prj_but"><button onClick={() => {

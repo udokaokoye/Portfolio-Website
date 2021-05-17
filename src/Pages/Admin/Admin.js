@@ -101,6 +101,7 @@ const Admin = () => {
         })
         .then((data) => data.json())
         .then((res) => {
+            console.log(res)
             fetchProjects()
         });
     }
@@ -359,6 +360,7 @@ const Admin = () => {
                         <h1>Projects</h1>
 
                         <div className="ext_project">
+                            <span>Filter Keys:- React Js - react js, React Native - react native PHP - php, Python - python</span>
                             {projects.map((project) => {
                                 return (
                                     <div className="cnt">

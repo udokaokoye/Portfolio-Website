@@ -15,6 +15,20 @@ html {
   scroll-behavior: smooth;
 }
 
+.page_up {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  padding: 15px;
+  background-color: #01a1a79c;
+  border-radius: 9px;
+  z-index: 10;
+}
+
+.page_up:hover {
+  background-color: #01A1A7;
+}
+
 .main-home {
   width: 100%;
   height: 100vh;
@@ -33,7 +47,8 @@ html {
   z-index: 5;
   width: 100%;
   height: 80%;
-  padding-top: 18vh;
+  padding-top: 17vh;
+  overflow: hidden;
 }
 
 .main-home .show .show_inner {
@@ -48,6 +63,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 .main-home .show .left {
@@ -85,8 +101,6 @@ html {
   border: 2px solid #01A1A7;
   border-radius: 50%;
   padding: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 
 .main-home .show .left .social-links a:hover {
@@ -117,9 +131,10 @@ html {
 }
 
 .main-home .show .left .my-det p {
+  font-family: 'Roboto';
   margin-top: 20px;
   font-size: 22px;
-  font-weight: 100;
+  font-weight: 200;
   word-wrap: break-word;
   word-spacing: 3px;
 }
@@ -136,8 +151,6 @@ html {
   background-color: transparent;
   color: white;
   border: 2px solid #01A1A7;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
 
@@ -176,6 +189,7 @@ html {
   background-position: top;
   background-repeat: no-repeat;
   background-size: 80%;
+  overflow: hidden;
 }
 
 .main-home .show .dwn-btn {
@@ -415,6 +429,16 @@ html {
   text-align: center;
 }
 
+.about .inner .me_skills .inner .me .cnt_res_btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .about .inner .me_skills .inner .me .resume {
   padding: 12px 35px;
   margin-top: 20px;
@@ -456,6 +480,7 @@ html {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 18px;
+  overflow: hidden;
 }
 
 .about .inner .me_skills .inner .skills .skill_bar .skill_fill {
@@ -559,6 +584,9 @@ html {
   margin-bottom: 10px;
   color: #007175;
   cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .experience .inner .right .experience_container .jb_function {
@@ -577,10 +605,11 @@ html {
 
 .projects .project_popup {
   width: 100%;
-  height: 111vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.781);
-  position: absolute;
-  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
 }
 
 .projects .project_popup .project_inner {
@@ -601,11 +630,12 @@ html {
   width: 40%;
   height: 80%;
   background-color: #f0f0f0;
+  overflow: scroll;
 }
 
 .projects .project_popup .project_inner .project_popup_main .img_slide {
   width: 100%;
-  height: 45%;
+  height: 55%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -619,6 +649,10 @@ html {
   font-weight: bold;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.projects .project_popup .project_inner .project_popup_main .img_slide .slider_img {
+  margin: 0 auto;
 }
 
 .projects .project_popup .project_inner .project_popup_main .project_title h3 {
@@ -635,7 +669,7 @@ html {
 }
 
 .projects .project_popup .project_inner .project_popup_main .prj_btns {
-  width: 45%;
+  width: 100%;
   padding: 0px 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -958,7 +992,7 @@ html {
   background: transparent;
   -webkit-box-shadow: 10px 10px 20px 3px #141414;
           box-shadow: 10px 10px 20px 3px #141414;
-  border: 1px solid #4b4b4b;
+  border: 1px solid #2e2e2e;
   border-radius: 6px;
   color: #c9c9c9;
   margin-left: 15px;
@@ -986,7 +1020,7 @@ html {
   background: transparent;
   -webkit-box-shadow: 10px 10px 20px 3px #161616;
           box-shadow: 10px 10px 20px 3px #161616;
-  border: 1px solid #4b4b4b;
+  border: 1px solid #2e2e2e;
   border-radius: 6px;
   color: #c9c9c9;
   margin-left: 15px;
@@ -1406,6 +1440,15 @@ html {
   .about .inner .me_skills .inner .me .img {
     height: 25vh;
   }
+  .about .inner .me_skills .inner .me .cnt_res_btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .about .inner .me_skills .inner .skills {
     width: 95%;
   }
@@ -1484,6 +1527,19 @@ html {
   .footer .ft_inner .social-links {
     width: 80%;
   }
+  .about .inner .head_intro {
+    margin-top: 0px;
+  }
+  .about .inner .head_intro h1 {
+    font-size: 28px;
+  }
+  .about .inner .head_intro hr {
+    width: 75px;
+    border-width: 2px;
+  }
+  .about .inner .boxes {
+    margin-top: 0px;
+  }
 }
 
 @media only screen and (max-width: 414px) {
@@ -1506,6 +1562,9 @@ html {
   .projects .inner .right .prjs {
     display: block;
     width: 100%;
+  }
+  .main-home .show .right {
+    background-color: #202020;
   }
 }
 
@@ -1562,6 +1621,12 @@ html {
   .projects .inner .right .prjs {
     display: block;
     width: 100%;
+  }
+  .main-home .show .left .my-det h3 {
+    font-size: 23px;
+  }
+  .main-home .show .left .my-det p {
+    font-size: 16px;
   }
 }
 
