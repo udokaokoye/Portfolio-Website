@@ -95,3 +95,15 @@ $dark-cardbg: #4b4b4b;
         }
     }
 }
+
+@media only screen and (max-width: 768px) {
+.auth_main {
+    .auth_inner {
+        .img {
+            width: 80%;
+            height: 30%;
+            background-color:$dark-color;
+        }
+    }
+}
+}

@@ -383,7 +383,7 @@ $dark-cardbg: #4b4b4b;
                     // display: block;
                     margin-top: 25px;
 
-                    input {}
+                    
                 }
 
                 .chkbx {
@@ -421,6 +421,95 @@ $dark-cardbg: #4b4b4b;
 
                         &:focus {
                             outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .admin_main {
+        .nav {
+            h1 {
+                font-size: 16px;
+            }
+
+            button {
+                padding: 5px 15px;
+            }
+        }
+
+        .main_body {
+            .cms_skills {
+                .ext_skills {
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    .cnt {
+                        padding: 4px 8px;
+                        margin: 0px;
+                        margin-top: 10px;
+                    }
+                }
+                .add_skills {
+                    .skills_form {
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+
+                        .field2 {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+
+            .cms_experience {
+                .ext_experience {
+                    flex-wrap: wrap;
+
+                    .cnt {
+                        margin-left: 0;
+                        margin-top: 10px;
+                    }
+                }
+
+                .add_experience {
+                    .experience_form {
+                        flex-wrap: wrap;
+
+                        .field2, .field3, .field4 {
+                            margin-left: 0;
+
+                            textarea {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .cms_project {
+                .ext_project {
+                    flex-wrap: wrap;
+
+                    .cnt {
+                        width: 100%;
+                    }
+                }
+
+                .add_project {
+                    .project_form {
+                        flex-wrap: wrap;
+
+                        .field2, .field3, .field4 {
+                            margin-left: 0;
+
+                            textarea {
+                                width: 100%;
+                            }
                         }
                     }
                 }

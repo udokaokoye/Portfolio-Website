@@ -1,18 +1,6 @@
 import React, {useEffect, useState} from 'react';
-// import {
-//     BrowserRouter as Router,
-//     Route,
-//     Link,
-//     NavLink,
-//   } from "react-router-dom";
 import './Nav.css'
 import logo from '../../Assets/icon.PNG';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import {
-  faBars
-} from "@fortawesome/free-solid-svg-icons";
-import AOS from 'aos';
 import 'aos/dist/aos.css'
 
 const Nav = () => {
@@ -23,12 +11,9 @@ const Nav = () => {
 
     function vhToPixels (vh) {
         return Math.round(window.innerHeight / (100 / vh));
-        // console.log(Math.round(window.innerHeight / (100 / vh)) + 'px')
-        // alert(Math.round(window.innerHeight / (100 / vh)) + 'px')
       }
 
     useEffect(() => {
-        // vhToPixels(100)
 
         window.onscroll = () => {
             if (window.scrollY > 20) {
@@ -44,14 +29,6 @@ const Nav = () => {
             }
         }
     }, [])
-
-    function disableScrolling() {
-      // var x = window.scrollX;
-      // var y = window.scrollY;
-      window.onscroll = function () {
-        window.scrollTo({top: 0, behavior: 'auto'});
-      };
-    }
   
     function enableScrolling() {
       window.onscroll = () => {
@@ -75,7 +52,6 @@ const Nav = () => {
     
     const open = {
       transition: "all 0.5s ease-in-out",
-      // height: "100%",
       width: "100%",
       transform: "scale(1)",
       top: 0,
@@ -86,7 +62,6 @@ const Nav = () => {
   
     const close = {
       transition: "all 0.5s ease-in-out",
-      // height: "100%",
       width: "100%",
       transform: "scale(0.001)",
       opacity: 0
@@ -95,7 +70,6 @@ const Nav = () => {
       <React.Fragment>
         
         <div className={`main-nav ${navTrans}`}>
-            {/* <div className="scr"></div> */}
             <nav 
                 data-aos="fade-down" 
                 data-aos-duration="1500" 
@@ -103,8 +77,8 @@ const Nav = () => {
                   <div className="logo">
                     
                 
-                <img onClick={() => window.location.href = 'http://192.168.200.146:3000/'} src={logo} alt="code"/>
-                <h1 onClick={() => window.location.href = 'http://192.168.200.146:3000/'}>Udoka Okoye</h1>
+                <img onClick={() => window.location.href = 'https://udokaokoye.com'} src={logo} alt="code"/>
+                <h1 onClick={() => window.location.href = 'https://udokaokoye.com'}>Udoka Okoye</h1>
                 
                 </div>
 
@@ -126,7 +100,7 @@ const Nav = () => {
                         data-aos-duration="600" 
                         data-aos-delay="1700"
                         href="#experience"><span>Experience</span></a>
-                        {/* <a href="#experience_div"><span>Projects</span></a> */}
+                        
                         <a 
                         data-aos="fade-in" 
                         data-aos-duration="600" 
@@ -142,7 +116,6 @@ const Nav = () => {
 
                 <div onClick={() => {
                   setsideNav(true);
-                  // window.scrollTo(0, 0);
                   }}
                   data-aos="fade-right" 
                   data-aos-duration="1250" 
@@ -162,10 +135,7 @@ const Nav = () => {
                     enableScrolling()
                     }} className='close-bar'><span>&times;</span></div>
                 <div className="side-nav-inner">
-                  {/* <button onClick={() => {
-                    setsideNav(false);
-                    enableScrolling()
-                    }}>close</button> */}
+                  
 
                     <ul>
                       <a data-aos="fade-down" data-aos-duration="800" data-aos-delay="300" onClick={() => setsideNav(false)} href="#home"><li>Home</li></a>

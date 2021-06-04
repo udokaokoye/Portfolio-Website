@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {
     useHistory
   } from "react-router-dom";
@@ -10,9 +10,7 @@ const AdminLogin = () => {
     const [userAuthenticated, setuserAuthenticated] = useState(false)
     const formData = new FormData();
     const history = useHistory()
-    // useEffect(() => {
-    //     // testApi()
-    // }, [])
+    
 
     const SigninHandler = () => {
         
@@ -30,7 +28,7 @@ const AdminLogin = () => {
             formData.append('password', password)
         }
         
-        const url = 'http://localhost/Portfolio%20Backend/signin.php';
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/signin.php';
         fetch(url, {
             method: 'post',
             body: formData

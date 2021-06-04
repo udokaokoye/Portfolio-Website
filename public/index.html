@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/icon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#202020" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Okoye Levi Udoka. Software Engineer, Full-Stack Web Developer Based in Cincinnati, Ohio"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/icon.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -25,6 +25,16 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Okoye .L Udoka</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D04GB2GHQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D04GB2GHQX');
+</script>
    
   </head>
   <body>
@@ -40,30 +50,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 
-    <script>
 
-var $isotope = $('.prjs').isotope({});
-$('.controlss').on('click', 'button', function() {
-  var filterValue = $(this).attr('data-filter');
-  $isotope.isotope({
-    filter: filterValue
-  });
-
-  alert("Hello")
-});
-      // var grid = $('.prjs').isotope({
-      //   // options
-      //   itemSelector: '.project_div',
-      //   layoutMode: 'fitRows'
-      //   });
-
-      //   grid.isotope({
-      //       filter: '.react'
-      //   })
-  </script>
   </body>
 </html>

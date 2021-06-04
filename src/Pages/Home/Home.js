@@ -5,15 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Carousel from 'nuka-carousel';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
-// import Isotope from 'isotope-layout';
-// import $ from 'jquery';
 import {
   faArrowRight,
   faTachometerAlt,
   faMobileAlt,
   faLightbulb,
   faRocket,
-  faEye,
   faLongArrowAltUp,
   faFileAlt,
   faCopyright,
@@ -26,11 +23,6 @@ import {
   faLinkedinIn,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-// import  {motion, useAnimation} from 'framer-motion';
-// import {useInView} from 'react-intersection-observer';
-// import FadeWhenVisible from '../../FadeWhenVisible';
-// import projects from '../../projects';
-import { parse } from '@fortawesome/fontawesome-svg-core';
 const Home = () => {
     
     const formData = new FormData();
@@ -162,7 +154,7 @@ const Home = () => {
 
 
     const fetchSkills = () => {
-        const url = 'http://192.168.200.146/Portfolio%20Backend/get_cms.php?section=skills'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/get_cms.php?section=skills'
 
         fetch(url, {
             method: 'POST'
@@ -174,7 +166,7 @@ const Home = () => {
     }
 
     const fetchExperience = () => {
-        const url = 'http://192.168.200.146/Portfolio%20Backend/get_cms.php?section=experience'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/get_cms.php?section=experience'
 
         fetch(url, {
             method: 'POST'
@@ -186,7 +178,7 @@ const Home = () => {
     }
 
     const fetchProjects = () => {
-        const url = 'http://192.168.200.146/Portfolio%20Backend/get_cms.php?section=projects'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/get_cms.php?section=projects'
 
         fetch(url, {
             method: 'POST'
@@ -194,7 +186,6 @@ const Home = () => {
         .then((data) => data.json())
         .then((res) => {
             setprojects(res)
-            // console.log(res);
         });
     }
 
@@ -203,7 +194,7 @@ const Home = () => {
         formData.append('email', cnt_email);
         formData.append('message', cnt_message);
 
-        const url = 'http://192.168.200.146/Portfolio%20Backend/contact.php';
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/contact.php';
 
         fetch(url, {
             method: 'post',
@@ -382,7 +373,7 @@ const Home = () => {
                             {/* <a href=""><FontAwesomeIcon className="li" color="#fff" icon={faLinkedinIn} /></a> */}
                         </div>
                         <div className="my-det">
-                            <h3 data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1000">I am Okoye Udoka</h3>
+                            <h3 data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1000">I am Udoka Okoye</h3>
                             <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1050">A Freelance Web Designer & Developer based in Cincinnati, Ohio.
                                 Highly experienced in designing & developing websites.</p>
                         </div>
@@ -394,7 +385,9 @@ const Home = () => {
                         </div>
                     </div>
                     <div
-                    //  animate={{opacity: 1, transition: {duration: 3}}} initial={{opacity: 0}}
+                    data-aos="fade-in" 
+                    data-aos-duration="2500" 
+                    data-aos-delay="1100"
                      className="right">
                         {/* <img src={mypic} alt=""/> */}
                     </div>
@@ -465,12 +458,12 @@ const Home = () => {
                                 <div data-aos="zoom-in" data-aos-duration="900" data-aos-delay="" className="img"></div>
                                 <h1 data-aos="fade-up" data-aos-duration="900" data-aos-delay="50">Who's this guy?</h1>
 
-                                <p data-aos="fade-in" data-aos-duration="900" data-aos-delay="200">I'm a Fullstack Developer in Cincinnati, Ohio.
-I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
-Let's make something special</p>
+                                <p data-aos="fade-in" data-aos-duration="900" data-aos-delay="200">I'm a Fullstack Developer in Cincinnati, Ohio
+with a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
+<br /> Let's make something special</p>
                                 <div className="cnt_res_btns">
                                 <a href="#contact" ><button className='resume'>Contact Me</button></a>
-                                <a href="https://drive.google.com/file/d/1VcRyB5ChzmjZYwwj-p1KCiF-7a0AfjU6/view?usp=sharing" target='_blank'><button className='resume'><FontAwesomeIcon className="resm" color="#fff" icon={faFileAlt} /> Resume</button></a>
+                                <a href="https://udokaokoye.com/Updated%20Resume.pdf" download target='_blank'><button className='resume'><FontAwesomeIcon className="resm" color="#fff" icon={faFileAlt} /> Resume</button></a>
                                 </div>
                             </div>
                             <div className="skills">
@@ -529,7 +522,8 @@ Let's make something special</p>
         <div id='portfolio' className="projects project_grid">
             <div ref={popupRef} style={{display: project_popup[0] ? 'block' : 'none'}} className="project_popup">
                 <div style={project_popup[0] ? openProjectPopup : closeProjectPopup} className="project_inner">
-                <div className="project_popup_main">
+                {project_popup[0] ? (
+                    <div data-aos="zoom-in" data-aos-duration="1000" className="project_popup_main">
                     <div 
                     // style={{backgroundImage: `url(${project_popup[1].prj_img1})`, backgroundSize: `${project_popup[1].project_platform === 'Web' ? 'cover' : 'contain'}` }} 
                     className="img_slide">
@@ -550,6 +544,7 @@ Let's make something special</p>
                         <button onClick={() => {setproject_popup([false, []])}} className='cls_btn'>Close</button>
                     </div>
                 </div>
+                ) : (<p></p>)}
                 </div>
             </div>
            <div className="inner">

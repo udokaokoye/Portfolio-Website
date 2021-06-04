@@ -6,7 +6,6 @@ import {
 
   import {
     faLink,
-    faPlus,
     faTrash
   } from "@fortawesome/free-solid-svg-icons";
   import './Admin.css'
@@ -62,7 +61,7 @@ const Admin = () => {
 
     const deleteSkill = (id) => {
         
-        const url = 'http://localhost/Portfolio%20Backend/del_cms.php?section=skills'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/del_cms.php?section=skills'
         formData.append("id", id);
 
         fetch(url, {
@@ -77,7 +76,7 @@ const Admin = () => {
 
     const deleteExperience = (id) => {
         
-        const url = 'http://localhost/Portfolio%20Backend/del_cms.php?section=experience'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/del_cms.php?section=experience'
         formData.append("id", id);
 
         fetch(url, {
@@ -92,7 +91,7 @@ const Admin = () => {
 
     const deleteProject = (id) => {
         
-        const url = 'http://localhost/Portfolio%20Backend/del_cms.php?section=projects'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/del_cms.php?section=projects'
         formData.append("id", id);
 
         fetch(url, {
@@ -101,13 +100,12 @@ const Admin = () => {
         })
         .then((data) => data.json())
         .then((res) => {
-            console.log(res)
             fetchProjects()
         });
     }
 
     const fetchSkills = () => {
-        const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=skills'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/get_cms.php?section=skills'
 
         fetch(url, {
             method: 'POST'
@@ -119,7 +117,7 @@ const Admin = () => {
     }
 
     const fetchExperience = () => {
-        const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=experience'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/get_cms.php?section=experience'
 
         fetch(url, {
             method: 'POST'
@@ -131,7 +129,7 @@ const Admin = () => {
     }
 
     const fetchProjects = () => {
-        const url = 'http://localhost/Portfolio%20Backend/get_cms.php?section=projects'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/get_cms.php?section=projects'
 
         fetch(url, {
             method: 'POST'
@@ -143,7 +141,7 @@ const Admin = () => {
     }
 
     const addSkill = () => {
-        const url = 'http://localhost/Portfolio%20Backend/cms.php?section=skills'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/cms.php?section=skills'
         formData.append('skill_name', skill_name)
         formData.append('skill_percent', skill_percent)
 
@@ -163,7 +161,7 @@ const Admin = () => {
     }
 
     const addExperience = () => {
-        const url = 'http://localhost/Portfolio%20Backend/cms.php?section=experience'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/cms.php?section=experience'
         formData.append('jb_position', jb_position)
         formData.append('jb_company', jb_company)
         formData.append('jb_duration_location', jb_duration_location)
@@ -185,7 +183,7 @@ const Admin = () => {
     }
 
     const addProject = () => {
-        const url = 'http://localhost/Portfolio%20Backend/cms.php?section=projects'
+        const url = 'https://udokaokoye.com/Portfolio%20Backend/cms.php?section=projects'
         formData.append('prj_title', prj_title)
         formData.append('prj_tech', prj_tech)
         formData.append('prj_url', prj_url)
@@ -225,7 +223,6 @@ const Admin = () => {
         })
         .then((data) => data.json())
         .then((res) => {
-            console.log(res);
             if (res === 'SUCCESS') {
                 setprojects_msg(['Project Added', '#20cf20']);
                 fetchProjects()
@@ -360,7 +357,7 @@ const Admin = () => {
                         <h1>Projects</h1>
 
                         <div className="ext_project">
-                            <span>Filter Keys:- React Js - react js, React Native - react native PHP - php, Python - python</span>
+                            
                             {projects.map((project) => {
                                 return (
                                     <div className="cnt">
@@ -376,6 +373,8 @@ const Admin = () => {
                         </div>
                         <div className="add_project">
                             <h3>Add project</h3>
+                            <br />
+                            <span>Filter Keys:- React Js - react js, React Native - react native PHP - php, Python - python</span>
                             <p style={{color: projects_msg[1]}}>{projects_msg[0]}</p>
                             <form onSubmit={(e) => {e.preventDefault(); addProject()}}>
                             <div className="project_form">

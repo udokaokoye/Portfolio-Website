@@ -460,4 +460,73 @@
 .admin_main .main_body .cms_project .add_project .add_project_btn button:focus {
   outline: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .admin_main .nav h1 {
+    font-size: 16px;
+  }
+  .admin_main .nav button {
+    padding: 5px 15px;
+  }
+  .admin_main .main_body .cms_skills .ext_skills {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .admin_main .main_body .cms_skills .ext_skills .cnt {
+    padding: 4px 8px;
+    margin: 0px;
+    margin-top: 10px;
+  }
+  .admin_main .main_body .cms_skills .add_skills .skills_form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .admin_main .main_body .cms_skills .add_skills .skills_form .field2 {
+    margin-left: 0;
+  }
+  .admin_main .main_body .cms_experience .ext_experience {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .admin_main .main_body .cms_experience .ext_experience .cnt {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .admin_main .main_body .cms_experience .add_experience .experience_form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .admin_main .main_body .cms_experience .add_experience .experience_form .field2, .admin_main .main_body .cms_experience .add_experience .experience_form .field3, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 {
+    margin-left: 0;
+  }
+  .admin_main .main_body .cms_experience .add_experience .experience_form .field2 textarea, .admin_main .main_body .cms_experience .add_experience .experience_form .field3 textarea, .admin_main .main_body .cms_experience .add_experience .experience_form .field4 textarea {
+    width: 100%;
+  }
+  .admin_main .main_body .cms_project .ext_project {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .admin_main .main_body .cms_project .ext_project .cnt {
+    width: 100%;
+  }
+  .admin_main .main_body .cms_project .add_project .project_form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .admin_main .main_body .cms_project .add_project .project_form .field2, .admin_main .main_body .cms_project .add_project .project_form .field3, .admin_main .main_body .cms_project .add_project .project_form .field4 {
+    margin-left: 0;
+  }
+  .admin_main .main_body .cms_project .add_project .project_form .field2 textarea, .admin_main .main_body .cms_project .add_project .project_form .field3 textarea, .admin_main .main_body .cms_project .add_project .project_form .field4 textarea {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=Admin.css.map */

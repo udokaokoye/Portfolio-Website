@@ -411,9 +411,9 @@ html {
 
 .about .inner .me_skills .inner .me .img {
   width: 100%;
-  height: 80%;
+  height: 100%;
   background: url("../../Assets/cartoonpic.png");
-  background-position: center;
+  background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -437,11 +437,11 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 20px;
 }
 
 .about .inner .me_skills .inner .me .resume {
   padding: 12px 35px;
-  margin-top: 20px;
   border: none;
   background-color: #01A1A7;
   color: white;
@@ -593,6 +593,10 @@ html {
   margin-top: 25px;
 }
 
+.experience .inner .right .experience_container .jb_function ul {
+  white-space: pre-wrap;
+}
+
 .experience .inner .right .experience_container .jb_function ul li {
   margin-left: 45px;
   margin-bottom: 15px;
@@ -628,9 +632,8 @@ html {
 
 .projects .project_popup .project_inner .project_popup_main {
   width: 40%;
-  height: 80%;
+  height: 100%;
   background-color: #f0f0f0;
-  overflow: scroll;
 }
 
 .projects .project_popup .project_inner .project_popup_main .img_slide {
@@ -1307,6 +1310,9 @@ html {
         -ms-flex-align: center;
             align-items: center;
   }
+  .project_popup .project_inner .project_popup_main .prj_description {
+    overflow-y: scroll;
+  }
 }
 
 @media only screen and (max-width: 692px) {
@@ -1552,6 +1558,9 @@ html {
   }
   .projects .project_popup .project_inner .project_popup_main .img_slide {
     height: 40%;
+  }
+  .projects .project_popup .project_inner .project_popup_main .prj_description {
+    overflow-y: scroll;
   }
   .projects .project_popup .project_inner .project_popup_main .prj_btns {
     width: 90%;

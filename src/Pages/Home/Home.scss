@@ -348,9 +348,10 @@ html {
 
                     .img {
                         width: 100%;
-                        height: 80%;
+                        height: 100%;
                         background: url('../../Assets/cartoonpic.png');
-                        background-position: center;
+                        // background-color: red;
+                        background-position: top;
                         background-size: contain;
                         background-repeat: no-repeat;
                     }
@@ -369,11 +370,12 @@ html {
                         display: flex;
                         width: 60%;
                         justify-content: space-between;
+                        // background-color: red;
+                        margin-top: 20px;
                     }
 
                     .resume {
                         padding:  12px 35px;
-                        margin-top: 20px;
                         border: none;
                         background-color: $accent-color;
                         color: white;
@@ -503,6 +505,7 @@ html {
                 .jb_function {
                     margin-top: 25px;
                     ul {
+                        white-space: pre-wrap;
                         li {
                             margin-left: 45px;
                             margin-bottom: 15px;
@@ -539,9 +542,9 @@ html {
             
             .project_popup_main {
                 width: 40%;
-                height: 80%;
+                height: 100%;
                 background-color: rgb(240, 240, 240);
-                overflow: scroll;
+                // overflow: scroll;
     
                 .img_slide {
                     width: 100%;
@@ -1287,6 +1290,15 @@ html {
             }
         }
     }
+    .project_popup {
+        .project_inner {
+            .project_popup_main {
+                .prj_description {
+                    overflow-y: scroll;
+                }
+            }
+        }
+    }
 
 }
 
@@ -1618,6 +1630,10 @@ html {
 
                     .img_slide {
                         height: 40%;
+                    }
+
+                    .prj_description {
+                        overflow-y: scroll;
                     }
 
                     .prj_btns {

@@ -102,4 +102,12 @@
 .auth_main .auth_inner .main_form .submit_btn:focus {
   outline: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .auth_main .auth_inner .img {
+    width: 80%;
+    height: 30%;
+    background-color: #202020;
+  }
+}
 /*# sourceMappingURL=AdminLogin.css.map */
