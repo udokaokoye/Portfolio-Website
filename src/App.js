@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home';
 import Admin from "./Pages/Admin/Admin";
 import AdminAuth from "./Pages/AdminLogin/AdminLogin";
 import NavBar from './Components/Nav/Nav';
+import Bbn from "./Pages/BBN/Bbn";
 function App() {
   
   return (
@@ -23,6 +24,10 @@ function App() {
 
         <Route key={'/auth/admin'} exact path={'/auth/admin'}>
             <AdminAuth />
+        </Route>
+
+        <Route path='/bbnlive' exact key={"bbnlive"}>
+          <Bbn />
         </Route>
       </React.Fragment>
     </Router>

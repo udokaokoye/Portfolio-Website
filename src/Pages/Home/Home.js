@@ -143,7 +143,7 @@ const Home = () => {
         var updatedArray = projects.filter(function (el) {
 
             if (filterkey === '*') {
-                return projects
+                return el.project_platform == 'Web'
             } else {
                     return el.project_filter_key === filterkey;
             }
@@ -565,19 +565,20 @@ with a serious passion for UI effects, animations and creating intuitive, dynami
                <div className="prjs" id="prjs">
 
                    {newarray.slice(0, 6).map((project) => {
-                       return (
+                        return (
                            
-                        <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="" style={{backgroundImage: `url(${project.prj_img1})`, backgroundSize: `${project.project_platform === 'Web' ? 'cover' : 'contain'}` }} className="project_div prj1">
-                        <div className="prj_card">
-                        <div className="prj_txt"><span>{project.project_name}<br/> <span className='lng_used'>{project.project_tech}</span></span></div>
-                        <div className="prj_but"><button onClick={() => {
-                            setproject_popup([true, project])
-                            // popupRef.current.scrollIntoView()
-                            }}>Learn More</button></div>
-                        </div>
-                        
-                        </div>
-                       );
+                            <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="" style={{backgroundImage: `url(${project.prj_img1})`, backgroundSize: `${project.project_platform === 'Web' ? 'contain' : 'contain'}` }} className="project_div prj1">
+                            <div className="prj_card">
+                            <div className="prj_txt"><span>{project.project_name}<br/> <span className='lng_used'>{project.project_tech}</span></span></div>
+                            <div className="prj_but"><button onClick={() => {
+                                setproject_popup([true, project])
+                                // popupRef.current.scrollIntoView()
+                                }}>Learn More</button></div>
+                            </div>
+                            
+                            </div>
+                           );
+                       
                    })}
                     
                </div>

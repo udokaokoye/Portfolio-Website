@@ -708,11 +708,11 @@ html {
             .prjs {
                 margin: 0 auto;
                 height: 100%;
-                width: 85%;
+                width: 95%;
                 // background-color: red;
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-                grid-gap: 1rem;
+                grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+                grid-gap: 0.5rem;
                 justify-content: center;
                 // background-color: red;
 
@@ -724,9 +724,11 @@ html {
                     position: relative;
                     // background: url('../../Assets/ProjectImage/church 2.PNG');
                     // background-size: cover;
-                    // background-position: center;
+                    background-position: top !important;
                     // background-repeat: no-repeat;
-                    transition: all 0.5s ease-in-out;
+                    // background-size: contain ;
+                    // background-position: bottom;
+                    // transition: all 0.5s ease-in-out;
 
                     .prj_card {
                         overflow: hidden;

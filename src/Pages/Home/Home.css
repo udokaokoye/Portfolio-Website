@@ -808,12 +808,12 @@ html {
 .projects .inner .right .prjs {
   margin: 0 auto;
   height: 100%;
-  width: 85%;
+  width: 95%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(30%, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-  grid-gap: 1rem;
+  -ms-grid-columns: (minmax(40%, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  grid-gap: 0.5rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -823,8 +823,7 @@ html {
   width: 100%;
   height: 40vh;
   position: relative;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  background-position: top !important;
 }
 
 .projects .inner .right .prjs .project_div .prj_card {

@@ -1,0 +1,55 @@
+.Container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.Container h1 {
+  text-align: center;
+  padding-top: 45px;
+}
+
+.Container .liveContainer {
+  width: 70%;
+  height: 60vh;
+  margin: 0 auto;
+  margin-top: 35px;
+}
+
+.Container p {
+  margin-top: 45px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.Container p a {
+  color: initial;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.Container .broghttoyou {
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 699px) {
+  .Container {
+    min-height: 50vh;
+  }
+  .Container h1 {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 494px) {
+  .Container {
+    min-height: 50vh;
+  }
+  .Container h1 {
+    font-size: 18px;
+  }
+  .Container p {
+    font-size: 15px;
+  }
+}
+/*# sourceMappingURL=Bbn.css.map */
