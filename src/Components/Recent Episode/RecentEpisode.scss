@@ -1,0 +1,140 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
+$maincolor: teal;
+
+.recent_episodes {
+    width: 100%;
+    height: auto;
+    // background-color: red;
+    overflow: visible;
+    .recent_bar {
+        height: 10vh;
+        width: 20vw;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // width: fit-content;
+        // background-color: blue;
+        border: 1px solid white;
+        color: white;
+        h3 {
+            font-family: 'Space Mono';
+            font-size: 25px;
+            font-style: italic;
+        }
+        margin-top: 65px;
+        margin-bottom: 35px;
+    }
+
+    .recent_content {
+        width: 85%;
+        height: auto;
+        // background-color: yellow;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        // grid-gap: 0.5rem;
+        // justify-content: center;
+        padding-top: 45px;
+        margin: 0 auto;
+        margin-bottom: 35px;
+
+        .recent {
+            height: 70vh;
+            width: 90%;
+            // background-color: brown;
+            padding-left: 25px;
+            align-self: center;
+            justify-self: center;
+            color: white;
+            border-left: 1px solid rgb(179, 179, 179);
+
+            &:first-child {
+                // display: none;
+                border: none;
+            }
+
+            h4 {
+                font-family: 'Space Mono';
+                display: flex;
+                align-items: center;
+                span {
+                    font-size: 90px;
+                    margin-left: 5px;
+                    font-family: "Roboto";
+                    font-weight: bold;
+                    color: $maincolor;
+
+                    .odd_txt {
+                        font-family: 'Londrina Outline';
+                    }
+                }
+            }
+
+            h1 {
+                font-family: 'Roboto';
+                font-weight: bold;
+                font-size: 45px;
+                padding-bottom: 10px;
+            }
+            .date {
+                font-family: 'Space Mono';
+                // margin-top: 15px;
+                font-style: italic;
+            }
+
+            p {
+                font-family: 'Space Mono';
+                padding-top: 20px;
+                line-height: 30px;
+                font-size: 18px;
+            }
+
+            .more_btn, .more_icn {
+                color: $maincolor;
+                font-size: 18px;
+                font-family: 'Roboto';
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                margin-top: 30px;
+            }
+
+            .more_btn {
+                &:hover {
+                    color: white;
+
+                    .more_icn {
+                        color: white;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .view_all {
+        width: 100%;
+        // background-color: brown;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            background-color: $maincolor;
+            border: none;
+            padding: 22px 75px;
+            cursor: pointer;
+            font-family: 'Roboto';
+            font-weight: bold;
+            font-size: 20px;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
