@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap");
+.feature, .subscribe {
+  color: white;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.feature h1, .subscribe h1 {
+  font-size: 70px;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+
+.feature h1 span, .subscribe h1 span {
+  font-family: 'Londrina Outline';
+  color: teal;
+  font-weight: bold;
+}
+
+.feature h3, .subscribe h3 {
+  font-family: 'Space Mono';
+  font-style: italic;
+}
+
+.feature h4, .subscribe h4 {
+  font-family: 'Space Mono';
+  font-style: italic;
+}
+
+.feature .input, .subscribe .input {
+  width: 30%;
+  height: 6vh;
+  margin: 0 auto;
+  border: 1px solid white;
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feature .input input, .subscribe .input input {
+  height: 100%;
+  width: 90%;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding-left: 5px;
+  color: white;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+
+.feature .input input:focus, .subscribe .input input:focus {
+  outline: none;
+}
+
+.feature .input input::-webkit-input-placeholder, .subscribe .input input::-webkit-input-placeholder {
+  padding-left: 33px;
+  font-family: 'Space Mono';
+  color: teal;
+  font-size: 17px;
+}
+
+.feature .input input:-ms-input-placeholder, .subscribe .input input:-ms-input-placeholder {
+  padding-left: 33px;
+  font-family: 'Space Mono';
+  color: teal;
+  font-size: 17px;
+}
+
+.feature .input input::-ms-input-placeholder, .subscribe .input input::-ms-input-placeholder {
+  padding-left: 33px;
+  font-family: 'Space Mono';
+  color: teal;
+  font-size: 17px;
+}
+
+.feature .input input::placeholder, .subscribe .input input::placeholder {
+  padding-left: 33px;
+  font-family: 'Space Mono';
+  color: teal;
+  font-size: 17px;
+}
+
+.feature .input span, .subscribe .input span {
+  width: 10%;
+  font-size: 18px;
+  color: teal;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.feature .input span:hover, .subscribe .input span:hover {
+  padding-left: 10px;
+}
+
+.feature .social_pltf, .subscribe .social_pltf {
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 39px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.feature .social_pltf .social_icns, .subscribe .social_pltf .social_icns {
+  font-size: 35px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.feature .social_pltf .social_icns:hover, .subscribe .social_pltf .social_icns:hover {
+  color: teal;
+}
+/*# sourceMappingURL=PodcastSubscribe.css.map */

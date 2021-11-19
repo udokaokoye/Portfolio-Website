@@ -1,0 +1,39 @@
+$maincolor: teal;
+.footer_container {
+    background-color: black;
+    width:100% ;
+    color: white;
+
+    .social_pltf_ftr {
+        width: 20%;
+        margin: 0 auto;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        // background-color: red;
+        display: flex;
+        justify-content: space-evenly;
+
+        .social_icns {
+            font-size: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $maincolor;
+            }
+        }
+}
+
+hr {
+    border-color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: 'Space Mono';
+    font-style: italic;
+}
+
+}

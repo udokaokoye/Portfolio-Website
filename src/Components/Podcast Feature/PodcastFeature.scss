@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
+$maincolor: teal;
+
+.feature, .subscribe  {
+    color: white;
+    text-align: center;
+    padding-bottom: 25px;
+
+    h1 {
+        font-size: 70px;
+        font-family: 'Roboto';
+        font-weight: bold;
+
+        span {
+            font-family: 'Londrina Outline';
+            color: $maincolor;
+            font-weight: bold;
+        }
+    }
+
+    h3 {
+        font-family: 'Space Mono';
+        font-style: italic;
+    }
+    h4 {
+        font-family: 'Space Mono';
+        font-style: italic;
+    }
+
+    .input {
+        width: 30%;
+        height: 6vh;
+        margin: 0 auto;
+        border: 1px solid white;
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+            height: 100%;
+            width: 90%;
+            border: 1px solid transparent;
+            background-color: transparent;
+            padding-left: 5px;
+            color: white;
+            font-family: 'Roboto';
+            font-weight: bold;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                padding-left: 33px;
+                font-family: 'Space Mono';
+                color: $maincolor;
+                font-size: 17px;
+            }
+        }
+
+        span {
+            width: 10%;
+            font-size: 18px;
+            color: $maincolor;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .social_pltf {
+        width: 20%;
+        margin: 0 auto;
+        margin-top: 39px;
+        // background-color: red;
+        display: flex;
+        justify-content: space-evenly;
+
+        .social_icns {
+            font-size: 35px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $maincolor;
+            }
+        }
+    }
+}

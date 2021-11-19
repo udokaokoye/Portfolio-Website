@@ -1,0 +1,42 @@
+.footer_container {
+  background-color: black;
+  width: 100%;
+  color: white;
+}
+
+.footer_container .social_pltf_ftr {
+  width: 20%;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.footer_container .social_pltf_ftr .social_icns {
+  font-size: 25px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer_container .social_pltf_ftr .social_icns:hover {
+  color: teal;
+}
+
+.footer_container hr {
+  border-color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.footer_container p {
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: 'Space Mono';
+  font-style: italic;
+}
+/*# sourceMappingURL=PodcastFooter.css.map */
