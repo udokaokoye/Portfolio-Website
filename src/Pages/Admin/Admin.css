@@ -50,6 +50,15 @@
   overflow-x: hidden;
 }
 
+.admin_main .main_body .podcast_admin {
+  padding: 15px 25px;
+  margin-bottom: 10px;
+  background-color: #01A1A7;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .admin_main .main_body .cms_welcome {
   font-size: 15px;
   padding-bottom: 20px;
@@ -458,6 +467,40 @@
 }
 
 .admin_main .main_body .cms_project .add_project .add_project_btn button:focus {
+  outline: none;
+}
+
+.admin_main .main_body textarea {
+  padding: 15px 25px;
+  background: transparent;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  color: #eeecec;
+}
+
+.admin_main .main_body textarea:focus {
+  outline: none;
+}
+
+.admin_main .main_body .btn {
+  padding: 12px 30px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: #eeecec;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin_main .main_body .btn:hover {
+  background-color: #01A1A7;
+  border: 1px solid #01A1A7;
+  color: #eeecec;
+}
+
+.admin_main .main_body .btn:focus {
   outline: none;
 }
 

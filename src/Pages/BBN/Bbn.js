@@ -1,6 +1,22 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import './Bbn.css'
 const Bbn = () => {
+
+    const [frame, setframe] = useState('')
+
+    useEffect(() => {
+        getFrame()
+    }, [])
+
+    const getFrame = () => {
+        fetch("https://udokaokoye.com/Portfolio%20Backend/bbnlive.php", {
+            method: "GET"
+        }).then((res) => res.json()).then((data) => {
+            // console.log(data)
+            setframe(data.frame)
+        })
+    }
+
 
 
 
@@ -10,7 +26,47 @@ const Bbn = () => {
             <h1>Welcome To Big Brother Naija 2021 S6 Live Stream</h1>
 
             <div className="liveContainer">
-            <iframe src="https://player.twitch.tv/?channel=udokaokoye&parent=udokaokoye.com&parent=www.udokaokoye.com" frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="620" style={{width: "100%", height: "100%"}}></iframe>
+
+
+            {frame ? (
+                <div
+                style={{width: "100%", height: "100%"}}
+                dangerouslySetInnerHTML={{
+                  __html: frame,
+                }}
+                className="news_body_text"
+              />
+            ) : (<h1>Loading...</h1>)}
+
+
+
+
+
+            {/* <iframe
+        width="560"
+        height="315"
+        src="//ok.ru/videoembed/2936226127599"
+        frameBorder="0"
+        allow="autoplay"
+        allowFullScreen
+        style={{width: "100%", height: "100%"}}
+      ></iframe> */}
+
+
+
+
+
+            {/* <iframe
+        src="//iframe.dacast.com/b/165826/c/540674"
+        width="590"
+        height="431"
+        frameBorder="0"
+        scrolling="no"
+        allow="autoplay"
+        allowFullScreen={true}
+        style={{width: "100%", height: "100%"}}
+      ></iframe> */}
+            {/* <iframe src="https://player.twitch.tv/?channel=udokaokoye&parent=udokaokoye.com&parent=www.udokaokoye.com" frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="620" style={{width: "100%", height: "100%"}}></iframe> */}
             </div>
 
             <p className='broghttoyou'><i>This stream is brought to you by udoka okoye</i></p>

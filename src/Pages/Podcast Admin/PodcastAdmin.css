@@ -1,0 +1,134 @@
+.podcast_admin_container {
+  min-height: 100vh;
+  color: white;
+  background-color: #202020;
+}
+
+.podcast_admin_container .all_episodes {
+  padding: 25px;
+}
+
+.podcast_admin_container .all_episodes .epi_cont {
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  background-color: #4b4b4b;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.podcast_admin_container .all_episodes .epi_cont .left {
+  width: 30%;
+  height: auto;
+  background-position: top !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+
+.podcast_admin_container .all_episodes .epi_cont .right {
+  width: 65%;
+  height: 100%;
+}
+
+.podcast_admin_container .all_episodes .epi_cont .right h1 {
+  font-family: 'Roboto';
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.podcast_admin_container .all_episodes .epi_cont .right p {
+  font-family: 'Roboto';
+  font-size: 15px;
+  line-height: 26px;
+  width: 70%;
+}
+
+.podcast_admin_container .all_episodes .epi_cont .right .btns_div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.podcast_admin_container .all_episodes .epi_cont .right .btns_div button {
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.podcast_admin_container .all_episodes .epi_cont .right .btns_div .ad, .podcast_admin_container .all_episodes .epi_cont .right .btns_div .edt {
+  background-color: #049bf1;
+  font-weight: bold;
+}
+
+.podcast_admin_container .all_episodes .epi_cont .right .btns_div .del {
+  background-color: red;
+  font-weight: bold;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.podcast_admin_container .add_episodes {
+  padding: 25px;
+}
+
+.podcast_admin_container .add_episodes .episodes_form {
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.podcast_admin_container .add_episodes .episodes_form .field2, .podcast_admin_container .add_episodes .episodes_form .field3, .podcast_admin_container .add_episodes .episodes_form .field4 {
+  margin-left: 25px;
+}
+
+.podcast_admin_container .add_episodes .episodes_form .field1, .podcast_admin_container .add_episodes .episodes_form .field2, .podcast_admin_container .add_episodes .episodes_form .field3, .podcast_admin_container .add_episodes .episodes_form .field4 {
+  margin-top: 20px;
+}
+
+.podcast_admin_container .add_episodes .episodes_form .field1 input, .podcast_admin_container .add_episodes .episodes_form .field1 textarea, .podcast_admin_container .add_episodes .episodes_form .field2 input, .podcast_admin_container .add_episodes .episodes_form .field2 textarea, .podcast_admin_container .add_episodes .episodes_form .field3 input, .podcast_admin_container .add_episodes .episodes_form .field3 textarea, .podcast_admin_container .add_episodes .episodes_form .field4 input, .podcast_admin_container .add_episodes .episodes_form .field4 textarea {
+  padding: 15px 25px;
+  width: 210px;
+  background: transparent;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  color: #c9c9c9;
+}
+
+.podcast_admin_container .add_episodes .episodes_form .field1 input:focus, .podcast_admin_container .add_episodes .episodes_form .field1 textarea:focus, .podcast_admin_container .add_episodes .episodes_form .field2 input:focus, .podcast_admin_container .add_episodes .episodes_form .field2 textarea:focus, .podcast_admin_container .add_episodes .episodes_form .field3 input:focus, .podcast_admin_container .add_episodes .episodes_form .field3 textarea:focus, .podcast_admin_container .add_episodes .episodes_form .field4 input:focus, .podcast_admin_container .add_episodes .episodes_form .field4 textarea:focus {
+  outline: none;
+}
+
+.podcast_admin_container .add_episodes .episodes_form .field1 textarea, .podcast_admin_container .add_episodes .episodes_form .field2 textarea, .podcast_admin_container .add_episodes .episodes_form .field3 textarea, .podcast_admin_container .add_episodes .episodes_form .field4 textarea {
+  width: initial;
+}
+
+.podcast_admin_container .add_episodes .episodes_form .field1 small, .podcast_admin_container .add_episodes .episodes_form .field2 small, .podcast_admin_container .add_episodes .episodes_form .field3 small, .podcast_admin_container .add_episodes .episodes_form .field4 small {
+  margin-left: 10px;
+}
+
+.podcast_admin_container .add_episodes .add_episode_button {
+  padding: 12px 25px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background-color: #01A1A7;
+  cursor: pointer;
+}
+/*# sourceMappingURL=PodcastAdmin.css.map */

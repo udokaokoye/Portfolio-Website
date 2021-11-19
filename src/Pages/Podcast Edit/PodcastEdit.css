@@ -1,0 +1,72 @@
+.edit_episode_container {
+  background-color: #202020;
+  height: 100vh;
+  padding: 35px;
+}
+
+.edit_episode_container .edit_episodes_form {
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.edit_episode_container .edit_episodes_form .field2, .edit_episode_container .edit_episodes_form .field3, .edit_episode_container .edit_episodes_form .field4 {
+  margin-left: 25px;
+}
+
+.edit_episode_container .edit_episodes_form .field1, .edit_episode_container .edit_episodes_form .field2, .edit_episode_container .edit_episodes_form .field3, .edit_episode_container .edit_episodes_form .field4 {
+  margin-top: 20px;
+}
+
+.edit_episode_container .edit_episodes_form .field1 input, .edit_episode_container .edit_episodes_form .field1 textarea, .edit_episode_container .edit_episodes_form .field2 input, .edit_episode_container .edit_episodes_form .field2 textarea, .edit_episode_container .edit_episodes_form .field3 input, .edit_episode_container .edit_episodes_form .field3 textarea, .edit_episode_container .edit_episodes_form .field4 input, .edit_episode_container .edit_episodes_form .field4 textarea {
+  padding: 15px 25px;
+  width: 210px;
+  background: transparent;
+  -webkit-box-shadow: 10px 10px 20px 3px #161616;
+          box-shadow: 10px 10px 20px 3px #161616;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  color: #c9c9c9;
+}
+
+.edit_episode_container .edit_episodes_form .field1 input:focus, .edit_episode_container .edit_episodes_form .field1 textarea:focus, .edit_episode_container .edit_episodes_form .field2 input:focus, .edit_episode_container .edit_episodes_form .field2 textarea:focus, .edit_episode_container .edit_episodes_form .field3 input:focus, .edit_episode_container .edit_episodes_form .field3 textarea:focus, .edit_episode_container .edit_episodes_form .field4 input:focus, .edit_episode_container .edit_episodes_form .field4 textarea:focus {
+  outline: none;
+}
+
+.edit_episode_container .edit_episodes_form .field1 textarea, .edit_episode_container .edit_episodes_form .field2 textarea, .edit_episode_container .edit_episodes_form .field3 textarea, .edit_episode_container .edit_episodes_form .field4 textarea {
+  width: initial;
+}
+
+.edit_episode_container .edit_episodes_form .field1 small, .edit_episode_container .edit_episodes_form .field2 small, .edit_episode_container .edit_episodes_form .field3 small, .edit_episode_container .edit_episodes_form .field4 small {
+  margin-left: 10px;
+}
+
+.edit_episode_container .edit_episode_button {
+  padding: 12px 25px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background-color: #01A1A7;
+  cursor: pointer;
+}
+
+.edit_episode_container .cancel {
+  background-color: red;
+  margin-left: 25px;
+}
+
+.edit_episode_container .curr_cover {
+  width: 40%;
+  height: auto;
+}
+
+.edit_episode_container .curr_cover .img_curr {
+  display: none;
+  height: 40vh;
+  background-position: top;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  margin-bottom: 35px;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=PodcastEdit.css.map */

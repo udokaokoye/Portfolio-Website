@@ -11,7 +11,7 @@
 
     .liveContainer {
         width: 70%;
-        height: 60vh;
+        height: 70vh;
         // background-color: blue;
         margin: 0 auto;
         margin-top: 35px;
@@ -42,6 +42,11 @@
         min-height: 50vh;
         h1 {
             font-size: 25px;
+            font-weight: bolder;
+        }
+
+        .liveContainer {
+            width: 95%
         }
     }
 
@@ -52,7 +57,7 @@
     .Container {
         min-height: 50vh;
         h1 {
-            font-size: 18px;
+            font-size: 22px;
         }
 
         p {

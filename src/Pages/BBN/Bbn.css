@@ -10,7 +10,7 @@
 
 .Container .liveContainer {
   width: 70%;
-  height: 60vh;
+  height: 70vh;
   margin: 0 auto;
   margin-top: 35px;
 }
@@ -38,6 +38,10 @@
   }
   .Container h1 {
     font-size: 25px;
+    font-weight: bolder;
+  }
+  .Container .liveContainer {
+    width: 95%;
   }
 }
 
@@ -46,7 +50,7 @@
     min-height: 50vh;
   }
   .Container h1 {
-    font-size: 18px;
+    font-size: 22px;
   }
   .Container p {
     font-size: 15px;

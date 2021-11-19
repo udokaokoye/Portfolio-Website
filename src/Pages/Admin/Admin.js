@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {
+    Link,
     useHistory
   } from "react-router-dom";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -36,6 +37,26 @@ const Admin = () => {
     const [prj_description, setprj_description] = useState('')
 
 
+    // !! BBN LIVE (TO BE REMOVED SOON)
+    const [bbnliveframe, setbbnliveframe] = useState('')
+    const [bbnlivemessage, setbbnlivemessage] = useState('')
+
+    const handelBbnLive = () => {
+        const formData = new FormData;
+
+        if (bbnliveframe == '') {
+            alert("Enter Iframe details for bbn");
+            return;
+        }
+
+        formData.append('frame', bbnliveframe)
+        fetch("https://udokaokoye.com/Portfolio%20Backend/bbnlive.php", {
+            method: "POST",
+            body: formData
+        }).then((res) => res.json()).then((data) => {
+            setbbnlivemessage(data)
+        })
+    }
 
     // !FETCHED
 
@@ -256,6 +277,8 @@ const Admin = () => {
                 <div className="main_body">
                     <h1 className='cms_welcome'>Welcome, Okoye Udoka</h1>
 
+                        <button className='podcast_admin' ><Link style={{textDecoration: 'none'}} to='/admin/podcast'>Podcast Admin</Link></button>
+
                     <div className="cms_skills">
                         <h1>Skills</h1>
                         <div className="ext_skills">
@@ -424,6 +447,12 @@ const Admin = () => {
                             </form>
                         </div>
                     </div>
+                <br /><br />
+                <p>{bbnlivemessage}</p>
+                <br />
+                <textarea onChange={(e) => setbbnliveframe(e.target.value)} value={bbnliveframe} name="" id="" cols="50" rows="10"></textarea>
+                <br /><br />
+                <button onClick={() => handelBbnLive()} className='btn'>Add</button>
                 </div>
             </div>
             
