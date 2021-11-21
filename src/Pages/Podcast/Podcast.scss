@@ -485,3 +485,11 @@ $maincolor: teal;
 
     
 }
+
+@media only screen and (max-width: 1229px) {
+
+    .nav_container {
+        display: none;
+    }
+
+}

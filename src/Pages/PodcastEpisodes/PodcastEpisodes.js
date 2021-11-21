@@ -52,7 +52,9 @@ const PodcastEpisodes = () => {
             </div>
             ))}
 
-            <button disabled={reavealNumber == allEpisodes.length} onClick={() => updateReavealNumber()}>Unveal More</button>
+            <div className="view_more_cnt">
+            <button className="view_more_btn" disabled={reavealNumber == allEpisodes.length} onClick={() => updateReavealNumber()}>View More</button>
+            </div>
 
         </div>
         </React.Fragment>

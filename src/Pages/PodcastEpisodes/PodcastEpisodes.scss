@@ -83,11 +83,14 @@ $maincolor: teal;
                 background-size: contain !important;
                 background-position: top !important;
                 background-repeat: no-repeat !important;
+                // background-color: green !important;
             }
 
             .right {
+                width: 60%;
                 height: 100%;
                 // padding-left: 35px;
+                // background-color: red;
 
                 h1 {
                     font-size: 55px;
@@ -128,4 +131,22 @@ $maincolor: teal;
             }
         }
     }
+
+    .view_more_cnt{ 
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+
+        .view_more_btn{ 
+            background-color: $maincolor;
+            color: white;
+            border: none;
+            width: 140px;
+            height: 50px;
+            cursor: pointer;
+        }
+    }
+    
 }

@@ -47,6 +47,7 @@ const PodcastAdmin = () => {
             body: formData
         }).then((res) => res.json()).then((data) => {
             fetchPodcast()
+            alert("Done")
         } )
     }
 
@@ -65,6 +66,8 @@ const PodcastAdmin = () => {
             }).then((res) => res.json()).then((data) => {
                 console.log(data)
                 fetchPodcast()
+                alert("Deleted");
+            
             })
         } else {
             alert("No")

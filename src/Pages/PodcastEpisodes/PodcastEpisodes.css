@@ -100,6 +100,7 @@
 }
 
 .episodes_container .show_episode .pdct_det .right {
+  width: 60%;
   height: 100%;
 }
 
@@ -139,5 +140,28 @@
 .episodes_container .show_episode .pdct_det .right .more_btn:hover .more_icn {
   color: white;
   margin-left: 5px;
+}
+
+.episodes_container .view_more_cnt {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+}
+
+.episodes_container .view_more_cnt .view_more_btn {
+  background-color: teal;
+  color: white;
+  border: none;
+  width: 140px;
+  height: 50px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=PodcastEpisodes.css.map */
