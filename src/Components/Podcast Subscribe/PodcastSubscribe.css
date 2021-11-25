@@ -125,4 +125,10 @@
 .feature .social_pltf .social_icns:hover, .subscribe .social_pltf .social_icns:hover {
   color: teal;
 }
+
+@media only screen and (max-width: 552px) {
+  .feature .input, .subscribe .input {
+    width: 70%;
+  }
+}
 /*# sourceMappingURL=PodcastSubscribe.css.map */

@@ -42,7 +42,7 @@ const PodcastAdmin = () => {
         document.getElementById("coverFile").files[0] ? formData.append("cover", document.getElementById("coverFile").files[0]) : formData.append("cover", null)
 
 
-        fetch("http://localhost/Portfolio%20Backend/podcast/add.php", {
+        fetch("http://192.168.1.157/Portfolio%20Backend/podcast/add.php", {
             method: 'POST',
             body: formData
         }).then((res) => res.json()).then((data) => {
@@ -52,7 +52,7 @@ const PodcastAdmin = () => {
     }
 
     const fetchPodcast = () => {
-        fetch("http://localhost/Portfolio%20Backend/podcast/get.php?mode=*", {
+        fetch("http://192.168.1.157/Portfolio%20Backend/podcast/get.php?mode=*", {
             method: "POST"
         }).then((res) => res.json()).then((data) => {
             setallEpisodes(data)
@@ -61,7 +61,7 @@ const PodcastAdmin = () => {
 
     const deletePodcast = (id) => {
         if (window.confirm("Are you sure you want to delete podcast?")) {
-            fetch(`http://localhost/Portfolio%20Backend/podcast/delete.php?id=${id}`, {
+            fetch(`http://192.168.1.157/Portfolio%20Backend/podcast/delete.php?id=${id}`, {
                 method: "POST",
             }).then((res) => res.json()).then((data) => {
                 console.log(data)

@@ -94,3 +94,14 @@ $maincolor: teal;
         }
     }
 }
+
+@media only screen and (max-width: 552px) {
+
+    
+        .feature, .subscribe {
+            .social_pltf {
+                width: 80% !important;
+            }
+        }
+
+}

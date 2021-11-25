@@ -37,3 +37,28 @@ p {
 }
 
 }
+
+@media only screen and (max-width: 800px) {
+
+ .footer_container {
+     .social_pltf_ftr {
+         width: 50%;
+     }
+ }
+
+}
+
+@media only screen and (max-width: 375px) {
+
+    .footer_container {
+        .social_pltf_ftr {
+            width: 70%;
+        }
+    }
+
+    p {
+        font-size: 12px;
+        padding: 0px 5px;
+    }
+   
+   }

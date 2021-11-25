@@ -17,7 +17,7 @@ const PodcastFooter = () => {
 
             </div>
             <hr />
-            <p>copyright <FontAwesomeIcon icon={faCopyright} color="white" />2021 . Udoka Okoye || Dev Podcast . All Rights Reserved</p>
+            <p>copyright <FontAwesomeIcon icon={faCopyright} color="white" /> 2021 . Udoka Okoye || Dev Podcast . All Rights Reserved</p>
         </div>
     )
 }

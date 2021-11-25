@@ -79,7 +79,7 @@
 
 .episodes_container .show_episode .pdct_det {
   padding: 35px;
-  height: 55vh;
+  min-height: 55vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,7 +92,7 @@
 
 .episodes_container .show_episode .pdct_det .left {
   width: 40%;
-  height: 100%;
+  height: 55vh;
   background-image: url("../../Assets//Podcast/my_podcast_cover_less.JPG");
   background-size: contain !important;
   background-position: top !important;
@@ -163,5 +163,43 @@
   width: 140px;
   height: 50px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 942px) {
+  .episodes_container .pdct_det .right h1 {
+    font-size: 45px !important;
+  }
+}
+
+@media only screen and (max-width: 826px) {
+  .episodes_container .pdct_det {
+    display: block;
+  }
+  .episodes_container .pdct_det .left {
+    display: none;
+  }
+  .episodes_container .pdct_det .right {
+    width: 98% !important;
+  }
+  .episodes_container .pdct_det .right h1 {
+    font-size: 45px !important;
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 698px) {
+  .all_showcase {
+    padding-top: 0;
+    padding-left: 15px;
+  }
+  .all_showcase h1 {
+    font-size: 55px;
+  }
+  .all_showcase .show_second_txt {
+    font-size: 20px;
+  }
+  .episodes_container .pdct_det .right h1 {
+    font-size: 45px !important;
+  }
 }
 /*# sourceMappingURL=PodcastEpisodes.css.map */

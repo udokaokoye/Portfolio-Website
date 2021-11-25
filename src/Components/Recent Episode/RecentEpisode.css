@@ -2,6 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap");
+* {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
 .recent_episodes {
   width: 100%;
   height: auto;
@@ -9,7 +14,7 @@
 }
 
 .recent_episodes .recent_bar {
-  height: 10vh;
+  min-height: 10vh;
   width: 20vw;
   margin: 0 auto;
   display: -webkit-box;
@@ -46,7 +51,7 @@
 }
 
 .recent_episodes .recent_content .recent {
-  height: 70vh;
+  min-height: 70vh;
   width: 90%;
   padding-left: 25px;
   -ms-flex-item-align: center;
@@ -150,5 +155,87 @@
 .recent_episodes .view_all button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+@media only screen and (max-width: 1336px) {
+  .recent_episodes .recent_bar {
+    min-height: 8vh;
+    width: 18vw;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid white;
+    color: white;
+    margin-top: 65px;
+    margin-bottom: 35px;
+  }
+  .recent_episodes .recent_bar h3 {
+    font-family: 'Space Mono';
+    font-size: 20px;
+    font-style: italic;
+  }
+  .recent_episodes .recent_content {
+    display: block;
+  }
+  .recent_episodes .recent_content .recent {
+    min-height: auto;
+    border: none;
+    margin-bottom: 155px;
+  }
+}
+
+@media only screen and (max-width: 684px) {
+  .recent_episodes .recent_bar {
+    min-height: 5vh;
+    width: 29vw;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid white;
+    color: white;
+  }
+  .recent_episodes .recent_bar h3 {
+    font-family: 'Space Mono';
+    font-size: 15px;
+    font-style: italic;
+  }
+}
+
+@media only screen and (max-width: 436px) {
+  .recent_episodes .recent_bar {
+    min-height: 8vh;
+    width: 52%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid white;
+    color: white;
+  }
+  .recent_episodes .recent_bar h3 {
+    font-family: 'Space Mono';
+    font-size: 15px;
+    font-style: italic;
+  }
 }
 /*# sourceMappingURL=RecentEpisode.css.map */

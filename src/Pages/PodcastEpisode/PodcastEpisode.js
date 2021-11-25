@@ -81,7 +81,7 @@ const PodcastEpisode = () => {
     const fetchEpisode = () => {
         const formData = new FormData();
         formData.append('id', id)
-        fetch("http://localhost/Portfolio%20Backend/podcast/get.php?mode=id", {
+        fetch("http://192.168.1.157/Portfolio%20Backend/podcast/get.php?mode=id", {
             method: "POST",
             body: formData
         }).then((res) => res.json()).then((data) => {

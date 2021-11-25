@@ -23,7 +23,7 @@ const RecentEpisode = () => {
     }, [])
 
     const fetchPodcast = () => {
-        fetch("http://localhost/Portfolio%20Backend/podcast/get.php?mode=*", {
+        fetch("http://192.168.1.157/Portfolio%20Backend/podcast/get.php?mode=*", {
             method: "POST"
         }).then((res) => res.json()).then((data) => {
             setallEpisodes(data)

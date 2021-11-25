@@ -5,13 +5,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
 $maincolor: teal;
 
+* {
+    transition: all 0.1s ease;
+}
+
 .recent_episodes {
     width: 100%;
     height: auto;
     // background-color: red;
     overflow: visible;
     .recent_bar {
-        height: 10vh;
+        min-height: 10vh;
         width: 20vw;
         margin: 0 auto;
         display: flex;
@@ -43,7 +47,7 @@ $maincolor: teal;
         margin-bottom: 35px;
 
         .recent {
-            height: 70vh;
+            min-height: 70vh;
             width: 90%;
             // background-color: brown;
             padding-left: 25px;
@@ -136,5 +140,91 @@ $maincolor: teal;
                 transform: scale(1.1);
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1336px) {
+
+    .recent_episodes {
+        .recent_bar {
+            min-height: 8vh;
+            width: 18vw;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // width: fit-content;
+            // background-color: blue;
+            border: 1px solid white;
+            color: white;
+            h3 {
+                font-family: 'Space Mono';
+                font-size: 20px;
+                font-style: italic;
+            }
+            margin-top: 65px;
+            margin-bottom: 35px;
+        }
+
+        .recent_content {
+            display: block;
+
+            .recent {
+                min-height: auto;
+                border: none;
+                margin-bottom: 155px;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 684px) {
+
+    .recent_episodes {
+        .recent_bar {
+            min-height: 5vh;
+            width: 29vw;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // width: fit-content;
+            // background-color: blue;
+            border: 1px solid white;
+            color: white;
+            h3 {
+                font-family: 'Space Mono';
+                font-size: 15px;
+                font-style: italic;
+            }
+        }
+
+    }
+        
+
+}
+
+@media only screen and (max-width: 436px) {
+
+    .recent_episodes {
+        .recent_bar {
+            min-height: 8vh;
+            width: 52%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // width: fit-content;
+            // background-color: blue;
+            border: 1px solid white;
+            color: white;
+            h3 {
+                font-family: 'Space Mono';
+                font-size: 15px;
+                font-style: italic;
+            }
+        }
+
     }
 }
