@@ -43,6 +43,7 @@ export const Podcast = () => {
         animationPercentage: 0,
         volume: 0,
       });
+      
 
     const audioRef = useRef(null)
 
@@ -109,8 +110,8 @@ export const Podcast = () => {
                 <div className="hosted"><h3>Hosted by: Udoka Okoye</h3> <div className="hosted_img"></div></div>
                 <p>A weekly conversation where we break down the challenges as an entrepreneur in the developer/coding space, the lessons learnt along the way & how technologies such as Javascript and React were able to and continue to transform my everyday life.</p>
                 <div className="buttons">
-                    <button className="listen_now_button"><FontAwesomeIcon className="li" color="#000" icon={faHeadphones} /> Listen Now</button>
-                    <button className="fav_button"><FontAwesomeIcon className="li" color="#fff" icon={faHeart} /> Add to favorites</button>
+                   <Link className="listen_now_button"><FontAwesomeIcon className="li" color="#000" icon={faHeadphones} /> <span>Listen Now</span></Link>
+                   <Link className="fav_button"><FontAwesomeIcon className="li" color="#fff" icon={faHeart} /> <span>Subscribe</span></Link>
                 </div>
                 <div className="listen_platforms">
 
@@ -144,7 +145,7 @@ export const Podcast = () => {
                 </div>
 
                 <div className="audio_latest_info">
-                    <span>{getTime(audioInfo.currentTime)} 
+                    <span>{getTime(audioInfo.currentTime)} </span>
                         <input 
                         type="range" 
                         value={audioInfo.currentTime}
@@ -153,7 +154,7 @@ export const Podcast = () => {
                         onChange={dragHandler}
                         className='song_range'/> 
 
-                        {getTime(audioInfo.duration)}</span>
+                     <span>   {getTime(audioInfo.duration)}</span>
                     <audio 
                     ref={audioRef} 
                     src={allEpisodes[allEpisodes.length - 1]?.audio}

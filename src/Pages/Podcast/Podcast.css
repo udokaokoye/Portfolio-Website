@@ -110,7 +110,7 @@
           align-items: center;
 }
 
-.container .hero_section .left .buttons button {
+.container .hero_section .left .buttons .listen_now_button, .container .hero_section .left .buttons .fav_button {
   width: 35%;
   height: 80%;
   border: 1px solid transparent;
@@ -119,14 +119,31 @@
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .hero_section .left .buttons .listen_now_button span, .container .hero_section .left .buttons .fav_button span {
+  margin-left: 5px;
 }
 
 .container .hero_section .left .buttons .listen_now_button {
   background-color: #00D7FF;
+  border-radius: 8px;
+}
+
+.container .hero_section .left .buttons .listen_now_button span {
   color: #070707;
   font-weight: bold;
   font-size: 18px;
-  border-radius: 8px;
 }
 
 .container .hero_section .left .buttons .listen_now_button:hover {
@@ -139,6 +156,12 @@
   border: 1px solid #00FFFF;
   background-color: transparent;
   color: white;
+}
+
+.container .hero_section .left .buttons .fav_button span {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .container .hero_section .left .buttons .fav_button:hover {
@@ -331,13 +354,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .container .latestEpisode .audioPlayer_latest_container .audio_latest_info span {
@@ -694,6 +716,32 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .container .latestEpisode .audioPlayer_latest_container .audio_latest_info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .container .latestEpisode .audioPlayer_latest_container .audio_latest_info .song_range {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .container .latestEpisode .audioPlayer_latest_container .audio_latest_info .song_range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 100%;
+    width: 20px;
+    background-color: teal;
+    border-radius: 9px;
   }
 }
 /*# sourceMappingURL=Podcast.css.map */

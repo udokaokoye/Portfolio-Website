@@ -7,7 +7,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 85px;
-    color: white;z-index: 5;
+    color: white;
+    z-index: 5;
     transition: all 0.5s ease-in-out;
     .logo {
         width: 12%;
@@ -47,22 +48,123 @@
             font-weight: bold;
         }
     }
+
+    .menu {
+        display: none;
+    }
 }
 
 .scroll_min {
     height: 10vh;
     background-color: rgba(0, 0, 0, 0.548);
+
+    
 }
 
 .scroll_max {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.836);
+
+    &:after {
+        content: "";
+        position: absolute;
+        // z-index: 1;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255, 255, 255, 0.151) 90%);
+        width: 100%;
+        height: inherit;
+      }
+}
+
+
+@media only screen and (max-width: 1412px) {
+
+    .nav_container {
+
+        .logo {
+            width: 15%;
+        }
+    }
+
 }
 
 
 @media only screen and (max-width: 1229px) {
 
     .nav_container {
-        display: none;
+        padding: 0 20px;
+
+        .logo {
+            width: 20%;
+        }
+
+
+        .links {
+            display: none;
+        }
+
+        .menu {
+            display: block;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 920px) {
+
+    .nav_container {
+        justify-content: space-between !important;
+        .logo {
+            width: 25%;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 742px) {
+
+    .nav_container {
+
+        .logo {
+            width: 35%;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 574px) {
+
+    .nav_container {
+
+        .logo {
+            width: 38%;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 496px) {
+
+    .nav_container {
+
+        .logo {
+            width: 45%;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 442px) {
+
+    .nav_container {
+        .logo {
+                width: 50%;
+            // .img {
+            //     width: 15%;
+            // }
+        }
+
     }
 
 }

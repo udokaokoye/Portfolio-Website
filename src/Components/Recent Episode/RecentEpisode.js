@@ -40,7 +40,8 @@ const RecentEpisode = () => {
         <div className="recent_content">
             {allEpisodes?.slice(0, 3).map((episode) => (
                 <div className="recent">
-                <h4>EPISODE <span><span className="odd_txt">0</span>01</span></h4>
+                    <span></span>
+                <h4>EPISODE <span><span className="odd_txt">{episode.episode.charAt(0)}</span>{episode.episode.charAt(1)}{episode.episode.charAt(2)}</span></h4>
                 <h1>{episode.title}</h1>
                 <span className="date">{episode.date}</span>
                 <p>{episode.description}</p>

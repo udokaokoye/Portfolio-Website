@@ -1,10 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import "./Podcastnav.css"
 import {Link} from 'react-router-dom'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faBars
+  } from "@fortawesome/free-solid-svg-icons";
+import PodcastSideNav from '../PodcastSideNav/PodcastSideNav';
 const PodcastNav = () => {
 
     const [podcastNavTrans, setpodcastNavTrans] = useState("")
+
+    
+    const [sidebar, setsidebar] = useState(false)
 
     function vhToPixels (vh) {
         return Math.round(window.innerHeight / (100 / vh));
@@ -35,6 +42,14 @@ const PodcastNav = () => {
                 <a href='#subscribe' className='nav_link'>Subscribe</a>
                 <a href='#feature' className='nav_link'>Contact</a>
             </div>
+
+            <div onClick={() => setsidebar(true)} className="menu">
+              <FontAwesomeIcon icon={faBars} />
+            </div>
+
+            {sidebar ? (
+              <PodcastSideNav sidebar={sidebar} setsidebar={setsidebar} />
+            ) : ""}
         </div>
     )
 }

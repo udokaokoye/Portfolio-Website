@@ -198,8 +198,41 @@
   .all_showcase .show_second_txt {
     font-size: 20px;
   }
+  .episodes_container .br_title h4 span {
+    font-size: 80px !important;
+  }
   .episodes_container .pdct_det .right h1 {
     font-size: 45px !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .episodes_container .pdct_det {
+    display: block;
+    margin-bottom: 55px;
+  }
+  .episodes_container .pdct_det .left {
+    display: none;
+  }
+  .episodes_container .pdct_det .right {
+    width: 98% !important;
+  }
+  .episodes_container .pdct_det .right h1 {
+    font-size: 45px !important;
+    width: 100% !important;
+  }
+  .episodes_container .pdct_det .right p {
+    width: 100% !important;
+    font-size: 16px;
+  }
+  .episodes_container .pdct_det .right .more_btn, .episodes_container .pdct_det .right .more_icn {
+    font-size: 16px !important;
+  }
+  .episodes_container .pdct_det .right .more_btn {
+    padding: 10px 20px !important;
+  }
+  .episodes_container .view_more_btn {
+    font-size: 16px !important;
   }
 }
 /*# sourceMappingURL=PodcastEpisodes.css.map */

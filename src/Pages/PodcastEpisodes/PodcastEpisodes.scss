@@ -201,12 +201,60 @@ $maincolor: teal;
     }
 
     .episodes_container {
+
+        .br_title {
+            h4 {
+                span {
+                    font-size: 80px !important;
+                }
+            }
+        }
         .pdct_det {
             .right {
                 h1 {
                     font-size: 45px !important;
                 }
             }
+        }
+    }
+   
+   }
+
+   @media only screen and (max-width: 375px) {
+
+    .episodes_container {
+        .pdct_det {
+            display: block;
+            margin-bottom: 55px;
+            .left {
+                display: none;
+            }
+            .right {
+                width: 98% !important;
+                h1 {
+                    font-size: 45px !important;
+                    width: 100% !important;
+                }
+
+                p {
+                    width: 100% !important;
+                    font-size: 16px;
+                }
+
+                .more_btn, .more_icn {
+                    font-size: 16px !important;
+                }
+
+                .more_btn {
+                    padding: 10px 20px !important;
+                }
+            }
+
+
+        }
+
+        .view_more_btn {
+            font-size: 16px !important;
         }
     }
    

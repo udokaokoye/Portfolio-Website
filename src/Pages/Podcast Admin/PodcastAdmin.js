@@ -28,6 +28,7 @@ const PodcastAdmin = () => {
             // alert('Valid')
         } else {
             history.push('/auth/admin');
+            // alert("Helklo")
         }
     }
 
