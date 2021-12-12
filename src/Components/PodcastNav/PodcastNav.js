@@ -40,7 +40,7 @@ const PodcastNav = () => {
                 <Link to='/' className='nav_link'>Main Website</Link>
                 <Link to="/podcast/episodes" className='nav_link'>Library</Link>
                 <a href='#subscribe' className='nav_link'>Subscribe</a>
-                <a href='#feature' className='nav_link'>Contact</a>
+                <a href='#feature' className='nav_link'>Feature</a>
             </div>
 
             <div onClick={() => setsidebar(true)} className="menu">

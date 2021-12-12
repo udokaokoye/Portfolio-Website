@@ -47,7 +47,7 @@ const PodcastSideNav = ({sidebar, setsidebar}) => {
                     <Link to="/podcast/episodes" onClick={() => linkCliked()} style={{textDecoration: 'none'}}><span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-offset="-200">Library</span></Link>
                     {/* <Link to="" onClick={() => linkCliked()} style={{textDecoration: 'none'}}><span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700" data-aos-offset="-200">Favorites</span></Link> */}
                     <a href="#subscribe" onClick={() => linkCliked()} style={{textDecoration: 'none'}}><span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900" data-aos-offset="-200">Subscribe</span></a>
-                    <a href="#feature" onClick={() => linkCliked()} style={{textDecoration: 'none'}}><span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1100" data-aos-offset="-200">Contact</span></a>
+                    <a href="#feature" onClick={() => linkCliked()} style={{textDecoration: 'none'}}><span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1100" data-aos-offset="-200">Feature</span></a>
 
                 </div>
             </div>
