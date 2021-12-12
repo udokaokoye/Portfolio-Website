@@ -9,10 +9,22 @@ $maincolor: teal;
     text-align: center;
     padding-bottom: 25px;
 
+    .subscribe_message {
+        color: red;
+        margin-top: 10px;
+        font-weight: bolder;
+    }
+
     h1 {
         font-size: 70px;
         font-family: 'Roboto';
         font-weight: bold;
+
+        small {
+            font-size: 70px;
+            font-family: 'Roboto';
+            font-weight: bold;
+        }
 
         span {
             font-family: 'Londrina Outline';

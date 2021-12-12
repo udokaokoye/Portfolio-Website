@@ -36,7 +36,7 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 80%;
+  width: 70%;
   position: fixed;
   height: 10vh;
 }
@@ -80,7 +80,7 @@ nav .logo h1 {
 
 nav .links {
   padding-right: 28px;
-  width: 60%;
+  width: 70%;
 }
 
 nav .links .inner {

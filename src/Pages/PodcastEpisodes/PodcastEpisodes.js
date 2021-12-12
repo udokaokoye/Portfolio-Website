@@ -13,9 +13,16 @@ const PodcastEpisodes = () => {
     const [reavealNumber, setreavealNumber] = useState(3)
     useEffect(() => {
         fetchPodcast()
+        topFunction();
     }, [])
+    
+
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
     const fetchPodcast = () => {
-        fetch("http://192.168.1.157/Portfolio%20Backend/podcast/get.php?mode=*", {
+        fetch("https://udokaokoye.com/Portfolio%20Backend/podcast/get.php?mode=*", {
             method: "POST"
         }).then((res) => res.json()).then((data) => {
             setallEpisodes(data)
@@ -36,9 +43,9 @@ const PodcastEpisodes = () => {
             </div>
         <div className='episodes_container'>
             {allEpisodes?.slice(0, reavealNumber).map((episode) => (
-                <div className="show_episode">
+                <div key={episode.id} className="show_episode">
                 <div className="br_title">
-                    <h4>EPISODE <span>0<span>29</span></span> 10.05.21</h4>
+                    <h4>EPISODE <span>{episode?.episode.charAt(0)}<span>{episode?.episode.charAt(1)}{episode?.episode.charAt(2)}</span></span> 10.05.21</h4>
                 </div>
 
                 <div className="pdct_det">

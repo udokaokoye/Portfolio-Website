@@ -14,15 +14,58 @@ import {
     faEnvelope
   } from "@fortawesome/free-solid-svg-icons";
   import {faFacebook, faInstagram, faTwitter} from '@fortawesome/free-brands-svg-icons'
+  import AOS from 'aos';
+import 'aos/dist/aos.css'
 import PodcastPlayer from '../../Components/PodcastPlayer/PodcastPlayer';
 import RecentEpisode from '../../Components/Recent Episode/RecentEpisode';
 import PodcastFeature from '../../Components/Podcast Feature/PodcastFeature';
 import PodcastSubscribe from '../../Components/Podcast Subscribe/PodcastSubscribe';
 import VerticalBreaker from '../../Components/Vertical Breaker/VerticalBreaker';
 import { Link } from 'react-router-dom';
+import PodcastLoader from '../../Components/PodcastLoader/PodcastLoader';
 export const Podcast = () => {
+    const [screen_loader, setscreen_loader] = useState(true)
     useEffect(() => {
+        // setscreen_loader(true)
+    //    var t = setTimeout(() => {
+    //         setscreen_loader(false)
+    //         clearTimeout(t)
+    //     }, 2800);
+        
         fetchPodcast()
+        
+    }, [])
+
+    // const condi = 1 +1;
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setscreen_loader(false)
+    //     }, 2800);
+    // }, [condi])
+
+    useEffect(() => {
+        AOS.init({
+            // Global settings:
+            disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+            startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+            initClassName: 'aos-init', // class applied after initialization
+            animatedClassName: 'aos-animate', // class applied on animation
+            useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+            disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+            debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+            throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+            
+          
+            // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 120, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 400, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: false, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out while scrolling past them
+          
+          });
     }, [])
 
     
@@ -43,12 +86,13 @@ export const Podcast = () => {
         animationPercentage: 0,
         volume: 0,
       });
+
       
 
     const audioRef = useRef(null)
 
     const fetchPodcast = () => {
-        fetch("http://192.168.1.157/Portfolio%20Backend/podcast/get.php?mode=*", {
+        fetch("https://udokaokoye.com/Portfolio%20Backend/podcast/get.php?mode=*", {
             method: "POST"
         }).then((res) => res.json()).then((data) => {
             setallEpisodes(data)
@@ -101,17 +145,23 @@ export const Podcast = () => {
           volume: e.target.volume,
         });
       };
+
+    //   if (screen_loader) {
+    //       return (
+    //           <PodcastLoader />
+    //       )
+    //   } 
     return (
         <div className="container">
             <div className="hero_section">
-            <div className='float_btn'></div>
+            <div className='float_btn' data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1700" data-aos-offset="-100"></div>
             <div className="left">
-                <h1>The Reactive Developer</h1>
-                <div className="hosted"><h3>Hosted by: Udoka Okoye</h3> <div className="hosted_img"></div></div>
-                <p>A weekly conversation where we break down the challenges as an entrepreneur in the developer/coding space, the lessons learnt along the way & how technologies such as Javascript and React were able to and continue to transform my everyday life.</p>
+                <h1> <span data-aos="fade" data-aos-duration="1000">The</span> <span data-aos="fade" data-aos-duration="1000" data-aos-delay="1000">Reactive</span> <span data-aos="fade" data-aos-duration="1000" data-aos-delay="2000">Developer</span></h1>
+                <div className="hosted" data-aos="fade" data-aos-duration="1500" data-aos-delay="1700"><h3>Hosted by: Udoka Okoye</h3> <div className="hosted_img"></div></div>
+                <p data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1700">A weekly conversation where we break down the challenges as an entrepreneur in the developer/coding space, the lessons learnt along the way & how technologies such as Javascript and React were able to and continue to transform my everyday life.</p>
                 <div className="buttons">
-                   <Link className="listen_now_button"><FontAwesomeIcon className="li" color="#000" icon={faHeadphones} /> <span>Listen Now</span></Link>
-                   <Link className="fav_button"><FontAwesomeIcon className="li" color="#fff" icon={faHeart} /> <span>Subscribe</span></Link>
+                   <Link to="/podcast/episodes" className="listen_now_button" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1700" data-aos-offset="-100"><FontAwesomeIcon className="li" color="#000" icon={faHeadphones} /> <span>Listen Now</span></Link>
+                   <a href="#subscribe" className="fav_button" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1700" data-aos-offset="-100"><FontAwesomeIcon className="li" color="#fff" icon={faHeart} /> <span>Subscribe</span></a>
                 </div>
                 <div className="listen_platforms">
 
@@ -125,15 +175,15 @@ export const Podcast = () => {
         
 
         <div className="latestEpisode">
-            <div className="tp_br">EPISODE <span><span className="odd_txt">0</span>01</span>00.00.00</div>
+            <div className="tp_br">EPISODE <span><span className="odd_txt">{allEpisodes[0]?.episode.charAt(0)}</span>{allEpisodes[0]?.episode.charAt(1)}{allEpisodes[0]?.episode.charAt(2)}</span>{getTime(audioInfo.duration)}</div>
             
                 <div className="main_container">
-                    <div className="left" style={{background: `url(${allEpisodes[allEpisodes.length - 1]?.cover})`}} ></div>
+                    <div className="left" style={{background: `url(${allEpisodes[0]?.cover})`}} data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="0" data-aos-offset="-202" ></div>
                     <div className="right">
-                        <h1>{allEpisodes[allEpisodes.length - 1]?.title}</h1>
-                        <p>{allEpisodes[allEpisodes.length - 1]?.description}</p>
+                        <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="0" data-aos-offset="-202">{allEpisodes[0]?.title}</h1>
+                        <p data-aos="fade" data-aos-duration="1000" data-aos-delay="0">{allEpisodes[0]?.description}</p>
 
-                        <Link style={{textDecoration: 'none'}} to={`/podcast/episode/${allEpisodes[allEpisodes.length - 1]?.id}`}><span className="more_btn">MORE <FontAwesomeIcon icon={faArrowRight} color="white" className="more_icn" /></span></Link>
+                        <Link style={{textDecoration: 'none'}} to={`/podcast/episode/${allEpisodes[0]?.id}`}  data-aos="fade-left" data-aos-duration="1000" data-aos-delay="0" data-aos-easing="ease-in-sine"><span className="more_btn">MORE <FontAwesomeIcon icon={faArrowRight} color="white" className="more_icn" /></span></Link>
                     </div>
                 </div>
             
@@ -157,7 +207,7 @@ export const Podcast = () => {
                      <span>   {getTime(audioInfo.duration)}</span>
                     <audio 
                     ref={audioRef} 
-                    src={allEpisodes[allEpisodes.length - 1]?.audio}
+                    src={allEpisodes[0]?.audio}
                     onLoadedMetadata={timeUpdateHandler}
                     onTimeUpdate={timeUpdateHandler}
                     onEnded={() => setisPlaying(false)}

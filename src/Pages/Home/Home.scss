@@ -573,6 +573,7 @@ html {
                         padding: 0px 25px;
                         padding-top: 10px;
                         font-weight: bold;
+                        color: black;
                     }
                 }
     
@@ -582,6 +583,7 @@ html {
                         padding: 25px;
                         text-align: left;
                         line-height: 28px;
+                        color: black;
                     }
                 }
     
@@ -656,6 +658,7 @@ html {
                 font-size: 45px;
                 font-weight: bold;
                 text-align: center;
+                color: initial;
             }
         }
     
@@ -688,6 +691,11 @@ html {
                     cursor: pointer;
                     transition: all 0.4s ease-in-out;
 
+                    span {
+                        color: rgb(46, 46, 46);
+                        font-weight: bold;
+                    }
+
                     &:hover {
                         background-color: $dark-color;
                         color: $light-cardbg;
@@ -697,6 +705,9 @@ html {
                 .active_br {
                     background-color: $dark-color;
                     color: $light-cardbg;
+                    span {
+                        color: white;
+                    }
                 }
     
                 .br3 {
@@ -737,6 +748,7 @@ html {
                         height: 100%;
                         // background-color: blue;
                         transition: all 0.5s ease-in-out;
+                        
                         // border: 1px solid $light-cardbg;
 
                         .prj_txt {
@@ -745,6 +757,9 @@ html {
                             // transform: translateY(0);
                             top: -50%;
                             transition: all 0.5s ease-in-out;
+                            span {
+                                color: black !important;
+                            }
 
                             // !Main Style
 
@@ -816,6 +831,7 @@ html {
                             opacity: 1;
                             position: absolute;
                             // transform: translateY(0);
+                            // color: blue !important;
                             top: 20%;
                             transition: all 0.5s ease-in-out;
                         }

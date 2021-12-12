@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Nav.css'
 import logo from '../../Assets/icon.PNG';
 import 'aos/dist/aos.css'
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
 
@@ -106,10 +107,16 @@ const Nav = () => {
                         data-aos-duration="600" 
                         data-aos-delay="1900"
                         href="#portfolio"><span>Portfolio</span></a>
-                        <a 
+
+                        <Link 
                         data-aos="fade-in" 
                         data-aos-duration="600" 
                         data-aos-delay="2100"
+                        to="/podcast"><span>Podcast</span></Link>
+                        <a 
+                        data-aos="fade-in" 
+                        data-aos-duration="600" 
+                        data-aos-delay="2300"
                         href="#contact"><span>Contact</span></a>
                     </div>
                 </div>
@@ -142,6 +149,7 @@ const Nav = () => {
                       <a data-aos="fade-down" data-aos-duration="800" data-aos-delay="500" onClick={() => setsideNav(false)} href="#about"><li>About</li></a>
                       <a data-aos="fade-down" data-aos-duration="800" data-aos-delay="700" onClick={() => setsideNav(false)} href="#experience"><li>Experience</li></a>
                       <a data-aos="fade-down" data-aos-duration="800" data-aos-delay="800" onClick={() => setsideNav(false)} href="#portfolio"><li>Portfolio</li></a>
+                      <Link data-aos="fade-down" data-aos-duration="800" data-aos-delay="800" onClick={() => setsideNav(false)} to="/podcast"><li>Podcast</li></Link>
                       <a data-aos="fade-down" data-aos-duration="800" data-aos-delay="1000" data-aos-offset="5" onClick={() => setsideNav(false)} href="#contact"><li>Contact</li></a>
                     </ul>
                 </div>

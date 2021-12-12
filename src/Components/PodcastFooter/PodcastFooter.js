@@ -2,6 +2,7 @@ import React from 'react'
 import './PodcastFooter.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+    faArrowUp,
     faCopyright,
     faEnvelope,
   } from "@fortawesome/free-solid-svg-icons";
@@ -18,6 +19,10 @@ const PodcastFooter = () => {
             </div>
             <hr />
             <p>copyright <FontAwesomeIcon icon={faCopyright} color="white" /> 2021 . Udoka Okoye || Dev Podcast . All Rights Reserved</p>
+            <a href='#top' className='to_top_pdct_btn'><FontAwesomeIcon icon={faArrowUp} /></a>
+            <br />
+            <br />
+            <br />
         </div>
     )
 }

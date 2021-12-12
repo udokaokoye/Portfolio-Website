@@ -55,10 +55,12 @@ $maincolor: teal;
         // background-color: blue;
 
         h1 {
-            font-size: 48px;
-            font-family: 'Roboto';
-            font-weight: bold;
-            padding-bottom: 20px;
+            span {
+                font-size: 48px;
+                font-family: 'Roboto';
+                font-weight: bold;
+                padding-bottom: 20px;
+            }
             // font-family: "Lato";
         }
 
@@ -109,7 +111,7 @@ $maincolor: teal;
                 font-weight: bold;
                 font-size: 18px;
                 cursor: pointer;
-                transition: all 0.3s ease-in-out;
+                // transition: all 0.3s ease-in-out;
                 text-decoration: none;
                 display: flex;
                 justify-content: center;
@@ -248,7 +250,7 @@ $maincolor: teal;
                     font-size: 18px;
                     font-family: 'Roboto';
                     cursor: pointer;
-                    transition: all 0.2s ease-in-out;
+                    // transition: all 0.2s ease-in-out;
                     margin-top: 10px;
                 }
 

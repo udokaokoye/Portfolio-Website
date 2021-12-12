@@ -13,15 +13,18 @@ import VerticalBreaker from '../../Components/Vertical Breaker/VerticalBreaker';
 import RecentEpisode from '../../Components/Recent Episode/RecentEpisode';
 import PodcastFeature from '../../Components/Podcast Feature/PodcastFeature';
 import PodcastSubscribe from '../../Components/Podcast Subscribe/PodcastSubscribe';
-const PodcastEpisode = () => {
+const PodcastEpisode = (props) => {
+
+    const {id} = useParams()
     useEffect(() => {
+        topFunction()
         fetchEpisode();
-    }, [])
+    }, [id])
 
     const [episode, setepisode] = useState();
     const [isPlaying, setisPlaying] = useState(false) 
 
-    const {id} = useParams()
+    
     const audioRef = useRef(null)
 
     const [audioInfo, setaudioInfo] = useState({
@@ -30,6 +33,11 @@ const PodcastEpisode = () => {
         animationPercentage: 0,
         volume: 0,
       });
+
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
 
       const togglePlayPause = () => {
         if (!isPlaying) {
@@ -81,7 +89,7 @@ const PodcastEpisode = () => {
     const fetchEpisode = () => {
         const formData = new FormData();
         formData.append('id', id)
-        fetch("http://192.168.1.157/Portfolio%20Backend/podcast/get.php?mode=id", {
+        fetch("https://udokaokoye.com/Portfolio%20Backend/podcast/get.php?mode=id", {
             method: "POST",
             body: formData
         }).then((res) => res.json()).then((data) => {
@@ -102,14 +110,14 @@ const PodcastEpisode = () => {
                     <h1>{episode?.title}</h1>
                 </div>
                 <div className="right">
-                    <h1>0<span>26</span></h1>
+                    <h1>{episode?.episode.charAt(0)}<span>{episode?.episode.charAt(1)}{episode?.episode.charAt(2)}</span></h1>
                     <p>{episode?.description}</p>
                 </div>
             </div>
 
             <div className="podcast_player">
-                <div className="left">
-                        
+                <div className="_left">
+                        {/* <h1>Hello</h1> */}
                 </div>
 
                 <div className="right">
@@ -117,7 +125,7 @@ const PodcastEpisode = () => {
                     <div className="podcast_title_download">
                         <h3>{episode?.title}</h3>
                         <div className="icns">
-                            <FontAwesomeIcon icon={faDownload} color="white" />
+                           <a download href={episode?.audio} target="_blank"><FontAwesomeIcon icon={faDownload} color="white" /></a> 
                             <FontAwesomeIcon icon={faShare} color="white" />
                         </div>
                     </div>

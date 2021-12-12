@@ -1,0 +1,34 @@
+.loader_main_container {
+  width: 100%;
+  height: 100vh;
+  z-index: 30;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+}
+
+.loader_main_container .loder_cont {
+  width: 50%;
+}
+
+.loader_main_container .loder_cont .loader_gif {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .loader_main_container .loder_cont {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=PodcastLoader.css.map */

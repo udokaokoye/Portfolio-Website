@@ -35,10 +35,10 @@ const PodcastNav = () => {
     }, [])
     return (
         <div className={`nav_container ${podcastNavTrans}`}>
-            <a href="http://localhost:3000/podcast" className='logo'><div className="img"></div> <span>Dev Podcast</span></a>
+            <a href="https://udokaokoye.com/podcast" className='logo'><div className="img"></div> <span>Dev Podcast</span></a>
             <div className="links">
-                <Link to='/podcast/episodes' className='nav_link'>Library</Link>
-                <a className='nav_link'>Favorites</a>
+                <Link to='/' className='nav_link'>Main Website</Link>
+                <Link to="/podcast/episodes" className='nav_link'>Library</Link>
                 <a href='#subscribe' className='nav_link'>Subscribe</a>
                 <a href='#feature' className='nav_link'>Contact</a>
             </div>

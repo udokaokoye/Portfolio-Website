@@ -53,6 +53,7 @@ $maincolor: teal;
                 font-weight: bold;
                 text-align: left;
                 padding-top: 15px;
+                word-wrap: break-word;
             }
         }
 
@@ -93,13 +94,14 @@ $maincolor: teal;
         border-radius: 10px;
         overflow: hidden;
 
-        .left {
-            width: 20%;
-            height: 100%;
+        ._left {
+            width: 20% !important;
+            min-height: 216px;
             background-image: url('../../Assets/Podcast/my_podcast_cover_less.JPG');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+            // background-color: blue !important;
         }
 
         .right {
@@ -226,8 +228,8 @@ $maincolor: teal;
         // width: 95%;
         display: block;
 
-        .left {
-            width: 100% !important;
+        ._left {
+            display: none !important;
         }
 
         .right {
@@ -239,7 +241,7 @@ $maincolor: teal;
         width: 85%;
         // padding-bottom: 10px !important;
 
-        .left {
+        ._left {
             display: none;
         }
 
@@ -299,9 +301,9 @@ $maincolor: teal;
             min-height: 195px !important;
             // padding-bottom: 10px !important;
     
-            .left {
-                display: none;
-            }
+            // .left {
+            //     display: none;
+            // }
     
             .right {
                 width: 100%;

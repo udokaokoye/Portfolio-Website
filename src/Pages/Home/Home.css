@@ -662,6 +662,7 @@ html {
   padding: 0px 25px;
   padding-top: 10px;
   font-weight: bold;
+  color: black;
 }
 
 .projects .project_popup .project_inner .project_popup_main .prj_description p {
@@ -669,6 +670,7 @@ html {
   padding: 25px;
   text-align: left;
   line-height: 28px;
+  color: black;
 }
 
 .projects .project_popup .project_inner .project_popup_main .prj_btns {
@@ -748,6 +750,7 @@ html {
   font-size: 45px;
   font-weight: bold;
   text-align: center;
+  color: initial;
 }
 
 .projects .inner .right {
@@ -791,6 +794,11 @@ html {
   transition: all 0.4s ease-in-out;
 }
 
+.projects .inner .right .bar .br1 span, .projects .inner .right .bar .br2 span, .projects .inner .right .bar .br3 span, .projects .inner .right .bar .br4 span, .projects .inner .right .bar .br5 span {
+  color: #2e2e2e;
+  font-weight: bold;
+}
+
 .projects .inner .right .bar .br1:hover, .projects .inner .right .bar .br2:hover, .projects .inner .right .bar .br3:hover, .projects .inner .right .bar .br4:hover, .projects .inner .right .bar .br5:hover {
   background-color: #202020;
   color: #eeeeee;
@@ -799,6 +807,10 @@ html {
 .projects .inner .right .bar .active_br {
   background-color: #202020;
   color: #eeeeee;
+}
+
+.projects .inner .right .bar .active_br span {
+  color: white;
 }
 
 .projects .inner .right .bar .br3 {
@@ -846,6 +858,10 @@ html {
   font-size: 1.5vw;
   font-family: 'Lato';
   font-weight: 400;
+}
+
+.projects .inner .right .prjs .project_div .prj_card .prj_txt span {
+  color: black !important;
 }
 
 .projects .inner .right .prjs .project_div .prj_card .prj_txt .lng_used {

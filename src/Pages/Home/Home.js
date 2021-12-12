@@ -354,17 +354,17 @@ const Home = () => {
                             data-aos="zoom-in" 
                             data-aos-duration="300" 
                             data-aos-delay="300"
-                             href="https://web.facebook.com/udokovic" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faFacebookF} /></a>
+                             href="https://facebook.com/levi.okoye.dev" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faFacebookF} /></a>
                             <a 
                             data-aos="zoom-in" 
                             data-aos-duration="300" 
                             data-aos-delay="500"
-                            href="https://twitter.com/udokaokoye2" rel="noreferrer" target='_blank'><FontAwesomeIcon className="tw" color="#fff" icon={faTwitter} /></a>
+                            href="https://twitter.com/levi_dev_" rel="noreferrer" target='_blank'><FontAwesomeIcon className="tw" color="#fff" icon={faTwitter} /></a>
                             <a 
                             data-aos="zoom-in" 
                             data-aos-duration="300" 
                             data-aos-delay="700"
-                            href="https://www.instagram.com/okoye__udoka/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faInstagram} /></a>
+                            href="https://www.instagram.com/levi.dev__/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb" color="#fff" icon={faInstagram} /></a>
                             <a 
                             data-aos="zoom-in" 
                             data-aos-duration="300" 
@@ -647,9 +647,9 @@ with a serious passion for UI effects, animations and creating intuitive, dynami
 
             <div className="social-links">
                             <a href="https://github.com/udokaokoye" rel="noreferrer" target='_blank'><FontAwesomeIcon className="li icn" color="#fff" icon={faGithub} /></a>
-                            <a href="https://web.facebook.com/udokovic" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb icn" color="#fff" icon={faFacebookF} /></a>
-                            <a href="https://twitter.com/udokaokoye2" rel="noreferrer" target='_blank'><FontAwesomeIcon className="tw icn" color="#fff" icon={faTwitter} /></a>
-                            <a href="https://www.instagram.com/okoye__udoka/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb icn" color="#fff" icon={faInstagram} /></a>
+                            <a href="https://facebook.com/levi.okoye.dev" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb icn" color="#fff" icon={faFacebookF} /></a>
+                            <a href="https://twitter.com/levi_dev_" rel="noreferrer" target='_blank'><FontAwesomeIcon className="tw icn" color="#fff" icon={faTwitter} /></a>
+                            <a href="https://www.instagram.com/levi.dev__/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="fb icn" color="#fff" icon={faInstagram} /></a>
                             <a href="https://linkedin.com/in/udoka-okoye-abba591ab/" rel="noreferrer" target='_blank'><FontAwesomeIcon className="ig icn" color="#fff" icon={faLinkedinIn} /></a>
                             {/* <a href=""><FontAwesomeIcon className="li" color="#fff" icon={faLinkedinIn} /></a> */}
             </div>
