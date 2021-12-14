@@ -36,7 +36,7 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 70%;
+  width: 90%;
   position: fixed;
   height: 10vh;
 }

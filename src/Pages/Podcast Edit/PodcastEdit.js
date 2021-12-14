@@ -18,7 +18,7 @@ const PodcastEdit = () => {
     const fetchPodcast = () => {
         const formData = new FormData;
         formData.append('id', id)
-        fetch("http://192.168.1.157/Portfolio%20Backend/podcast/get.php?mode=id", {
+        fetch("https://udokaokoye.com/Portfolio%20Backend/podcast/get.php?mode=id", {
             method: "POST",
             body: formData
         }).then((res) => res.json()).then((data) => {
@@ -42,7 +42,7 @@ const PodcastEdit = () => {
         document.getElementById("audioFile").files[0] ? formData.append("audio", document.getElementById("audioFile").files[0]) : formData.append("audio", null)
         document.getElementById("coverFile").files[0] ? formData.append("cover", document.getElementById("coverFile").files[0]) : formData.append("cover", null)
 
-        fetch("http://192.168.1.157/Portfolio%20Backend/podcast/edit.php", {
+        fetch("https://udokaokoye.com/Portfolio%20Backend/podcast/edit.php", {
             method: "POST",
             body: formData
         }).then((res) => res.json()).then((data) => {

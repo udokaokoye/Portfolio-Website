@@ -53,6 +53,10 @@
   padding-left: 80px;
 }
 
+.container .hero_section .left h1 {
+  word-spacing: 15px;
+}
+
 .container .hero_section .left h1 span {
   font-size: 48px;
   font-family: 'Roboto';
